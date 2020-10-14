@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-- 🔭 I’m currently working on [`Open AFK`](https://github.com/jakobbouchard/open_afk)
+- 🔭 I’m currently working on [`Open AFK`](https://github.com/jakobbouchard/open_afk) and [`Price Tracker`](https://github.com/jakobbouchard/price_tracker)
 - 🌱 I’m currently learning Flutter & Dart
 - 🤔 I’m looking for help with Flutter best practices
 - 💬 Ask me about anything, I like talking!
