@@ -17,9 +17,11 @@
 				"christian-kohler.npm-intellisense",
 				"christian-kohler.path-intellisense",
 				"EditorConfig.EditorConfig",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"antfu.file-nesting"
 			],
 			"settings": {
+				"workbench.editor.labelFormat": "short",
 				"terminal.integrated.defaultProfile.linux": "zsh"
 			}
 		}
