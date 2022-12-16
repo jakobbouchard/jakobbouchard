@@ -17,7 +17,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.preloader {
 		position: fixed;
 		top: 0;

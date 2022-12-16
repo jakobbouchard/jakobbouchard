@@ -5,6 +5,8 @@
 @import '@fontsource/libre-baskerville/400.css';
 @import '@fontsource/libre-baskerville/700.css';
 
+@custom-selector :--heading h1, h2, h3, h4;
+
 /* Box sizing
 --------------------------------------------- */
 
@@ -30,10 +32,7 @@ body {
 		'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
-h1,
-h2,
-h3,
-h4 {
+:--heading {
 	font-family: 'Libre Baskerville', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	font-weight: 700;
 }
