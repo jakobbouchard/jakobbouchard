@@ -2,8 +2,11 @@
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<link rel="profile" href="https://gmpg.org/xfn/11" />
+
 		%sveltekit.head%
 
 		<script>
@@ -20,6 +23,16 @@
 				}, delay);
 			});
 		</script>
+
+		<!-- Umami – own your website analytics -->
+		<script
+			async
+			defer
+			src="https://umami.jakobbouchard.dev/sherlock.js"
+			data-website-id="e6d09bc6-f1fb-4d06-ac14-cd10147e8a41"
+			data-domains="jakobbouchard.dev"
+			data-do-not-track="true"
+		></script>
 	</head>
 	<body>
 		%sveltekit.body%
