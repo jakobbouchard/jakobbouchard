@@ -1,0 +1,88 @@
+@import '@fontsource/atkinson-hyperlegible/400.css';
+@import '@fontsource/atkinson-hyperlegible/400-italic.css';
+@import '@fontsource/atkinson-hyperlegible/700.css';
+@import '@fontsource/atkinson-hyperlegible/700-italic.css';
+@import '@fontsource/libre-baskerville/400.css';
+@import '@fontsource/libre-baskerville/700.css';
+
+:root {
+	/* Core units */
+	--base-unit: 0.25rem;
+	--base-half-unit: calc(var(--base-unit) / 2);
+
+	/* Fonts */
+	--font-primary: 'Atkinson Hyperlegible', sans-serif;
+	--font-secondary: 'Libre Baskerville', serif;
+	/* Font sizes - 4x4 grid */
+	--text-base-unit: var(--base-unit);
+	--text-xs: calc(var(--text-base-unit) * 3);
+	--text-sm: calc(var(--text-base-unit) * 3.5);
+	--text-base: calc(var(--text-base-unit) * 4);
+	--text-lg: calc(var(--text-base-unit) * 4.5);
+	--text-xl: calc(var(--text-base-unit) * 5);
+	--text-2xl: calc(var(--text-base-unit) * 6);
+	--text-3xl: calc(var(--text-base-unit) * 7);
+	--text-4xl: calc(var(--text-base-unit) * 9);
+	/* Line heights */
+	--leading-tight: 1.25;
+	--leading-normal: 1.5;
+
+	/* Margin, Padding - 8x8 grid */
+	--space-base-unit: calc(var(--base-unit) * 2);
+	--space-1: calc(var(--space-base-unit) * 1);
+	--space-2: calc(var(--space-base-unit) * 2);
+	--space-3: calc(var(--space-base-unit) * 3);
+	--space-4: calc(var(--space-base-unit) * 4);
+	--space-5: calc(var(--space-base-unit) * 5);
+	--space-6: calc(var(--space-base-unit) * 6);
+	--space-7: calc(var(--space-base-unit) * 7);
+	--space-8: calc(var(--space-base-unit) * 8);
+
+	/* Color */
+	--color-primary-lighter: #484848;
+	--color-primary-light: #303030;
+	--color-primary: #222222;
+	--color-primary-dark: #090909;
+	--color-primary-darker: #080808;
+	--color-secondary-ligher: #fefbf1;
+	--color-secondary-light: #fefbf0;
+	--color-secondary: #fffbef;
+	--color-secondary-dark: #ffeebc;
+	--color-secondary-darker: #fee28f;
+	--color-gray-1: #ffffff;
+	--color-gray-2: #eeeeee;
+	--color-gray-3: #d5d5d5;
+	--color-gray-4: #bbbbbb;
+	--color-gray-5: #a1a1a1;
+	--color-gray-6: #888888;
+	--color-gray-7: #6f6f6f;
+	--color-gray-8: #555555;
+	--color-gray-9: #3c3c3c;
+	--color-gray-10: #222222;
+	--color-black: #000000;
+
+	--color-blue: lab(69% -13 -49);
+	--color-indigo-dye: #004370;
+	--color-calgar-blue: #0081d6;
+	--color-malmo-ff: #a3daff;
+	--color-ninja: #00060a;
+
+	/* Gradients */
+	--gradient-1: linear-gradient(132deg, var(--color-primary) 0%, var(--color-primary-lighter) 100%);
+	--gradient-2: linear-gradient(132deg, var(--color-primary-lighter) 0%, var(--color-primary) 100%);
+	--gradient-3: linear-gradient(132deg, var(--color-primary) 0%, var(--color-primary-darker) 100%);
+
+	/* Border radius */
+	--rounded-sm: calc(var(--base-unit) * 0.5);
+	--rounded: calc(var(--base-unit) * 1);
+	--rounded-md: calc(var(--base-unit) * 1.5);
+	--rounded-lg: calc(var(--base-unit) * 2);
+	--rounded-full: 9999px;
+
+	/* Transition */
+	--speed-faster: 0.1s;
+	--speed-fast: 0.2s;
+	--speed-normal: 0.3s;
+	--speed-slow: 0.4s;
+	--speed-slower: 0.5s;
+}

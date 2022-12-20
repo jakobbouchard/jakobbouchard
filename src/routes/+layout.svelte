@@ -9,9 +9,9 @@
 <Preloader text="Jakob Bouchard" />
 <div class="app">
 	<Header />
-	<div id="content" tabindex="-1">
+	<main id="content" tabindex="-1">
 		<slot />
-	</div>
+	</main>
 	<Footer />
 </div>
 
