@@ -1,10 +1,18 @@
 <script>
 	import '../app.postcss';
 
+	import { page } from '$app/stores';
 	import Preloader from './Preloader.svelte';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
+
+	$: title = $page.data.title ?? 'Jakob Bouchard';
+	$: desc = $page.data.title ? 'Jakob Bouchard' : 'Game dev dude';
 </script>
+
+<svelte:head>
+	<title>{title} – {desc}</title>
+</svelte:head>
 
 <Preloader text="Jakob Bouchard" />
 <div class="app">
