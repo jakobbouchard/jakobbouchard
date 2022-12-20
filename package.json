@@ -15,7 +15,6 @@
 	"devDependencies": {
 		"@fontsource/atkinson-hyperlegible": "^4.5.10",
 		"@fontsource/libre-baskerville": "^4.5.10",
-		"@sveltejs/adapter-auto": "^1.0.0",
 		"@sveltejs/kit": "^1.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.46.1",
 		"@typescript-eslint/parser": "^5.46.1",
@@ -46,5 +45,8 @@
 		"not ie > 0",
 		"not op_mob > 0",
 		"not op_mini > 0"
-	]
+	],
+	"dependencies": {
+		"@sveltejs/adapter-static": "^1.0.0"
+	}
 }
