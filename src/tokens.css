@@ -37,6 +37,8 @@
 	--space-6: calc(var(--space-base-unit) * 6);
 	--space-7: calc(var(--space-base-unit) * 7);
 	--space-8: calc(var(--space-base-unit) * 8);
+	--space-9: calc(var(--space-base-unit) * 9);
+	--space-10: calc(var(--space-base-unit) * 10);
 
 	/* Color */
 	--color-primary-lighter: #484848;
