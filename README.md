@@ -1,38 +1,8 @@
-# create-svelte
+### Hello there 👋
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Glad to see you here!
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- 🔭 I’m currently working on 2 npm packages and 1 WordPress plugin.
+- 🌱 I’m currently learning video game development!
+- 💬 Ask me about video games, tech, web developement, or anything you want!
+- 📫 How to reach me: My most up to date contact info is available [on my website](https://jakobbouchard.dev/contact). You can also follow me on <a rel="me" href="https://fosstodon.org/@jakobbouchard">Mastodon</a>.
