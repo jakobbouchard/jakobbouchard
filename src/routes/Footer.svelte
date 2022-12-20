@@ -120,13 +120,8 @@
 	}
 
 	.copyright {
+		padding: var(--space-1) 0 var(--space-2);
 		width: 100%;
-	}
-
-	@media (--dark-mode) {
-		.social a:hover {
-			color: var(--color-gray-1);
-		}
 	}
 
 	@media (--breakpoint-sm) {
@@ -136,6 +131,12 @@
 
 		.links {
 			margin-left: auto;
+		}
+	}
+
+	@media (--dark-mode) {
+		.social a:hover {
+			color: var(--color-gray-1);
 		}
 	}
 </style>
