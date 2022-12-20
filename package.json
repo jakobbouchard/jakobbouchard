@@ -47,6 +47,6 @@
 		"not op_mini > 0"
 	],
 	"dependencies": {
-		"@sveltejs/adapter-static": "^1.0.0"
+		"@sveltejs/adapter-auto": "^1.0.0"
 	}
 }
