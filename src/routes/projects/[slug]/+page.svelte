@@ -34,7 +34,7 @@
 		you’ll be back when I’ll finally make a third blog post!
 	</p>
 	<footer>
-		<span class="cat-links">Posted in <a href="/category/meta" rel="category tag">Meta</a></span>
+		<!-- <span class="cat-links">Posted in <a href="/category/meta" rel="category tag">Meta</a></span> -->
 	</footer>
 </article>
 
