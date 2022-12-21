@@ -47,10 +47,10 @@ li {
 a {
 	color: currentColor;
 	text-decoration-thickness: 2px;
+}
 
-	&:hover {
-		text-decoration-style: dashed;
-	}
+a:hover {
+	text-decoration-style: dashed;
 }
 
 .container {
