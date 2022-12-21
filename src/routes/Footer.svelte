@@ -88,25 +88,29 @@
 				<span class="sr-only">GitHub</span>
 			</a>
 		</div>
+		<div class="copyright">Jakob Bouchard &copy; {new Date().getFullYear()}</div>
 		<div class="links">
 			<a href="/privacy">Privacy</a>
 		</div>
-		<div class="copyright">Jakob Bouchard &copy; {new Date().getFullYear()}</div>
 	</div>
 </footer>
 
 <style>
+	footer {
+		background-color: var(--color-gray-2);
+	}
+
 	.container {
 		display: flex;
-		flex-direction: column;
 		flex-wrap: wrap;
 		padding-top: var(--space-5);
-		padding-bottom: var(--space-2);
-		gap: var(--space-2) var(--space-8);
+		padding-bottom: var(--space-4);
+		gap: var(--space-4) var(--space-8);
 	}
 
 	.social {
 		display: flex;
+		width: 100%;
 		gap: 0 var(--space-2);
 	}
 
@@ -119,24 +123,47 @@
 		color: var(--color-gray-7);
 	}
 
+	.links,
 	.copyright {
-		padding: var(--space-1) 0 var(--space-2);
-		width: 100%;
+		font-size: var(--text-sm);
 	}
 
-	@media (min-width: 32rem) {
-		.container {
-			flex-direction: row;
-		}
+	.links {
+		margin-left: auto;
+	}
 
-		.links {
-			margin-left: auto;
-		}
+	.links a {
+		position: relative;
+		z-index: 0;
+		text-decoration: none;
+	}
+
+	.links a::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: calc(var(--space-1) * -1);
+		z-index: -1;
+		opacity: 20%;
+		width: calc(100% + var(--space-2));
+		height: 35%;
+		background-color: var(--color-gray-8);
+		transform: scaleX(0);
+		transition: transform var(--speed-normal) ease;
+	}
+
+	.links a:hover::after {
+		transform: scaleX(1);
 	}
 
 	@media (prefers-color-scheme: dark) {
 		.social a:hover {
 			color: var(--color-gray-1);
+		}
+
+		.links a::after {
+			background-color: var(--color-gray-1);
 		}
 	}
 </style>
