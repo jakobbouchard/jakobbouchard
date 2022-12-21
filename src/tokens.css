@@ -10,6 +10,11 @@
 	--base-unit: 0.25rem;
 	--base-half-unit: calc(var(--base-unit) / 2);
 
+	/* Breakpoints, for reference only. Cannot be used in media queries */
+	--breakpoint-sm: 32rem; /* 512px */
+	--breakpoint-md: 48rem; /* 768px */
+	--breakpoint-lg: 64rem; /* 1024px */
+
 	/* Fonts */
 	--font-primary: 'Atkinson Hyperlegible', sans-serif;
 	--font-secondary: 'Libre Baskerville', serif;
