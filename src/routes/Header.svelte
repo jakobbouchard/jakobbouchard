@@ -74,7 +74,7 @@
 
 	header .branding > * {
 		position: relative;
-		z-index: 1;
+		z-index: 10;
 		margin: 0;
 		font-family: var(--font-primary);
 		font-size: var(--text-xl);
@@ -101,7 +101,7 @@
 
 	nav button {
 		position: relative;
-		z-index: 1;
+		z-index: 10;
 		border: 0;
 		padding: var(--space-1);
 		width: var(--space-5);
@@ -145,9 +145,26 @@
 		transform: rotate(-45deg);
 	}
 
+	nav .menu-background {
+		position: fixed;
+		inset: 0;
+		z-index: 5;
+		background-color: var(--color-gray-2);
+		transform-origin: top;
+		transform: scaleY(0);
+		transition: transform var(--speed-slower) ease var(--speed-normal),
+			visibility 0s var(--speed-slower);
+	}
+
+	nav.active .menu-background {
+		visibility: visible;
+		transform: scaleY(1);
+		transition: transform var(--speed-slower) ease;
+	}
 	nav ul {
 		position: fixed;
 		inset: 0;
+		z-index: 10;
 		display: flex;
 		flex-direction: column;
 		visibility: hidden;
@@ -166,15 +183,15 @@
 		transition: opacity var(--speed-normal) ease, right var(--speed-slower) ease;
 	}
 
-	nav ul li:nth-child(1) {
+	nav ul li:nth-of-type(1) {
 		transition-delay: 0.2s;
 	}
 
-	nav ul li:nth-child(2) {
+	nav ul li:nth-of-type(2) {
 		transition-delay: 0.1s;
 	}
 
-	nav ul li:nth-child(3) {
+	nav ul li:nth-of-type(3) {
 		transition-delay: 0;
 	}
 
@@ -194,32 +211,16 @@
 		transition: opacity var(--speed-slow) ease, right var(--speed-normal) ease;
 	}
 
-	nav.active ul li:nth-child(1) {
+	nav.active ul li:nth-of-type(1) {
 		transition-delay: 0.15s;
 	}
 
-	nav.active ul li:nth-child(2) {
+	nav.active ul li:nth-of-type(2) {
 		transition-delay: 0.3s;
 	}
 
-	nav.active ul li:nth-child(3) {
+	nav.active ul li:nth-of-type(3) {
 		transition-delay: 0.45s;
-	}
-
-	nav .menu-background {
-		position: fixed;
-		inset: 0;
-		background-color: var(--color-gray-2);
-		transform-origin: top;
-		transform: scaleY(0);
-		transition: transform var(--speed-slower) ease var(--speed-normal),
-			visibility 0s var(--speed-slower);
-	}
-
-	nav.active .menu-background {
-		visibility: visible;
-		transform: scaleY(1);
-		transition: transform var(--speed-slower) ease;
 	}
 
 	@media (min-width: 32rem) {
