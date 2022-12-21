@@ -95,7 +95,7 @@
 	</div>
 </footer>
 
-<style lang="postcss">
+<style>
 	.container {
 		display: flex;
 		flex-direction: column;
@@ -108,15 +108,15 @@
 	.social {
 		display: flex;
 		gap: 0 var(--space-2);
+	}
 
-		& a {
-			line-height: 1;
-			transition: color var(--speed-normal) ease;
+	.social a {
+		line-height: 1;
+		transition: color var(--speed-normal) ease;
+	}
 
-			&:hover {
-				color: var(--color-gray-7);
-			}
-		}
+	.social a:hover {
+		color: var(--color-gray-7);
 	}
 
 	.copyright {
@@ -124,7 +124,7 @@
 		width: 100%;
 	}
 
-	@media (--breakpoint-sm) {
+	@media (min-width: 32rem) {
 		.container {
 			flex-direction: row;
 		}
@@ -134,7 +134,7 @@
 		}
 	}
 
-	@media (--dark-mode) {
+	@media (prefers-color-scheme: dark) {
 		.social a:hover {
 			color: var(--color-gray-1);
 		}

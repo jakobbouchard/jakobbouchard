@@ -1,5 +1,5 @@
 <script>
-	import '../app.postcss';
+	import '../app.css';
 
 	import { page } from '$app/stores';
 	import Preloader from './Preloader.svelte';
@@ -23,7 +23,7 @@
 	<Footer />
 </div>
 
-<style lang="postcss">
+<style>
 	.app {
 		display: flex;
 		flex-direction: column;

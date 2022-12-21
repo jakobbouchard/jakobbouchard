@@ -38,22 +38,17 @@
 	</footer>
 </article>
 
-<style lang="postcss">
+<style>
 	header {
 		margin-bottom: var(--space-4);
-
-		& h1 {
-			margin-bottom: var(--space-2);
-		}
-
-		& .entry-meta {
-			margin-top: var(--space-2);
-		}
 	}
 
-	figure,
-	figure + * {
-		margin-left: 0;
+	header h1 {
+		margin-bottom: var(--space-2);
+	}
+
+	header .entry-meta {
+		margin-top: var(--space-2);
 	}
 
 	footer {

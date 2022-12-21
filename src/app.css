@@ -1,15 +1,5 @@
 @import './tokens.css';
 
-@custom-selector :--heading h1, h2, h3;
-
-@custom-media --light-mode (prefers-color-scheme: light);
-@custom-media --dark-mode (prefers-color-scheme: dark);
-@custom-media --reduced-motion (prefers-reduced-motion);
-
-@custom-media --breakpoint-sm (min-width: 32rem); /* 512px */
-@custom-media --breakpoint-md (min-width: 48rem); /* 768px */
-@custom-media --breakpoint-lg (min-width: 64rem); /* 1024px */
-
 *,
 *::before,
 *::after {
@@ -28,7 +18,9 @@ body {
 	font-family: var(--font-primary);
 }
 
-:--heading {
+h1,
+h2,
+h3 {
 	line-height: var(--leading-tight);
 	font-family: var(--font-secondary);
 	font-weight: 700;
@@ -82,14 +74,14 @@ a {
 	word-wrap: normal !important;
 }
 
-@media (--breakpoint-sm) {
+@media (min-width: 32rem) {
 	.container {
 		padding-left: var(--space-5);
 		padding-right: var(--space-5);
 	}
 }
 
-@media (--breakpoint-md) {
+@media (min-width: 48rem) {
 	body {
 		font-size: var(--text-lg);
 	}
@@ -100,10 +92,10 @@ a {
 	}
 }
 
-@media (--breakpoint-lg) {
+@media (min-width: 64rem) {
 }
 
-@media (--dark-mode) {
+@media (prefers-color-scheme: dark) {
 	body {
 		background-color: var(--color-gray-10);
 		color: var(--color-gray-3);

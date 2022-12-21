@@ -29,7 +29,7 @@
 	</ul>
 </div>
 
-<style lang="postcss">
+<style>
 	ul {
 		padding-left: 0;
 		list-style: none;
