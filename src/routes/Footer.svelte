@@ -158,6 +158,10 @@
 	}
 
 	@media (prefers-color-scheme: dark) {
+		footer {
+			background-color: var(--color-black);
+		}
+
 		.social a:hover {
 			color: var(--color-gray-1);
 		}
