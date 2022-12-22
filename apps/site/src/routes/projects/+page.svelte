@@ -1,32 +1,32 @@
+<script lang="ts">
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+	const { projects } = data;
+</script>
+
 <div class="container">
 	<header>
 		<h1>Projects</h1>
 	</header>
-	<ul>
-		<li>
-			<article>
-				<header>
-					<h2>
-						<a href="/projects/blogging-is-hard">Blogging is hard</a>
-					</h2>
-				</header>
-				<p>
-					Since I’ve redone my website almost a year ago, I literally haven’t blogged once. I keep
-					looking at it, thinking it’s sad that I don’t use it.
-				</p>
-			</article>
-		</li>
-		<li>
-			<article>
-				<header>
-					<h2>
-						<a href="/projects/new-website">New website!</a>
-					</h2>
-				</header>
-				<p>I finally did it, I remade my website!</p>
-			</article>
-		</li>
-	</ul>
+	{#if projects && projects.length}
+		<ul>
+			{#each projects as project}
+				<li>
+					<article>
+						<header>
+							<h2>
+								<a href="/projects/{project.slug.current}">{project.title}</a>
+							</h2>
+						</header>
+						<p>{project.summary}</p>
+					</article>
+				</li>
+			{/each}
+		</ul>
+	{:else}
+		<p>No projects found</p>
+	{/if}
 </div>
 
 <style>

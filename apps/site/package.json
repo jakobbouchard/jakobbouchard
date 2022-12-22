@@ -15,6 +15,8 @@
 	"devDependencies": {
 		"@fontsource/atkinson-hyperlegible": "^4.5.10",
 		"@fontsource/libre-baskerville": "^4.5.10",
+		"@portabletext/svelte": "^1.0.1",
+		"@sanity/client": "^3.4.1",
 		"@sveltejs/adapter-cloudflare": "^1.0.0",
 		"@sveltejs/kit": "^1.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.47.0",
