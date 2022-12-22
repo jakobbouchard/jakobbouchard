@@ -1,4 +1,5 @@
+/.sanity
 /.turbo
-/.svelte-kit
+/dist
 node_modules
 .DS_Store
