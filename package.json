@@ -2,14 +2,21 @@
   "name": "portfolio",
   "private": true,
   "version": "1.0.0",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
+  },
+  "packageManager": "pnpm@7.18.1",
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "format": "turbo run format"
   },
-  "author": "Jakob Bouchard",
-  "license": "MIT",
   "devDependencies": {
     "turbo": "^1.6.3"
   }
