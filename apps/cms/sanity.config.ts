@@ -1,4 +1,4 @@
-import { defineConfig } from 'sanity';
+import { defineConfig, isDev } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
@@ -8,7 +8,7 @@ export default defineConfig({
 	title: 'Portfolio',
 
 	projectId: 'omwsdwsk',
-	dataset: 'production',
+	dataset: !isDev ? 'production' : 'staging',
 
 	plugins: [deskTool(), visionTool()],
 
