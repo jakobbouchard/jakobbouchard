@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/private';
-import { setPreviewCookie } from '$lib/sanity/preview-cookie';
+import { setPreviewType } from '$lib/sanity/preview';
 import { getClient } from '$lib/sanity/client';
 import { projectBySlugQuery } from '$lib/sanity/queries';
 import { error, redirect } from '@sveltejs/kit';
@@ -11,7 +11,7 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 	const incomingSecret = allParams.get('secret');
 	const type = allParams.get('type');
 	const slug = allParams.get('slug');
-	const embedded = allParams.get('embed');
+	const isEmbed = allParams.get('embed');
 
 	// Check the secret.
 	if (secret !== incomingSecret) {
@@ -37,15 +37,12 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 
 		isPreviewing = true;
 
-		// Set the redirect slug and append the isPreview query
-		// param, so that the app knows it's a Sanity preview.
-		const isPreview = embedded ? 'isPreview=true' : '';
-		redirectSlug = `/projects/${project.slug}?${isPreview}`;
+		redirectSlug = `/projects/${project.slug}`;
 	}
 
 	// Set the preview cookie.
 	if (isPreviewing) {
-		setPreviewCookie(cookies);
+		setPreviewType(cookies, isEmbed ? PreviewType.Embed : PreviewType.Regular);
 	}
 
 	// Since this endpoint is called from the Sanity Studio on

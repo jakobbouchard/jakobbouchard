@@ -1,16 +1,9 @@
-import { getPreviewCookie } from '$lib/sanity/preview-cookie';
+import { getPreviewType } from '$lib/sanity/preview';
 import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
-	const previewModeCookie = getPreviewCookie(event.cookies);
-
-	event.locals.previewMode = false;
-
-	if (previewModeCookie === 'true') {
-		event.locals.previewMode = true;
-	}
+	event.locals.previewType = getPreviewType(event.cookies);
 
 	const response = await resolve(event);
-
 	return response;
 };

@@ -14,7 +14,7 @@
 
 				<p class="truncate text-sm font-medium text-white">
 					<span class="hidden sm:inline font-bold">Hi {$data?.name ? $data.name : 'there'}!</span>
-					<span> This page is a draft.</span>
+					<span>This page is a draft.</span>
 					<span class="hidden md:inline hover:underline">
 						<a rel="external" href="/api/exit-preview">Exit?</a>
 					</span>

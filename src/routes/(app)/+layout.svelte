@@ -8,13 +8,14 @@
 
 	$: title = $page.data.title ?? 'Jakob Bouchard';
 	$: desc = $page.data.title ? 'Jakob Bouchard' : 'Game dev dude';
+	$: showPreloader = $page.data.previewType !== PreviewType.Embed;
 </script>
 
 <svelte:head>
 	<title>{title} – {desc}</title>
 </svelte:head>
 
-{#if !$page.data.previewMode}
+{#if showPreloader}
 	<Preloader text="Jakob Bouchard" />
 {/if}
 <div class="app">

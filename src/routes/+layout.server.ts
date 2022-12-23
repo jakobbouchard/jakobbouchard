@@ -1,10 +1,5 @@
 import type { LayoutServerLoad } from './$types';
 
-export const load = (async ({ locals: { previewMode }, url }) => {
-	const isPreview = previewMode && url.searchParams.get('isPreview') === 'true';
-
-	return {
-		previewModeEmbed: isPreview,
-		previewMode
-	};
+export const load = (async ({ locals: { previewType } }) => {
+	return { previewType };
 }) satisfies LayoutServerLoad;

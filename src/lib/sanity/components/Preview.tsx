@@ -16,12 +16,12 @@ export default function Preview(props: any) {
 
 	return (
 		<Card scheme="light" style={{ width: '100%', height: '100%' }}>
-			<iframe style={{ width: '100%', height: '100%', border: '0' }} src={getUrl(props)} />
+			<iframe style={{ width: '100%', height: '100%', border: '0' }} src={getUrl(props.document)} />
 		</Card>
 	);
 }
 
-function getUrl({ document }: { document: any }) {
+function getUrl(document: any) {
 	const url = new URL('/api/preview', location.origin);
 	const secret = import.meta.env.VITE_SANITY_PREVIEW_SECRET;
 
