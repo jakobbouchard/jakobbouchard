@@ -5,6 +5,10 @@
       "dependsOn": ["^build"],
       "outputs": [".svelte-kit/**", ".sanity/**", "dist/**"]
     },
+    "@portfolio/site#build": {
+      "dependsOn": ["@portfolio/cms#build"],
+      "outputs": [".svelte-kit/**"]
+    },
     "lint": {
       "outputs": []
     },

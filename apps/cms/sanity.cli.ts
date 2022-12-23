@@ -10,7 +10,7 @@ export default defineCliConfig({
 		...viteConfig,
 		build: {
 			...viteConfig.build,
-			outDir: '../site/.svelte-kit/cloudflare/studio'
+			outDir: '../site/static/studio'
 		}
 	})
 });
