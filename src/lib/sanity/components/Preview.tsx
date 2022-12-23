@@ -29,6 +29,7 @@ function getUrl({ document }: { document: any }) {
 		url.searchParams.set('secret', secret);
 	}
 
+	url.searchParams.set('embed', 'true');
 	url.searchParams.set('slug', document.displayed.slug.current);
 	url.searchParams.set('type', document.displayed._type);
 

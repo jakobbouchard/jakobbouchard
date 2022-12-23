@@ -11,6 +11,7 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 	const incomingSecret = allParams.get('secret');
 	const type = allParams.get('type');
 	const slug = allParams.get('slug');
+	const embedded = allParams.get('embed');
 
 	// Check the secret.
 	if (secret !== incomingSecret) {
@@ -38,7 +39,8 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 
 		// Set the redirect slug and append the isPreview query
 		// param, so that the app knows it's a Sanity preview.
-		redirectSlug = `/projects/${project.slug}?isPreview=true`;
+		const isPreview = embedded ? 'isPreview=true' : '';
+		redirectSlug = `/projects/${project.slug}?${isPreview}`;
 	}
 
 	// Set the preview cookie.
