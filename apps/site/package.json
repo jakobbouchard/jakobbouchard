@@ -17,7 +17,6 @@
 		"@fontsource/libre-baskerville": "^4.5.10",
 		"@portabletext/svelte": "^1.0.1",
 		"@sanity/client": "^3.4.1",
-		"@sveltejs/adapter-cloudflare": "^1.0.0",
 		"@sveltejs/kit": "^1.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.47.0",
 		"@typescript-eslint/parser": "^5.47.0",
@@ -44,5 +43,8 @@
 		"not ie > 0",
 		"not op_mob > 0",
 		"not op_mini > 0"
-	]
+	],
+	"dependencies": {
+		"@sveltejs/adapter-vercel": "^1.0.0"
+	}
 }
