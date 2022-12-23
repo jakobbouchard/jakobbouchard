@@ -1,21 +1,30 @@
 <script lang="ts">
 	import { PortableText } from '@portabletext/svelte';
-	import type { PageData } from './$types';
+	import { previewSubscription } from '$lib/sanity';
+	import { projectQuery } from '$lib/sanity/queries';
+	import type { PageServerData } from './$types';
 
-	export let data: PageData;
+	export let data: PageServerData;
+
+	$: ({ initialData, previewMode, slug } = data);
+	$: ({ data: project } = previewSubscription(projectQuery, {
+		params: { slug },
+		initialData,
+		enabled: previewMode && !!slug
+	}));
 </script>
 
 <article class="container">
 	<header>
-		<h1>{data.title}</h1>
+		<h1>{$project.data.title}</h1>
 		<p class="entry-meta">
 			Posted on
-			<time class="posted-on" datetime={data._createdAt}>
-				{new Date(data._createdAt).toLocaleDateString('en-CA', { dateStyle: 'long' })}
+			<time class="posted-on" datetime={$project.data.date}>
+				{new Date($project.data.date).toLocaleDateString('en-CA', { dateStyle: 'long' })}
 			</time>
 		</p>
 	</header>
-	<PortableText value={data.content} />
+	<PortableText value={$project.data.content} />
 	<footer>
 		<!-- <span class="cat-links">Posted in <a href="/category/meta" rel="category tag">Meta</a></span> -->
 	</footer>

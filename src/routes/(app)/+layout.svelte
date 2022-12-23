@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '$lib/app.css';
 
 	import { page } from '$app/stores';
@@ -14,7 +14,9 @@
 	<title>{title} – {desc}</title>
 </svelte:head>
 
-<Preloader text="Jakob Bouchard" />
+{#if !$page.data.previewMode}
+	<Preloader text="Jakob Bouchard" />
+{/if}
 <div class="app">
 	<Header />
 	<main id="content" tabindex="-1">

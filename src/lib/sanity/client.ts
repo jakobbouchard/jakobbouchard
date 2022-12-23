@@ -1,19 +1,27 @@
-import sanityClient, { type SanityDocument } from '@sanity/client';
-import type { InputValue } from '@portabletext/svelte/ptTypes';
-import { dev } from '$app/environment';
+import sanityClient from '@sanity/client';
+import { env } from '$env/dynamic/private';
+import config from './config/client';
 
-export interface Project extends SanityDocument {
-	title: string;
-	slug: {
-		current: string;
-	};
-	summary: string;
-	content: InputValue;
-}
-
-export const client = sanityClient({
-	projectId: 'omwsdwsk',
-	dataset: !dev ? 'production' : 'staging',
-	apiVersion: '2022-12-21',
-	useCdn: !dev
+const previewClient = sanityClient({
+	...config,
+	useCdn: false,
+	token: env.SANITY_API_READ_TOKEN || env.SANITY_API_WRITE_TOKEN || ''
 });
+const client = sanityClient(config);
+
+export const getClient = (usePreview?: boolean) => (usePreview ? previewClient : client);
+
+export function overlayDrafts(docs: any[]): any[] {
+	const documents = docs || [];
+	const overlayed = documents.reduce((map, doc) => {
+		if (!doc._id) {
+			throw new Error('Ensure that `_id` is included in query projection');
+		}
+
+		const isDraft = doc._id.startsWith('drafts.');
+		const id = isDraft ? doc._id.slice(7) : doc._id;
+		return isDraft || !map.has(id) ? map.set(id, doc) : map;
+	}, new Map());
+
+	return Array.from(overlayed.values());
+}

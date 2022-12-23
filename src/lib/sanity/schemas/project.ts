@@ -1,6 +1,6 @@
 import type { SchemaPluginOptions } from 'sanity';
 
-export const project = {
+export default {
 	name: 'project',
 	type: 'document',
 	title: 'Project',

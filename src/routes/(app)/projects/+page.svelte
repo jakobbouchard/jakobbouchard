@@ -16,7 +16,7 @@
 					<article>
 						<header>
 							<h2>
-								<a href="/projects/{project.slug.current}">{project.title}</a>
+								<a href="/projects/{project.slug}">{project.title}</a>
 							</h2>
 						</header>
 						<p>{project.summary}</p>
