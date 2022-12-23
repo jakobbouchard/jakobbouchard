@@ -1,5 +1,5 @@
 <script>
-	import '../app.css';
+	import '$lib/app.css';
 
 	import { page } from '$app/stores';
 	import Preloader from './Preloader.svelte';

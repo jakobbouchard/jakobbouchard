@@ -7,3 +7,6 @@ declare namespace App {
 	// interface Error {}
 	// interface Platform {}
 }
+
+// Helper for getting an Array's type
+type Unpacked<T> = T extends (infer U)[] ? U : T;
