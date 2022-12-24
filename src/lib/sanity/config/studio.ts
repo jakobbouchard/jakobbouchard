@@ -50,35 +50,15 @@ const documentConfig = {
 	}
 } satisfies DocumentPluginOptions;
 
-export default [
-	{
-		projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-		dataset: 'staging',
+export default {
+	projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+	dataset: import.meta.env.VITE_SANITY_PROJECT_DATASET,
 
-		name: 'staging',
-		icon: RobotIcon,
-		title: 'Jakob Bouchard',
-		subtitle: 'Staging',
-		basePath: '/studio/staging',
+	title: 'Jakob Bouchard',
+	basePath: '/studio',
 
-		plugins: [deskTool(deskConfig), visionTool()],
-		document: documentConfig,
+	plugins: [deskTool(deskConfig), visionTool()],
+	document: documentConfig,
 
-		schema: { types: schemaTypes }
-	},
-	{
-		projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-		dataset: 'production',
-
-		name: 'production',
-		icon: LaunchIcon,
-		title: 'Jakob Bouchard',
-		subtitle: 'Live',
-		basePath: '/studio/live',
-
-		plugins: [deskTool(deskConfig)],
-		document: documentConfig,
-
-		schema: { types: schemaTypes }
-	}
-] satisfies Config;
+	schema: { types: schemaTypes }
+} satisfies Config;
