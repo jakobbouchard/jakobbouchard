@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { PUBLIC_SANITY_API_TOKEN } from '$env/static/public';
 	import { PortableText } from '@portabletext/svelte';
 	import { definePreview } from '$lib/sanity/sveltekit/preview';
 	import config from '$lib/sanity/config/client';
@@ -12,7 +13,7 @@
 
 	const project = withPreview(
 		data.isPreview,
-		import.meta.env.VITE_SANITY_API_TOKEN,
+		PUBLIC_SANITY_API_TOKEN,
 		data.project,
 		projectQuery,
 		{ slug: data.project.slug }

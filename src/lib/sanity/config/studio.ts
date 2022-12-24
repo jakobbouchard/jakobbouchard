@@ -1,4 +1,9 @@
 import type { Config, DocumentPluginOptions, Slug } from 'sanity';
+import {
+	PUBLIC_PREVIEW_SECRET,
+	PUBLIC_SANITY_PROJECT_DATASET,
+	PUBLIC_SANITY_PROJECT_ID
+} from '$env/static/public';
 import { getComponent } from '$lib/sanity/components/Preview';
 
 /*-------------- SCHEMAS --------------*/
@@ -20,7 +25,7 @@ const deskConfig = {
 		if (schemaType === projectType.name) {
 			return S.document().views([
 				S.view.form(),
-				S.view.component(getComponent(import.meta.env.VITE_PREVIEW_SECRET)).title('Preview')
+				S.view.component(getComponent(PUBLIC_PREVIEW_SECRET)).title('Preview')
 			]);
 		}
 
@@ -32,7 +37,7 @@ const deskConfig = {
 const documentConfig = {
 	productionUrl: async (prev, { document }) => {
 		const url = new URL('/api/preview', location.origin);
-		const secret = import.meta.env.VITE_PREVIEW_SECRET;
+		const secret = PUBLIC_PREVIEW_SECRET;
 		if (secret) {
 			url.searchParams.set('secret', secret);
 		}
@@ -52,8 +57,8 @@ const documentConfig = {
 } satisfies DocumentPluginOptions;
 
 export default {
-	projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-	dataset: import.meta.env.VITE_SANITY_PROJECT_DATASET,
+	projectId: PUBLIC_SANITY_PROJECT_ID,
+	dataset: PUBLIC_SANITY_PROJECT_DATASET,
 
 	title: 'Jakob Bouchard',
 	basePath: '/studio',

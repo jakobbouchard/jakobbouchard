@@ -3,10 +3,11 @@ import { enablePreview } from '$lib/sanity/preview';
 import { getClient } from '$lib/sanity/client';
 import { projectNoContentQuery } from '$lib/sanity/queries';
 import { error, redirect } from '@sveltejs/kit';
+import { PUBLIC_PREVIEW_SECRET } from '$env/static/public';
 
 export const GET = (async ({ url, cookies, setHeaders }) => {
 	const allParams = url.searchParams;
-	const secret = import.meta.env.VITE_PREVIEW_SECRET;
+	const secret = PUBLIC_PREVIEW_SECRET;
 	const incomingSecret = allParams.get('secret');
 	const type = allParams.get('type');
 	const slug = allParams.get('slug');

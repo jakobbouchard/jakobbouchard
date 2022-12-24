@@ -2,11 +2,12 @@
 	import type { CurrentUser } from 'sanity';
 	import { onMount } from 'svelte';
 	import { getCurrentUser } from '$lib/sanity/sveltekit/user';
+	import { PUBLIC_SANITY_PROJECT_ID } from '$env/static/public';
 
 	let user: CurrentUser;
 
 	onMount(async () => {
-		const currentUser = await getCurrentUser(import.meta.env.VITE_SANITY_PROJECT_ID, null);
+		const currentUser = await getCurrentUser(PUBLIC_SANITY_PROJECT_ID, null);
 		if (currentUser) {
 			user = currentUser;
 		}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { PUBLIC_SANITY_API_TOKEN } from '$env/static/public';
 	import { definePreview } from '$lib/sanity/sveltekit/preview';
 	import config from '$lib/sanity/config/client';
 	import { allprojectsQuery } from '$lib/sanity/queries';
@@ -10,7 +11,7 @@
 
 	const projects = withPreview(
 		data.isPreview,
-		import.meta.env.VITE_SANITY_API_TOKEN,
+		PUBLIC_SANITY_API_TOKEN,
 		data.projects,
 		allprojectsQuery
 	);
