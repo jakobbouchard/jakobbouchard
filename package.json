@@ -24,7 +24,7 @@
 		"@sanity/image-url": "^1.0.1",
 		"@sanity/ui": "^1.0.4",
 		"@sanity/vision": "^3.1.2",
-		"@sveltejs/adapter-vercel": "^1.0.0",
+		"@sveltejs/adapter-cloudflare": "^1.0.0",
 		"@sveltejs/kit": "^1.0.1",
 		"@types/event-source-polyfill": "^1.0.0",
 		"@types/react": "^18.0.26",
