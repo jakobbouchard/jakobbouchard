@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { PortableText } from '@portabletext/svelte';
-	import { previewSubscription } from '$lib/sanity';
+	import { createPreviewSubscriptionStore } from '$lib/sanity/sveltekit/previewSubscriptionStore';
+	import config from '$lib/sanity/config/client';
 	import { projectQuery } from '$lib/sanity/queries';
 	import type { PageServerData } from './$types';
 
 	export let data: PageServerData;
+
+	const previewSubscription = createPreviewSubscriptionStore(config);
 
 	$: ({ initialData, isPreview, slug } = data);
 	$: ({ data: project } = previewSubscription(projectQuery, {

@@ -2,7 +2,7 @@ import type { GroqStore, Subscription } from '@sanity/groq-store';
 import { type Aborter, getAborter } from './aborter';
 import type { Params, ProjectConfig, SubscriptionOptions } from './types';
 import { get, writable } from 'svelte/store';
-import { getCurrentUser } from './currentUser';
+import { _checkAuth } from './auth';
 import { onMount } from 'svelte';
 
 const EMPTY_PARAMS = {};
@@ -86,14 +86,11 @@ function querySubscription<R = any>(options: {
 		const aborter = getAborter();
 		let subscription: Subscription | undefined;
 
-		getCurrentUser(projectId, aborter, token)
-			.then((user) => {
-				if (user) {
-					return;
+		_checkAuth(projectId, token)
+			.then((hasAuth) => {
+				if (!hasAuth) {
+					throw new Error('Not authenticated - preview not available');
 				}
-
-				console.warn('Not authenticated - preview not available');
-				throw new Error('Not authenticated - preview not available');
 			})
 			.then(() => getStore(aborter))
 			.then((store) => {

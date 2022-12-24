@@ -1,9 +1,3 @@
-<script lang="ts">
-	import { sanityUser } from '$lib/sanity';
-
-	$: ({ data } = sanityUser());
-</script>
-
 <div class="preview-banner">
 	<div class="preview-icon">
 		<svg
@@ -23,7 +17,7 @@
 	</div>
 	<div class="container">
 		<p>
-			<span class="name">Hello {$data?.name ? $data.name : 'there'}!</span>
+			<span class="hello">Hello there!</span>
 			<span>You are previewing a draft.</span>
 		</p>
 
@@ -70,7 +64,7 @@
 		margin: 0;
 	}
 
-	p .name {
+	p .hello {
 		display: none;
 	}
 
@@ -101,7 +95,7 @@
 	}
 
 	@media (min-width: 32rem) {
-		p .name {
+		p .hello {
 			display: inline;
 			font-weight: 700;
 		}
