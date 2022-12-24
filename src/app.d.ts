@@ -4,7 +4,6 @@
 declare namespace App {
 	interface Locals {
 		isPreview: boolean;
-		previewType: import('$lib/types').PreviewType | undefined;
 	}
 	// interface PageData {}
 	// interface Error {}

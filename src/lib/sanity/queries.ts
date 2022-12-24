@@ -2,6 +2,7 @@ import type { InputValue } from '@portabletext/svelte/ptTypes';
 import groq from 'groq';
 
 export interface Project {
+	_id: string;
 	title: string;
 	slug: string;
 	date: string;
@@ -10,6 +11,7 @@ export interface Project {
 }
 
 const projectFields = groq`
+  _id,
   title,
   "slug": slug.current,
   "date": _createdAt,

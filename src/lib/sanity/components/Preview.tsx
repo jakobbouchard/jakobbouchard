@@ -7,6 +7,9 @@ export function getComponent(secret: string | undefined) {
 	 */
 	return function Preview(props: any) {
 		const previewUrl = useMemo(() => {
+			if (!props.document.displayed.slug) {
+				return '';
+			}
 			const url = new URL('/api/preview', location.origin);
 
 			if (secret) {
@@ -21,7 +24,7 @@ export function getComponent(secret: string | undefined) {
 			url.searchParams.set('random', Math.random().toString(36).substring(7));
 
 			return url.toString();
-		}, []);
+		}, [props]);
 
 		if (!props.document.displayed.slug) {
 			return (

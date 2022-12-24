@@ -1,9 +1,8 @@
 import type { RequestHandler } from './$types';
-import { setPreviewType } from '$lib/sanity/preview';
+import { enablePreview } from '$lib/sanity/preview';
 import { getClient } from '$lib/sanity/client';
 import { projectBySlugQuery } from '$lib/sanity/queries';
 import { error, redirect } from '@sveltejs/kit';
-import { PreviewType } from '$lib/types';
 import { env } from '$env/dynamic/public';
 
 export const GET = (async ({ url, cookies, setHeaders }) => {
@@ -38,12 +37,12 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 
 		isPreviewing = true;
 
-		redirectSlug = `/projects/${project.slug}`;
+		redirectSlug = `/projects/${project.slug}${isEmbed ? '?isEmbedPreview=true' : ''}`;
 	}
 
 	// Set the preview cookie.
 	if (isPreviewing) {
-		setPreviewType(cookies, isEmbed ? PreviewType.Embed : PreviewType.Regular);
+		enablePreview(cookies);
 	}
 
 	// Since this endpoint is called from the Sanity Studio on

@@ -1,16 +1,13 @@
 import type { Cookies } from '@sveltejs/kit';
 import { dev } from '$app/environment';
-import type { PreviewType } from '$lib/types';
 
-const cookieName = '__preview_type';
+const cookieName = '__preview_enabled';
 
 /**
- * Sets the preview type using cookies.
- *
  * @param cookies The cookies object from the request.
  */
-export function setPreviewType(cookies: Cookies, previewType: PreviewType) {
-	cookies.set(cookieName, previewType.toString(), {
+export function enablePreview(cookies: Cookies) {
+	cookies.set(cookieName, '1', {
 		httpOnly: true,
 		path: '/',
 		sameSite: 'strict',
@@ -19,18 +16,13 @@ export function setPreviewType(cookies: Cookies, previewType: PreviewType) {
 }
 
 /**
- * Gets the preview type from the cookies.
- *
  * @param cookies The cookies object from the request.
- * @returns The preview type.
  */
-export function getPreviewType(cookies: Cookies) {
-	return cookies.get(cookieName) as PreviewType | undefined;
+export function isPreviewEnabled(cookies: Cookies) {
+	return cookies.get(cookieName) === '1';
 }
 
 /**
- * Disables preview mode using cookies.
- *
  * @param cookies The cookies object from the request.
  */
 export function disablePreview(cookies: Cookies) {

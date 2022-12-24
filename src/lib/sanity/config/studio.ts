@@ -41,7 +41,7 @@ const documentConfig = {
 
 		switch (document._type) {
 			case projectType.name:
-				url.searchParams.set('slug', (document.slug as Slug).current);
+				url.searchParams.set('slug', (document.slug as Slug)?.current);
 				break;
 			default:
 				return prev;

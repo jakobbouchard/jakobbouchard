@@ -24,7 +24,9 @@
 			</time>
 		</p>
 	</header>
-	<PortableText value={$project.data.content} />
+	{#if $project.data.content}
+		<PortableText value={$project.data.content} />
+	{/if}
 	<footer>
 		<!-- <span class="cat-links">Posted in <a href="/category/meta" rel="category tag">Meta</a></span> -->
 	</footer>
