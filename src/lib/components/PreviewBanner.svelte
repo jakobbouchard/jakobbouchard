@@ -70,9 +70,11 @@
 		display: flex;
 		align-items: center;
 		gap: 0 var(--space-2);
+		visibility: hidden;
 		height: 100%;
 		opacity: 0;
-		transition: opacity var(--speed-fast) ease var(--speed-normal);
+		transition: opacity var(--speed-fast) ease var(--speed-normal),
+			visibility 0s var(--speed-slower);
 	}
 
 	p {
@@ -105,6 +107,7 @@
 
 	.preview-banner:hover .container,
 	.preview-banner:focus-within .container {
+		visibility: visible;
 		opacity: 1;
 		transition: opacity var(--speed-fast) ease var(--speed-fast);
 	}
