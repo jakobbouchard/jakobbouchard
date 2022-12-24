@@ -1,13 +1,10 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { projectQuery, type Project } from '$lib/sanity/queries';
-import { getClient, overlayDrafts } from '$lib/sanity/client';
+import { getClient } from '$lib/sanity/client';
 
 export const load = (async ({ params, locals: { isPreview } }) => {
-	const { project, moreProjects } = await getClient(isPreview).fetch<{
-		project: Project;
-		moreProjects: Project[];
-	}>(projectQuery, {
+	const { project } = await getClient(isPreview).fetch<{ project: Project }>(projectQuery, {
 		slug: params.slug
 	});
 
@@ -18,9 +15,6 @@ export const load = (async ({ params, locals: { isPreview } }) => {
 	return {
 		isPreview,
 		slug: project?.slug || params.slug,
-		initialData: {
-			data: project,
-			moreData: overlayDrafts(moreProjects)
-		}
+		initialData: { data: project }
 	};
 }) satisfies PageServerLoad;

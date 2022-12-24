@@ -18,7 +18,7 @@
 	<div class="container">
 		<p>
 			<span class="hello">Hello there!</span>
-			<span>You are previewing a draft.</span>
+			<span>Preview mode is enabled.</span>
 		</p>
 
 		<a rel="external" href="/api/exit-preview">Exit</a>

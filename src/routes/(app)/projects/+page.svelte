@@ -19,7 +19,9 @@
 								<a href="/projects/{project.slug}">{project.title}</a>
 							</h2>
 						</header>
-						<p>{project.summary}</p>
+						{#if project.summary}
+							<p>{project.summary}</p>
+						{/if}
 					</article>
 				</li>
 			{/each}
