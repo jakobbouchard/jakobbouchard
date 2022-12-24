@@ -1,18 +1,17 @@
 import type { Cookies } from '@sveltejs/kit';
-import { dev } from '$app/environment';
 
 const cookieName = '__preview_enabled';
+const cookieOpts = {
+	httpOnly: true,
+	path: '/',
+	sameSite: true
+};
 
 /**
  * @param cookies The cookies object from the request.
  */
 export function enablePreview(cookies: Cookies) {
-	cookies.set(cookieName, '1', {
-		httpOnly: true,
-		path: '/',
-		sameSite: 'strict',
-		secure: !dev
-	});
+	cookies.set(cookieName, '1', cookieOpts);
 }
 
 /**
@@ -26,10 +25,5 @@ export function isPreviewEnabled(cookies: Cookies) {
  * @param cookies The cookies object from the request.
  */
 export function disablePreview(cookies: Cookies) {
-	cookies.delete(cookieName, {
-		httpOnly: true,
-		path: '/',
-		sameSite: 'strict',
-		secure: !dev
-	});
+	cookies.delete(cookieName, cookieOpts);
 }

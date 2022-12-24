@@ -2,10 +2,7 @@
 // for information about these interfaces
 // and what to do when importing types
 declare namespace App {
-	interface Locals {
-		isPreview: boolean;
-		isEmbedPreview: boolean;
-	}
+	// interface Locals {}
 	interface PageData {
 		isPreview: boolean;
 		isEmbedPreview: boolean;
