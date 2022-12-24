@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import type { PageData } from './$types';
+	export let data: PageData;
 </script>
 
 <svelte:head>
-	<title>Who is Jakob Bouchard – {$page.data.siteTitle}</title>
+	<title>Who is Jakob Bouchard – {data.siteTitle}</title>
 </svelte:head>
 
 <div class="container">

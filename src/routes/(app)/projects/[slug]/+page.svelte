@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { PortableText } from '@portabletext/svelte';
 	import { env } from '$env/dynamic/public';
 	import { definePreview } from '$lib/sanity/sveltekit/preview';
@@ -21,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<title>{$project.title} – {$page.data.siteTitle}</title>
+	<title>{$project.title} – {data.siteTitle}</title>
 </svelte:head>
 
 <article class="container">

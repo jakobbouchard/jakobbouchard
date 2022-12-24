@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import type { PageData } from './$types';
+	export let data: PageData;
 </script>
 
 <svelte:head>
-	<title>{$page.data.siteTitle} – {$page.data.siteDescription}</title>
+	<title>{data.siteTitle} – {data.siteDescription}</title>
 </svelte:head>
 
 <div class="container" />

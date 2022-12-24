@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { env } from '$env/dynamic/public';
 	import { definePreview } from '$lib/sanity/sveltekit/preview';
 	import config from '$lib/sanity/config/client';
@@ -19,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>Projects – {$page.data.siteTitle}</title>
+	<title>Projects – {data.siteTitle}</title>
 </svelte:head>
 
 <div class="container">

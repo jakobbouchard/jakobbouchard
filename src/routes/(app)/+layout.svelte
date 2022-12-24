@@ -1,17 +1,19 @@
 <script lang="ts">
 	import '$lib/app.css';
 
-	import { page } from '$app/stores';
 	import PreviewBanner from '$lib/components/PreviewBanner.svelte';
 	import Preloader from '$lib/components/Preloader.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import type { LayoutData } from './$types';
+
+	export let data: LayoutData;
 </script>
 
-{#if $page.data.isPreview && !$page.data.isEmbedPreview}
+{#if data.isPreview && !data.isEmbedPreview}
 	<PreviewBanner />
 {/if}
-{#if !$page.data.isEmbedPreview}
+{#if !data.isEmbedPreview}
 	<Preloader text="Jakob Bouchard" />
 {/if}
 <div class="app">
