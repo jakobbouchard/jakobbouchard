@@ -17,7 +17,6 @@ export function createPreviewSubscriptionStore({
 	// Only construct/setup the store when `getStore()` is called
 	let store: Promise<GroqStore>;
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	return function previewSubscriptionStore<R = any>(
 		query: string,
 		options: SubscriptionOptions<R> = {}
@@ -29,7 +28,6 @@ export function createPreviewSubscriptionStore({
 			projectId,
 			query,
 			params,
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			initialData: initialData as any,
 			enabled: enabled ? typeof window !== 'undefined' : false,
 			token
@@ -63,7 +61,6 @@ export function createPreviewSubscriptionStore({
 	}
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function querySubscription<R = any>(options: {
 	getStore: (abort: Aborter) => Promise<GroqStore>;
 	projectId: string;
@@ -95,7 +92,6 @@ function querySubscription<R = any>(options: {
 					return;
 				}
 
-				// eslint-disable-next-line no-console
 				console.warn('Not authenticated - preview not available');
 				throw new Error('Not authenticated - preview not available');
 			})

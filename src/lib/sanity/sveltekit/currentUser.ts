@@ -41,21 +41,3 @@ function currentSanityUserStore(projectId: string) {
 
 	return { data, error, loading };
 }
-
-// function useCurrentUser(projectId: string) {
-// 	const [data, setUser] = useState<CurrentUser | null>()
-// 	const [error, setError] = useState<Error>()
-
-// 	useEffect(() => {
-// 	  const aborter = getAborter()
-// 	  getCurrentUser(projectId, aborter)
-// 		.then(setUser)
-// 		.catch((err: Error) => err.name !== 'AbortError' && setError(err))
-
-// 	  return () => {
-// 		aborter.abort()
-// 	  }
-// 	}, [projectId])
-
-// 	return {data, error, loading: data !== null || !error}
-//   }

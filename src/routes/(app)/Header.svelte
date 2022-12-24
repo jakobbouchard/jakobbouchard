@@ -115,7 +115,7 @@
 		content: '';
 		position: relative;
 		display: block;
-		border-top: 2px solid #000;
+		border-top: 2px solid var(--color-black);
 		width: 100%;
 		transition: transform var(--speed-fast) ease, top var(--speed-fast) ease var(--speed-fast),
 			bottom var(--speed-fast) ease var(--speed-fast);
@@ -287,6 +287,15 @@
 		header .branding h1,
 		header .branding p {
 			color: var(--color-gray-1);
+		}
+
+		nav button::before,
+		nav button::after {
+			border-top-color: var(--color-gray-1);
+		}
+
+		nav .menu-background {
+			background-color: var(--color-gray-9);
 		}
 
 		nav ul li a::after {

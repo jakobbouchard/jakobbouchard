@@ -1,11 +1,11 @@
 import sanityClient from '@sanity/client';
-import { env } from '$env/dynamic/public';
+import { env } from '$env/dynamic/private';
 import config from './config/client';
 
 const previewClient = sanityClient({
 	...config,
 	useCdn: false,
-	token: env.PUBLIC_SANITY_API_TOKEN || ''
+	token: env.SANITY_API_TOKEN || ''
 });
 const client = sanityClient(config);
 
