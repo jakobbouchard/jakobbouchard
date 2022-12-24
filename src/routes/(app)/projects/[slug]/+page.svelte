@@ -6,11 +6,11 @@
 
 	export let data: PageServerData;
 
-	$: ({ initialData, previewType, slug } = data);
+	$: ({ initialData, isPreview, slug } = data);
 	$: ({ data: project } = previewSubscription(projectQuery, {
 		params: { slug },
 		initialData,
-		enabled: previewType != PreviewType.Disabled && !!slug
+		enabled: isPreview && !!slug
 	}));
 </script>
 

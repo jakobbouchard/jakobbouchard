@@ -5,6 +5,7 @@
 	import Preloader from './Preloader.svelte';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
+	import { PreviewType } from '$lib/types';
 
 	$: title = $page.data.title ?? 'Jakob Bouchard';
 	$: desc = $page.data.title ? 'Jakob Bouchard' : 'Game dev dude';

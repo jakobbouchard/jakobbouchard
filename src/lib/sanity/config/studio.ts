@@ -5,7 +5,6 @@ import { projectId } from './';
 
 /*-------------- SCHEMAS --------------*/
 import projectType from '$lib/sanity/schemas/project';
-import { env } from '$env/dynamic/public';
 const schemaTypes = [projectType];
 
 /*-------------- PLUGINS --------------*/
@@ -33,21 +32,19 @@ const documentConfig = {
 		const secret = import.meta.env.VITE_SANITY_PREVIEW_SECRET;
 		if (secret) {
 			url.searchParams.set('secret', secret);
-			url.searchParams.set('type', document._type);
 		}
 
-		try {
-			switch (document._type) {
-				case projectType.name:
-					url.searchParams.set('slug', (document.slug as Slug).current);
-					break;
-				default:
-					return prev;
-			}
-			return url.toString();
-		} catch {
-			return prev;
+		url.searchParams.set('type', document._type);
+
+		switch (document._type) {
+			case projectType.name:
+				url.searchParams.set('slug', (document.slug as Slug).current);
+				break;
+			default:
+				return prev;
 		}
+
+		return url.toString();
 	}
 } satisfies DocumentPluginOptions;
 

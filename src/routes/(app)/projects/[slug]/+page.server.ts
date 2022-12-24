@@ -3,8 +3,8 @@ import type { PageServerLoad } from './$types';
 import { projectQuery, type Project } from '$lib/sanity/queries';
 import { getClient, overlayDrafts } from '$lib/sanity/client';
 
-export const load = (async ({ params, locals: { previewType } }) => {
-	const { project, moreProjects } = await getClient(previewType != PreviewType.Disabled).fetch<{
+export const load = (async ({ params, locals: { isPreview } }) => {
+	const { project, moreProjects } = await getClient(isPreview).fetch<{
 		project: Project;
 		moreProjects: Project[];
 	}>(projectQuery, {
@@ -16,7 +16,7 @@ export const load = (async ({ params, locals: { previewType } }) => {
 	}
 
 	return {
-		previewType,
+		isPreview,
 		slug: project?.slug || params.slug,
 		initialData: {
 			data: project,

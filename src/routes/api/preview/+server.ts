@@ -1,13 +1,13 @@
 import type { RequestHandler } from './$types';
-import { env } from '$env/dynamic/private';
 import { setPreviewType } from '$lib/sanity/preview';
 import { getClient } from '$lib/sanity/client';
 import { projectBySlugQuery } from '$lib/sanity/queries';
 import { error, redirect } from '@sveltejs/kit';
+import { PreviewType } from '$lib/types';
 
 export const GET = (async ({ url, cookies, setHeaders }) => {
 	const allParams = url.searchParams;
-	const secret = env.VITE_SANITY_PREVIEW_SECRET;
+	const secret = import.meta.env.VITE_SANITY_PREVIEW_SECRET;
 	const incomingSecret = allParams.get('secret');
 	const type = allParams.get('type');
 	const slug = allParams.get('slug');

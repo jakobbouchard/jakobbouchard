@@ -8,10 +8,13 @@
 	 */
 	const previewRouteIds = ['/(app)/projects/[slug]'];
 	import PreviewBanner from '$lib/components/PreviewBanner.svelte';
+	import { PreviewType } from '$lib/types';
 
-	$: ({ previewType } = data);
+	$: ({ isPreview, previewType } = data);
 	$: showPreviewBanner =
-		previewType == PreviewType.Regular && previewRouteIds.includes($page.route.id || '');
+		isPreview &&
+		previewType == PreviewType.Regular &&
+		previewRouteIds.includes($page.route.id || '');
 </script>
 
 {#if showPreviewBanner}

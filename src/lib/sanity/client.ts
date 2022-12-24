@@ -5,7 +5,7 @@ import config from './config/client';
 const previewClient = sanityClient({
 	...config,
 	useCdn: false,
-	token: env.SANITY_API_READ_TOKEN || env.SANITY_API_WRITE_TOKEN || ''
+	token: env.SANITY_API_READ_TOKEN || ''
 });
 const client = sanityClient(config);
 

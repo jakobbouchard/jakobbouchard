@@ -1,5 +1,6 @@
-import { dev } from '$app/environment';
 import type { Cookies } from '@sveltejs/kit';
+import { dev } from '$app/environment';
+import type { PreviewType } from '$lib/types';
 
 const cookieName = '__preview_type';
 
@@ -23,15 +24,20 @@ export function setPreviewType(cookies: Cookies, previewType: PreviewType) {
  * @param cookies The cookies object from the request.
  * @returns The preview type.
  */
-export function getPreviewType(cookies: Cookies): PreviewType {
-	return (cookies.get(cookieName) as PreviewType | undefined) ?? PreviewType.Disabled;
+export function getPreviewType(cookies: Cookies) {
+	return cookies.get(cookieName) as PreviewType | undefined;
 }
 
 /**
- * Remove the preview using cookies.
+ * Disables preview mode using cookies.
  *
  * @param cookies The cookies object from the request.
  */
 export function disablePreview(cookies: Cookies) {
-	cookies.delete(cookieName);
+	cookies.delete(cookieName, {
+		httpOnly: true,
+		path: '/',
+		sameSite: 'strict',
+		secure: !dev
+	});
 }

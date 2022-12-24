@@ -3,17 +3,12 @@
 // and what to do when importing types
 declare namespace App {
 	interface Locals {
-		previewType: PreviewType;
+		isPreview: boolean;
+		previewType: import('$lib/types').PreviewType | undefined;
 	}
 	// interface PageData {}
 	// interface Error {}
 	// interface Platform {}
-}
-
-enum PreviewType {
-	Disabled,
-	Regular,
-	Embed
 }
 
 // Helper for getting an Array's type
