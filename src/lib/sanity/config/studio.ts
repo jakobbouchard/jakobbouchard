@@ -1,6 +1,5 @@
 import type { Config, DocumentPluginOptions, Slug } from 'sanity';
 import { LaunchIcon, RobotIcon } from '@sanity/icons';
-import { env } from '$env/dynamic/public';
 import { getComponent } from '$lib/sanity/components/Preview';
 
 /*-------------- SCHEMAS --------------*/
@@ -20,7 +19,7 @@ const deskConfig = {
 		if (schemaType === projectType.name) {
 			return S.document().views([
 				S.view.form(),
-				S.view.component(getComponent(env.PUBLIC_PREVIEW_SECRET)).title('Preview')
+				S.view.component(getComponent(import.meta.env.VITE_PREVIEW_SECRET)).title('Preview')
 			]);
 		}
 
@@ -32,7 +31,7 @@ const deskConfig = {
 const documentConfig = {
 	productionUrl: async (prev, { document }) => {
 		const url = new URL('/api/preview', location.origin);
-		const secret = env.PUBLIC_PREVIEW_SECRET;
+		const secret = import.meta.env.VITE_PREVIEW_SECRET;
 		if (secret) {
 			url.searchParams.set('secret', secret);
 		}
@@ -53,7 +52,7 @@ const documentConfig = {
 
 export default [
 	{
-		projectId: env.PUBLIC_SANITY_PROJECT_ID,
+		projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
 		dataset: 'staging',
 
 		name: 'staging',
@@ -68,7 +67,7 @@ export default [
 		schema: { types: schemaTypes }
 	},
 	{
-		projectId: env.PUBLIC_SANITY_PROJECT_ID,
+		projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
 		dataset: 'production',
 
 		name: 'production',
