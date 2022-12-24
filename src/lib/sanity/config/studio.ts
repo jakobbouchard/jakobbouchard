@@ -1,7 +1,6 @@
 import type { Config, DocumentPluginOptions, Slug } from 'sanity';
 import { LaunchIcon, RobotIcon } from '@sanity/icons';
 import Preview from '$lib/sanity/components/Preview';
-import { projectId } from './';
 
 /*-------------- SCHEMAS --------------*/
 import projectType from '$lib/sanity/schemas/project';
@@ -50,7 +49,7 @@ const documentConfig = {
 
 export default [
 	{
-		projectId,
+		projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
 		dataset: 'staging',
 
 		name: 'staging',
@@ -65,7 +64,7 @@ export default [
 		schema: { types: schemaTypes }
 	},
 	{
-		projectId,
+		projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
 		dataset: 'production',
 
 		name: 'production',

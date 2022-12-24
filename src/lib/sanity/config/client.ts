@@ -1,10 +1,9 @@
 import type { ClientConfig } from '@sanity/client';
 import { dev } from '$app/environment';
-import { projectId } from './';
 
 export default {
-	projectId,
-	dataset: !dev ? 'production' : 'staging',
+	projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+	dataset: import.meta.env.VITE_SANITY_PROJECT_DATASET,
 	useCdn: !dev,
 	apiVersion: '2022-12-21'
 } satisfies ClientConfig;
