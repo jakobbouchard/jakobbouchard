@@ -1,6 +1,7 @@
 import type { Config, DocumentPluginOptions, Slug } from 'sanity';
 import { LaunchIcon, RobotIcon } from '@sanity/icons';
-import Preview from '$lib/sanity/components/Preview';
+import { env } from '$env/dynamic/public';
+import { getComponent } from '$lib/sanity/components/Preview';
 
 /*-------------- SCHEMAS --------------*/
 import projectType from '$lib/sanity/schemas/project';
@@ -17,7 +18,10 @@ const deskConfig = {
 	// https://www.sanity.io/docs/structure-builder-reference
 	defaultDocumentNode: (S, { schemaType }) => {
 		if (schemaType === projectType.name) {
-			return S.document().views([S.view.form(), S.view.component(Preview).title('Preview')]);
+			return S.document().views([
+				S.view.form(),
+				S.view.component(getComponent(env.PUBLIC_PREVIEW_SECRET)).title('Preview')
+			]);
 		}
 
 		return null;
@@ -28,7 +32,7 @@ const deskConfig = {
 const documentConfig = {
 	productionUrl: async (prev, { document }) => {
 		const url = new URL('/api/preview', location.origin);
-		const secret = import.meta.env.VITE_SANITY_PREVIEW_SECRET;
+		const secret = env.PUBLIC_PREVIEW_SECRET;
 		if (secret) {
 			url.searchParams.set('secret', secret);
 		}
@@ -49,7 +53,7 @@ const documentConfig = {
 
 export default [
 	{
-		projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+		projectId: env.PUBLIC_SANITY_PROJECT_ID,
 		dataset: 'staging',
 
 		name: 'staging',
@@ -64,7 +68,7 @@ export default [
 		schema: { types: schemaTypes }
 	},
 	{
-		projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+		projectId: env.PUBLIC_SANITY_PROJECT_ID,
 		dataset: 'production',
 
 		name: 'production',

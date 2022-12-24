@@ -4,10 +4,11 @@ import { getClient } from '$lib/sanity/client';
 import { projectBySlugQuery } from '$lib/sanity/queries';
 import { error, redirect } from '@sveltejs/kit';
 import { PreviewType } from '$lib/types';
+import { env } from '$env/dynamic/public';
 
 export const GET = (async ({ url, cookies, setHeaders }) => {
 	const allParams = url.searchParams;
-	const secret = import.meta.env.VITE_SANITY_PREVIEW_SECRET;
+	const secret = env.PUBLIC_PREVIEW_SECRET;
 	const incomingSecret = allParams.get('secret');
 	const type = allParams.get('type');
 	const slug = allParams.get('slug');
