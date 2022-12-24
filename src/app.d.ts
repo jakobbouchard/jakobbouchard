@@ -4,6 +4,7 @@
 declare namespace App {
 	interface Locals {
 		isPreview: boolean;
+		isEmbedPreview: boolean;
 	}
 	interface PageData {
 		isPreview: boolean;

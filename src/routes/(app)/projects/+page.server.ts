@@ -3,7 +3,8 @@ import { getClient, overlayDrafts } from '$lib/sanity/client';
 import { allprojectsQuery, type Project } from '$lib/sanity/queries';
 import type { PageServerLoad } from './$types';
 
-export const load = (async ({ locals: { isPreview } }) => {
+export const load = (async ({ parent }) => {
+	const { isPreview } = await parent();
 	const projects = await getClient(isPreview).fetch<Project[]>(allprojectsQuery);
 
 	if (!projects) {

@@ -1,10 +1,10 @@
 import type { LayoutServerLoad } from './$types';
 
-export const load = (async ({ locals: { isPreview }, url }) => {
+export const load = (async ({ locals: { isPreview, isEmbedPreview } }) => {
 	return {
 		siteTitle: 'Jakob Bouchard',
 		siteDescription: 'Game dev dude',
 		isPreview,
-		isEmbedPreview: isPreview && url.searchParams.get('isEmbedPreview') === 'true'
+		isEmbedPreview
 	};
 }) satisfies LayoutServerLoad;
