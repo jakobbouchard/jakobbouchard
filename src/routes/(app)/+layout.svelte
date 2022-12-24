@@ -2,28 +2,16 @@
 	import '$lib/app.css';
 
 	import { page } from '$app/stores';
-	import type { LayoutData } from './$types';
-
 	import PreviewBanner from '$lib/components/PreviewBanner.svelte';
-	import Preloader from './Preloader.svelte';
-	import Header from './Header.svelte';
-	import Footer from './Footer.svelte';
-
-	export let data: LayoutData;
-
-	$: title = $page.data.title ?? 'Jakob Bouchard';
-	$: desc = $page.data.title ? 'Jakob Bouchard' : 'Game dev dude';
-	$: ({ isPreview, isEmbedPreview } = data);
+	import Preloader from '$lib/components/Preloader.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 </script>
 
-<svelte:head>
-	<title>{title} – {desc}</title>
-</svelte:head>
-
-{#if isPreview && !isEmbedPreview}
+{#if $page.data.isPreview && !$page.data.isEmbedPreview}
 	<PreviewBanner />
 {/if}
-{#if !isEmbedPreview}
+{#if !$page.data.isEmbedPreview}
 	<Preloader text="Jakob Bouchard" />
 {/if}
 <div class="app">

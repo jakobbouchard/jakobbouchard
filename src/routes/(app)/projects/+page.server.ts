@@ -10,5 +10,5 @@ export const load = (async ({ locals: { isPreview } }) => {
 		throw error(500, 'Could not find projects');
 	}
 
-	return { title: 'Projects', projects: overlayDrafts(projects) };
+	return { isPreview, projects: overlayDrafts(projects) };
 }) satisfies PageServerLoad;

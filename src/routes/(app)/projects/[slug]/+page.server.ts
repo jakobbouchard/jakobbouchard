@@ -3,18 +3,12 @@ import type { PageServerLoad } from './$types';
 import { projectQuery, type Project } from '$lib/sanity/queries';
 import { getClient } from '$lib/sanity/client';
 
-export const load = (async ({ params, locals: { isPreview } }) => {
-	const { project } = await getClient(isPreview).fetch<{ project: Project }>(projectQuery, {
-		slug: params.slug
-	});
+export const load = (async ({ params: { slug }, locals: { isPreview } }) => {
+	const project = await getClient(isPreview).fetch<Project>(projectQuery, { slug });
 
 	if (!project) {
 		throw error(404, 'Project not found');
 	}
 
-	return {
-		isPreview,
-		slug: project?.slug || params.slug,
-		initialData: { data: project }
-	};
+	return { isPreview, project };
 }) satisfies PageServerLoad;

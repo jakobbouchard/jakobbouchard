@@ -15,24 +15,13 @@ const projectFields = groq`
   title,
   "slug": slug.current,
   "date": _createdAt,
-  summary,
-  content
+  summary
 `;
 
 export const projectQuery = groq`
-{
-  "draft": *[_type == "project" && slug.current == $slug && defined(draft) && draft == true][0]{
-    content,
-    ${projectFields}
-  },
-  "project": *[_type == "project" && slug.current == $slug] | order(_updatedAt desc) [0] {
-    content,
-    ${projectFields}
-  },
-  "moreProjects": *[_type == "project" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
-    content,
-    ${projectFields}
-  }
+*[_type == "project" && slug.current == $slug] [0] {
+  content,
+  ${projectFields}
 }`;
 
 export const allprojectsQuery = groq`
@@ -40,8 +29,7 @@ export const allprojectsQuery = groq`
   ${projectFields}
 }`;
 
-export const projectBySlugQuery = groq`
+export const projectNoContentQuery = groq`
 *[_type == "project" && slug.current == $slug][0] {
   ${projectFields}
-}
-`;
+}`;

@@ -1,3 +1,11 @@
+<script lang="ts">
+	import { page } from '$app/stores';
+</script>
+
+<svelte:head>
+	<title>Privacy – {$page.data.siteTitle}</title>
+</svelte:head>
+
 <div class="container">
 	<header>
 		<h1>Privacy</h1>

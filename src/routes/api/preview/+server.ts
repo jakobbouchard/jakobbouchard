@@ -1,7 +1,7 @@
 import type { RequestHandler } from './$types';
 import { enablePreview } from '$lib/sanity/preview';
 import { getClient } from '$lib/sanity/client';
-import { projectBySlugQuery } from '$lib/sanity/queries';
+import { projectNoContentQuery } from '$lib/sanity/queries';
 import { error, redirect } from '@sveltejs/kit';
 import { env } from '$env/dynamic/public';
 
@@ -29,7 +29,7 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 
 	// Our query may vary depending on the type.
 	if (type === 'project') {
-		const project = await getClient(true).fetch(projectBySlugQuery, { slug });
+		const project = await getClient(true).fetch(projectNoContentQuery, { slug });
 
 		if (!project || !project.slug) {
 			throw error(401, 'No project found');

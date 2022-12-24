@@ -1,17 +1,34 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import { page } from '$app/stores';
+	import { env } from '$env/dynamic/public';
+	import { definePreview } from '$lib/sanity/sveltekit/preview';
+	import config from '$lib/sanity/config/client';
+	import { allprojectsQuery } from '$lib/sanity/queries';
+	import type { PageServerData } from './$types';
 
-	export let data: PageData;
-	const { projects } = data;
+	export let data: PageServerData;
+
+	const withPreview = definePreview(config);
+
+	const projects = withPreview(
+		data.isPreview,
+		env.PUBLIC_SANITY_API_TOKEN,
+		data.projects,
+		allprojectsQuery
+	);
 </script>
+
+<svelte:head>
+	<title>Projects – {$page.data.siteTitle}</title>
+</svelte:head>
 
 <div class="container">
 	<header>
 		<h1>Projects</h1>
 	</header>
-	{#if projects && projects.length}
+	{#if $projects.length}
 		<ul>
-			{#each projects as project}
+			{#each $projects as project}
 				<li>
 					<article>
 						<header>

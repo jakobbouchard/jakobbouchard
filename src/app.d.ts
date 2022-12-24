@@ -5,7 +5,12 @@ declare namespace App {
 	interface Locals {
 		isPreview: boolean;
 	}
-	// interface PageData {}
+	interface PageData {
+		isPreview: boolean;
+		isEmbedPreview: boolean;
+		siteTitle: string;
+		siteDescription: string;
+	}
 	// interface Error {}
 	// interface Platform {}
 }
