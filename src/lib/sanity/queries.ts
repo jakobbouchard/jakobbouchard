@@ -1,11 +1,13 @@
-import type { InputValue } from '@portabletext/svelte/ptTypes';
 import groq from 'groq';
+import type { InputValue } from '@portabletext/svelte/ptTypes';
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 export interface Project {
 	_id: string;
 	title: string;
 	slug: string;
 	date: string;
+  featuredImage: SanityImageSource;
 	summary: string;
 	content: InputValue;
 }
@@ -15,6 +17,7 @@ const projectFields = groq`
   title,
   "slug": slug.current,
   "date": _createdAt,
+  featuredImage,
   summary
 `;
 

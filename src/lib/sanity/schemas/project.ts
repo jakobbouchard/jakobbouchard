@@ -17,6 +17,11 @@ export default {
 			options: { source: 'title' }
 		},
 		{
+			name: 'featuredImage',
+			type: 'image',
+			title: 'Featured Image'
+		},
+		{
 			name: 'summary',
 			type: 'string',
 			title: 'Summary'

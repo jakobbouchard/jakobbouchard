@@ -1,5 +1,4 @@
 import type { Config, DocumentPluginOptions, Slug } from 'sanity';
-import { LaunchIcon, RobotIcon } from '@sanity/icons';
 import { getComponent } from '$lib/sanity/components/Preview';
 
 /*-------------- SCHEMAS --------------*/
@@ -9,6 +8,8 @@ const schemaTypes = [projectType];
 /*-------------- PLUGINS --------------*/
 import { deskTool, type DeskToolOptions } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
+import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash';
+import { contentGraphView } from 'sanity-plugin-graph-view';
 const deskConfig = {
 	// `defaultDocumentNode is responsible for adding a “Preview” tab to the document pane
 	// You can add any React component to `S.view.component` and it will be rendered in the pane
@@ -57,7 +58,7 @@ export default {
 	title: 'Jakob Bouchard',
 	basePath: '/studio',
 
-	plugins: [deskTool(deskConfig), visionTool()],
+	plugins: [deskTool(deskConfig), visionTool(), unsplashImageAsset(), contentGraphView({})],
 	document: documentConfig,
 
 	schema: { types: schemaTypes }

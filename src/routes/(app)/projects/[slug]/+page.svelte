@@ -4,6 +4,7 @@
 	import config from '$lib/sanity/config/client';
 	import { projectQuery } from '$lib/sanity/queries';
 	import type { PageData } from './$types';
+	import { urlFor } from '$lib/sanity/images';
 
 	export let data: PageData;
 
@@ -32,6 +33,9 @@
 			</time>
 		</p>
 	</header>
+	{#if $project.featuredImage}
+		<img src={urlFor($project.featuredImage).width(1024).auto('format').url()} alt="" />
+	{/if}
 	{#if $project.content}
 		<PortableText value={$project.content} />
 	{/if}
@@ -51,6 +55,10 @@
 
 	header .entry-meta {
 		margin-top: var(--space-2);
+	}
+
+	img {
+		max-width: 100%;
 	}
 
 	footer {
