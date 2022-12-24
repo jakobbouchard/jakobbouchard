@@ -2,7 +2,7 @@ import type { QueryParams } from 'sanity';
 import type { GroqStore, Config } from '@sanity/groq-store';
 import { onMount } from 'svelte';
 import { writable } from 'svelte/store';
-import { checkAuth } from './auth';
+import { getCurrentUser } from './user';
 
 type PreviewConfig = Pick<
 	Config,
@@ -37,11 +37,9 @@ export function definePreview({
 			}
 
 			if (!store) {
-				if (token === null) {
-					const hasAuth = await checkAuth(projectId);
-					if (!hasAuth) {
-						throw new Error('Not authenticated. Cannot preview.');
-					}
+				const hasAuth = await getCurrentUser(projectId, token);
+				if (!hasAuth) {
+					throw new Error('Not authenticated. Cannot preview.');
 				}
 
 				const { groqStore } = await import('@sanity/groq-store');

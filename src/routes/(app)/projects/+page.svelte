@@ -4,9 +4,9 @@
 	import { definePreview } from '$lib/sanity/sveltekit/preview';
 	import config from '$lib/sanity/config/client';
 	import { allprojectsQuery } from '$lib/sanity/queries';
-	import type { PageServerData } from './$types';
+	import type { PageData } from './$types';
 
-	export let data: PageServerData;
+	export let data: PageData;
 
 	const withPreview = definePreview(config);
 

@@ -1,3 +1,19 @@
+<script lang="ts">
+	import type { CurrentUser } from 'sanity';
+	import { onMount } from 'svelte';
+	import { env } from '$env/dynamic/public';
+	import { getCurrentUser } from '$lib/sanity/sveltekit/user';
+
+	let user: CurrentUser;
+
+	onMount(async () => {
+		const currentUser = await getCurrentUser(env.PUBLIC_SANITY_PROJECT_ID, null);
+		if (currentUser) {
+			user = currentUser;
+		}
+	});
+</script>
+
 <div class="preview-banner">
 	<div class="preview-icon">
 		<svg
@@ -17,7 +33,7 @@
 	</div>
 	<div class="container">
 		<p>
-			<span class="hello">Hello there!</span>
+			<span class="hello">Hello {user ? user.name : 'there'}!</span>
 			<span>Preview mode is enabled.</span>
 		</p>
 
