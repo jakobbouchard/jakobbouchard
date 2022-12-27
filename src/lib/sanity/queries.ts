@@ -24,18 +24,18 @@ const projectFields = groq`
 `;
 
 export const projectQuery = groq`
-*[_type == "project" && slug.current == $slug][0] {
+*[_type == "project" && slug.current == $slug] | order(date desc, _updatedAt desc)[0] {
   content,
   featuredImage,
   ${projectFields}
 }`;
 
 export const allprojectsQuery = groq`
-*[_type == "project"] | order(date desc, _createdAt desc) {
+*[_type == "project"] | order(date desc, _updatedAt desc) {
   ${projectFields}
 }`;
 
 export const projectNoContentQuery = groq`
-*[_type == "project" && slug.current == $slug][0] {
+*[_type == "project" && slug.current == $slug] | order(date desc, _updatedAt desc)[0] {
   ${projectFields}
 }`;
