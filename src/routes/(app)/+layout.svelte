@@ -1,6 +1,5 @@
 <script lang="ts">
 	import './styles.css';
-	import PreviewBanner from './PreviewBanner.svelte';
 	import Preloader from './Preloader.svelte';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
@@ -10,7 +9,9 @@
 </script>
 
 {#if data.isPreview && !data.isEmbedPreview}
-	<PreviewBanner />
+	{#await import('./PreviewBanner.svelte') then { default: PreviewBanner }}
+		<PreviewBanner />
+	{/await}
 {/if}
 {#if !data.isEmbedPreview}
 	<Preloader text="Jakob Bouchard" />
