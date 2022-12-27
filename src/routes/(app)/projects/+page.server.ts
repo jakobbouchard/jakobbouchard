@@ -4,8 +4,8 @@ import { allprojectsQuery, type Project } from '$lib/sanity/queries';
 import type { PageServerLoad } from './$types';
 
 export const load = (async ({ parent }) => {
-	const { isPreview } = await parent();
-	const projects = await getClient(isPreview).fetch<Project[]>(allprojectsQuery);
+	const { isPreview, isEmbedPreview } = await parent();
+	const projects = await getClient(isPreview || isEmbedPreview).fetch<Project[]>(allprojectsQuery);
 
 	if (!projects) {
 		throw error(500, 'Could not find projects');

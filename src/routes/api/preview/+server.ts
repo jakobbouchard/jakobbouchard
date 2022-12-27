@@ -42,7 +42,7 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 
 	// Set the preview cookie.
 	if (isPreviewing) {
-		enablePreview(cookies);
+		enablePreview(cookies, !!isEmbed);
 	}
 
 	// Since this endpoint is called from the Sanity Studio on

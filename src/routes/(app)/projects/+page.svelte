@@ -10,7 +10,7 @@
 	const withPreview = definePreview(config);
 
 	const projects = withPreview(
-		data.isPreview,
+		data.isPreview || data.isEmbedPreview,
 		PUBLIC_SANITY_API_TOKEN,
 		data.projects,
 		allprojectsQuery

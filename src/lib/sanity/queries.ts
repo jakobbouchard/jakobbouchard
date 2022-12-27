@@ -28,7 +28,7 @@ export const projectQuery = groq`
 }`;
 
 export const allprojectsQuery = groq`
-*[_type == "project"] | order(date desc, _updatedAt desc) {
+*[_type == "project"] | order(date desc, _createdAt desc) {
   ${projectFields}
 }`;
 

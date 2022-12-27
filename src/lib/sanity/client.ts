@@ -11,9 +11,9 @@ const client = sanityClient(config);
 
 export const getClient = (usePreview?: boolean) => (usePreview ? previewClient : client);
 
-export function overlayDrafts(docs: any[]): any[] {
+export function overlayDrafts<D extends { _id: string }>(docs: D[]): D[] {
 	const documents = docs || [];
-	const overlayed = documents.reduce((map, doc) => {
+	const overlayed: Map<string, D> = documents.reduce((map, doc) => {
 		if (!doc._id) {
 			throw new Error('Ensure that `_id` is included in query projection');
 		}
