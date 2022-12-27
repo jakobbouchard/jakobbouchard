@@ -1,7 +1,7 @@
 import type { RequestHandler } from './$types';
 import { enablePreview } from '$lib/sanity/preview';
 import { getClient } from '$lib/sanity/client';
-import { type Project, projectNoContentQuery } from '$lib/sanity/queries';
+import { type ProjectNoContent, projectNoContentQuery } from '$lib/sanity/queries';
 import { error, redirect } from '@sveltejs/kit';
 import { PUBLIC_PREVIEW_SECRET } from '$env/static/public';
 
@@ -29,7 +29,7 @@ export const GET = (async ({ url: { searchParams }, cookies, setHeaders }) => {
 	// Our query may vary depending on the type.
 	switch (type) {
 		case 'project':
-			document = await getClient(true).fetch<Project>(projectNoContentQuery, { slug });
+			document = await getClient(true).fetch<ProjectNoContent>(projectNoContentQuery, { slug });
 
 			if (!document || !document.slug) {
 				throw error(404, 'Not found');

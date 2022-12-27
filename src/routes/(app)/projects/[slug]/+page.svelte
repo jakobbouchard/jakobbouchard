@@ -22,10 +22,12 @@
 			});
 		}
 	});
+	$: featuredImage = urlFor($project.featuredImage).size(1024, 576).auto('format').url();
 </script>
 
 <svelte:head>
 	<title>{$project.title} – {data.siteTitle}</title>
+	<link rel="preload" as="image" href={featuredImage} />
 </svelte:head>
 
 <article class="container">
@@ -38,12 +40,8 @@
 			</time>
 		</p>
 	</header>
-	{#if $project.featuredImage}
-		<img src={urlFor($project.featuredImage).width(1024).auto('format').url()} alt="" />
-	{/if}
-	{#if $project.content}
-		<PortableText value={$project.content} />
-	{/if}
+	<img src={featuredImage} alt="" />
+	<PortableText value={$project.content} />
 	<footer>
 		<!-- <span class="cat-links">Posted in <a href="/category/meta" rel="category tag">Meta</a></span> -->
 	</footer>
@@ -63,6 +61,7 @@
 	}
 
 	img {
+		aspect-ratio: 16/9;
 		max-width: 100%;
 	}
 
