@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '$lib/app.css';
 
-	import { dev } from '$app/environment';
 	import Preloader from '$lib/components/Preloader.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
@@ -9,19 +8,6 @@
 
 	export let data: LayoutData;
 </script>
-
-<svelte:head>
-	{#if !dev}
-		<script
-			async
-			defer
-			src="https://umami.jakobbouchard.dev/sherlock.js"
-			data-website-id="e6d09bc6-f1fb-4d06-ac14-cd10147e8a41"
-			data-domains="jakobbouchard.dev"
-			data-do-not-track="true"
-		></script>
-	{/if}
-</svelte:head>
 
 {#if data.isPreview && !data.isEmbedPreview}
 	{#await import('$lib/components/PreviewBanner.svelte') then { default: PreviewBanner }}
