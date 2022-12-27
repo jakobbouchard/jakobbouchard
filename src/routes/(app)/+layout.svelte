@@ -2,6 +2,7 @@
 	import '$lib/app.css';
 
 	import { dev } from '$app/environment';
+	import Preloader from '$lib/components/Preloader.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import type { LayoutData } from './$types';
@@ -28,9 +29,7 @@
 	{/await}
 {/if}
 {#if !data.isEmbedPreview}
-	{#await import('$lib/components/Preloader.svelte') then { default: Preloader }}
-		<Preloader text="Jakob Bouchard" />
-	{/await}
+	<Preloader text="Jakob Bouchard" />
 {/if}
 <div class="app">
 	<Header />
