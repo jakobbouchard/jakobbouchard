@@ -1,21 +1,5 @@
-<script lang="ts">
-	import type { CurrentUser } from 'sanity';
-	import { onMount } from 'svelte';
-	import { PUBLIC_SANITY_PROJECT_ID } from '$env/static/public';
-	import { getCurrentUser } from '$lib/sanity/svelte/user';
-
-	let user: CurrentUser | undefined;
-
-	onMount(async () => {
-		const currentUser = await getCurrentUser(PUBLIC_SANITY_PROJECT_ID, null);
-		if (currentUser) {
-			user = currentUser;
-		}
-	});
-</script>
-
 <div class="preview-banner">
-	<div class="preview-icon">
+	<div class="icon">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="20"
@@ -32,28 +16,12 @@
 		</svg>
 	</div>
 	<div class="container">
-		<p>
-			<span class="hello">Hello {user ? user.name : 'there'}!</span>
-			<span>Preview mode is enabled.</span>
-		</p>
-
+		<p>Preview mode is enabled.</p>
 		<a rel="external" href="/api/exit-preview">Exit</a>
 	</div>
 </div>
 
 <style>
-	.preview-icon {
-		z-index: 25;
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: grid;
-		place-items: center;
-		width: var(--space-4);
-		height: var(--space-4);
-		transition: opacity var(--speed-fast) ease var(--speed-slower);
-	}
-
 	.preview-banner {
 		position: fixed;
 		top: 0;
@@ -65,6 +33,18 @@
 		font-size: var(--text-sm);
 		z-index: 20;
 		transition: width var(--speed-fast) ease var(--speed-slower);
+	}
+
+	.icon {
+		z-index: 25;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: grid;
+		place-items: center;
+		width: var(--space-4);
+		height: var(--space-4);
+		transition: opacity var(--speed-fast) ease var(--speed-slower);
 	}
 
 	.container {
@@ -82,10 +62,6 @@
 		margin: 0;
 	}
 
-	p .hello {
-		display: none;
-	}
-
 	a {
 		margin-left: auto;
 	}
@@ -100,8 +76,8 @@
 		transition: width var(--speed-fast) ease;
 	}
 
-	.preview-banner:hover .preview-icon,
-	.preview-banner:focus-within .preview-icon {
+	.preview-banner:hover .icon,
+	.preview-banner:focus-within .icon {
 		opacity: 0;
 		transition: opacity var(--speed-fast) ease;
 	}
@@ -111,13 +87,6 @@
 		visibility: visible;
 		opacity: 1;
 		transition: opacity var(--speed-fast) ease var(--speed-fast);
-	}
-
-	@media (min-width: 32rem) {
-		p .hello {
-			display: inline;
-			font-weight: 700;
-		}
 	}
 
 	@media (prefers-color-scheme: dark) {

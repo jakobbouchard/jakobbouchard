@@ -2,7 +2,6 @@ import type { QueryParams } from 'sanity';
 import type { GroqStore, Config } from '@sanity/groq-store';
 import { onMount } from 'svelte';
 import { writable } from 'svelte/store';
-import { getCurrentUser } from './user';
 
 type PreviewConfig = Pick<
 	Config,
@@ -32,7 +31,16 @@ export function definePreview({
 			}
 
 			if (!store) {
-				const hasAuth = await getCurrentUser(projectId, token);
+				const _checkAuth = async () => {
+					const res = await fetch(`https://${projectId}.api.sanity.io/v1/users/me`, {
+						credentials: 'include',
+						headers: token ? { Authorization: `Bearer ${token}` } : undefined
+					});
+					const json = await res.json();
+					return !!json?.id;
+				};
+
+				const hasAuth = await _checkAuth();
 				if (!hasAuth) {
 					throw new Error('Not authenticated. Cannot preview.');
 				}
