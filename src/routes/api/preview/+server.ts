@@ -11,7 +11,7 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 	const incomingSecret = allParams.get('secret');
 	const type = allParams.get('type');
 	const slug = allParams.get('slug');
-	const isEmbed = allParams.get('embed');
+	const isEmbed = allParams.get('embed') === 'true';
 
 	// Check the secret.
 	if (secret !== incomingSecret) {
@@ -42,7 +42,7 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 
 	// Set the preview cookie.
 	if (isPreviewing) {
-		enablePreview(cookies, !!isEmbed);
+		enablePreview(cookies, isEmbed);
 	}
 
 	// Since this endpoint is called from the Sanity Studio on
