@@ -1,20 +1,18 @@
 import type { RequestHandler } from './$types';
 import { enablePreview } from '$lib/sanity/preview';
 import { getClient } from '$lib/sanity/client';
-import { projectNoContentQuery } from '$lib/sanity/queries';
+import { type Project, projectNoContentQuery } from '$lib/sanity/queries';
 import { error, redirect } from '@sveltejs/kit';
 import { PUBLIC_PREVIEW_SECRET } from '$env/static/public';
 
-export const GET = (async ({ url, cookies, setHeaders }) => {
-	const allParams = url.searchParams;
-	const secret = PUBLIC_PREVIEW_SECRET;
-	const incomingSecret = allParams.get('secret');
-	const type = allParams.get('type');
-	const slug = allParams.get('slug');
-	const isEmbed = allParams.get('embed') === 'true';
+export const GET = (async ({ url: { searchParams }, cookies, setHeaders }) => {
+	const secret = searchParams.get('secret');
+	const type = searchParams.get('type');
+	const slug = searchParams.get('slug');
+	const isEmbed = searchParams.get('embed') === 'true';
 
 	// Check the secret.
-	if (secret !== incomingSecret) {
+	if (secret !== PUBLIC_PREVIEW_SECRET) {
 		throw error(401, 'Invalid secret');
 	}
 
@@ -24,20 +22,26 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 	}
 
 	// Default redirect. Altnernatively, you can redirect to a 404 page.
-	let redirectSlug = '/';
+	let redirectSlug = '';
 	let isPreviewing = false;
+	let document;
 
 	// Our query may vary depending on the type.
-	if (type === 'project') {
-		const project = await getClient(true).fetch(projectNoContentQuery, { slug });
+	switch (type) {
+		case 'project':
+			document = await getClient(true).fetch<Project>(projectNoContentQuery, { slug });
 
-		if (!project || !project.slug) {
-			throw error(401, 'No project found');
-		}
+			if (!document || !document.slug) {
+				throw error(404, 'Not found');
+			}
 
-		isPreviewing = true;
+			isPreviewing = true;
 
-		redirectSlug = `/projects/${project.slug}${isEmbed ? '?isEmbedPreview=true' : ''}`;
+			redirectSlug = `/projects/${document.slug}${isEmbed ? '?isEmbedPreview=true' : ''}`;
+			break;
+
+		default:
+			break;
 	}
 
 	// Set the preview cookie.
@@ -49,6 +53,9 @@ export const GET = (async ({ url, cookies, setHeaders }) => {
 	// every content change, we'll make sure not to cache it.
 	setHeaders({ 'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0' });
 
-	// We don't redirect to url.searchParams.get("slug") as that exposes us to open redirect vulnerabilities,
+	if (!redirectSlug) {
+		throw error(404, 'Not found');
+	}
+
 	throw redirect(302, redirectSlug);
 }) satisfies RequestHandler;
