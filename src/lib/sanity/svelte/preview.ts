@@ -1,6 +1,5 @@
 import type { QueryParams } from 'sanity';
 import type { GroqStore, Config } from '@sanity/groq-store';
-import { onMount } from 'svelte';
 import { writable } from 'svelte/store';
 
 type PreviewConfig = Pick<
@@ -24,7 +23,7 @@ export function definePreview({
 	) {
 		const data = writable(initialData);
 
-		onMount(async () => {
+		(async () => {
 			if (!projectId) {
 				console.warn('No projectId set for `definePreview`');
 				return;
@@ -82,7 +81,7 @@ export function definePreview({
 					store.close();
 				};
 			}
-		});
+		})();
 
 		return data;
 	};
