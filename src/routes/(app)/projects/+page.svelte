@@ -1,20 +1,23 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { writable } from 'svelte/store';
 	import { PUBLIC_SANITY_API_TOKEN } from '$env/static/public';
-	import { definePreview } from '$lib/sanity/sveltekit/preview';
-	import config from '$lib/sanity/config/client';
-	import { allprojectsQuery } from '$lib/sanity/queries';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	const withPreview = definePreview(config);
+	let projects = writable(data.projects);
 
-	const projects = withPreview(
-		data.isPreview || data.isEmbedPreview,
-		PUBLIC_SANITY_API_TOKEN,
-		data.projects,
-		allprojectsQuery
-	);
+	onMount(async () => {
+		if (data.isPreview || data.isEmbedPreview) {
+			const { definePreview } = await import('$lib/sanity/sveltekit/preview');
+			const { default: config } = await import('$lib/sanity/config/client');
+			const { allprojectsQuery } = await import('$lib/sanity/queries');
+
+			const withPreview = definePreview(config);
+			projects = withPreview(PUBLIC_SANITY_API_TOKEN, data.projects, allprojectsQuery);
+		}
+	});
 </script>
 
 <svelte:head>

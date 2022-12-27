@@ -18,7 +18,6 @@ export function definePreview({
 }: PreviewConfig) {
 	let store: GroqStore;
 	return function withPreview<D>(
-		isPreview: boolean,
 		token: string | null,
 		initialData: D,
 		query: string,
@@ -27,10 +26,6 @@ export function definePreview({
 		const data = writable(initialData);
 
 		onMount(async () => {
-			if (!isPreview) {
-				return;
-			}
-
 			if (!projectId) {
 				console.warn('No projectId set for `definePreview`');
 				return;
