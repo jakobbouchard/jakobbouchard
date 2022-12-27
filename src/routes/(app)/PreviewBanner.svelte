@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { CurrentUser } from 'sanity';
 	import { onMount } from 'svelte';
-	import { getCurrentUser } from '$lib/sanity/sveltekit/user';
 	import { PUBLIC_SANITY_PROJECT_ID } from '$env/static/public';
+	import { getCurrentUser } from '$lib/sanity/svelte/user';
 
-	let user: CurrentUser;
+	let user: CurrentUser | undefined;
 
 	onMount(async () => {
 		const currentUser = await getCurrentUser(PUBLIC_SANITY_PROJECT_ID, null);

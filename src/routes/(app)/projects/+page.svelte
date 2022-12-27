@@ -5,12 +5,11 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-
 	let projects = writable(data.projects);
 
 	onMount(async () => {
 		if (data.isPreview || data.isEmbedPreview) {
-			const { definePreview } = await import('$lib/sanity/sveltekit/preview');
+			const { definePreview } = await import('$lib/sanity/svelte/preview');
 			const { default: config } = await import('$lib/sanity/config/client');
 			const { allprojectsQuery } = await import('$lib/sanity/queries');
 

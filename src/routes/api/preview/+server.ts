@@ -1,9 +1,9 @@
-import type { RequestHandler } from './$types';
-import { enablePreview } from '$lib/sanity/preview';
-import { getClient } from '$lib/sanity/client';
-import { type ProjectNoContent, projectNoContentQuery } from '$lib/sanity/queries';
 import { error, redirect } from '@sveltejs/kit';
 import { PUBLIC_PREVIEW_SECRET } from '$env/static/public';
+import { getClient } from '$lib/sanity/client';
+import { enablePreview } from '$lib/sanity/preview';
+import { type ProjectNoContent, projectNoContentQuery } from '$lib/sanity/queries';
+import type { RequestHandler } from './$types';
 
 export const GET = (async ({ url: { searchParams }, cookies, setHeaders }) => {
 	const secret = searchParams.get('secret');
@@ -57,5 +57,5 @@ export const GET = (async ({ url: { searchParams }, cookies, setHeaders }) => {
 		throw error(404, 'Not found');
 	}
 
-	throw redirect(302, redirectSlug);
+	throw redirect(307, redirectSlug);
 }) satisfies RequestHandler;

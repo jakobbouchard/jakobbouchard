@@ -1,16 +1,15 @@
 <script lang="ts">
-	import '$lib/app.css';
-
-	import Preloader from '$lib/components/Preloader.svelte';
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
+	import './styles.css';
+	import Preloader from './Preloader.svelte';
+	import Header from './Header.svelte';
+	import Footer from './Footer.svelte';
 	import type { LayoutData } from './$types';
 
 	export let data: LayoutData;
 </script>
 
 {#if data.isPreview && !data.isEmbedPreview}
-	{#await import('$lib/components/PreviewBanner.svelte') then { default: PreviewBanner }}
+	{#await import('./PreviewBanner.svelte') then { default: PreviewBanner }}
 		<PreviewBanner />
 	{/await}
 {/if}

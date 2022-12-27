@@ -1,11 +1,11 @@
 <script>
 	import { page } from '$app/stores';
 
-	const title = $page.error?.message || 'An error occured';
+	$: title = $page.error?.message || 'An error occured';
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{title} – {$page.data.siteTitle}</title>
 </svelte:head>
 
 <div class="container">
