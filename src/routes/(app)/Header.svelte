@@ -244,7 +244,7 @@
 			flex-wrap: wrap;
 			visibility: visible;
 			align-items: center;
-			gap: 0 clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+			gap: 0 var(--space-5);
 			margin: 0;
 			padding: var(--space-2) 0;
 			background-color: unset;
@@ -253,7 +253,6 @@
 
 		nav ul li {
 			right: 0;
-			margin: 0.15rem 0.5rem;
 			opacity: 1;
 		}
 
