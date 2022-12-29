@@ -23,7 +23,7 @@
 		"@sanity/groq-store": "^1.1.4",
 		"@sanity/icons": "^2.2.0",
 		"@sanity/image-url": "^1.0.1",
-		"@sanity/ui": "^1.0.5",
+		"@sanity/ui": "^1.0.6",
 		"@sanity/vision": "^3.1.2",
 		"@sveltejs/adapter-vercel": "^1.0.0",
 		"@sveltejs/kit": "^1.0.1",
