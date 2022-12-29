@@ -1,11 +1,11 @@
 <script>
-	import { afterNavigate } from '$app/navigation';
-	import { page } from '$app/stores';
+	import { afterNavigate } from "$app/navigation";
+	import { page } from "$app/stores";
 
 	let open = false;
 
 	afterNavigate((navigate) => {
-		if (open && navigate.type == 'link') {
+		if (open && navigate.type == "link") {
 			open = false;
 		}
 	});
@@ -16,23 +16,27 @@
 <header>
 	<div class="container">
 		<div class="branding">
-			<svelte:element this={$page.url.pathname === '/' ? 'h1' : 'p'}>
+			<svelte:element this={$page.url.pathname === "/" ? "h1" : "p"}>
 				<a href="/" rel="home">Jakob<br />Bouchard</a>
 			</svelte:element>
 		</div>
 		<nav aria-label="Main Menu" class:active={open}>
-			<button on:click={() => (open = !open)} aria-expanded={open} aria-controls="main-menu">
+			<button
+				on:click={() => (open = !open)}
+				aria-expanded={open}
+				aria-controls="main-menu"
+			>
 				<span class="sr-only">Menu</span>
 			</button>
 			<div class="menu-background" />
 			<ul id="main-menu">
-				<li class:active={$page.url.pathname.startsWith('/projects')}>
+				<li class:active={$page.url.pathname.startsWith("/projects")}>
 					<a href="/projects">Projects</a>
 				</li>
-				<li class:active={$page.url.pathname.startsWith('/about')}>
+				<li class:active={$page.url.pathname.startsWith("/about")}>
 					<a href="/about">About</a>
 				</li>
-				<li class:active={$page.url.pathname.startsWith('/contact')}>
+				<li class:active={$page.url.pathname.startsWith("/contact")}>
 					<a href="/contact">Contact</a>
 				</li>
 			</ul>
@@ -112,12 +116,13 @@
 
 	nav button::before,
 	nav button::after {
-		content: '';
+		content: "";
 		position: relative;
 		display: block;
 		border-top: 2px solid var(--color-black);
 		width: 100%;
-		transition: transform var(--speed-fast) ease, top var(--speed-fast) ease var(--speed-fast),
+		transition: transform var(--speed-fast) ease,
+			top var(--speed-fast) ease var(--speed-fast),
 			bottom var(--speed-fast) ease var(--speed-fast);
 	}
 
@@ -131,8 +136,8 @@
 
 	nav.active button::before,
 	nav.active button::after {
-		transition: transform var(--speed-fast) ease var(--speed-fast), top var(--speed-fast) ease,
-			bottom var(--speed-fast) ease;
+		transition: transform var(--speed-fast) ease var(--speed-fast),
+			top var(--speed-fast) ease, bottom var(--speed-fast) ease;
 	}
 
 	nav.active button::before {
@@ -262,7 +267,7 @@
 		}
 
 		nav ul li a::after {
-			content: '';
+			content: "";
 			display: block;
 			position: absolute;
 			bottom: 0;

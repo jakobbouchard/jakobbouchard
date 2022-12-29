@@ -1,7 +1,7 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from "$app/stores";
 
-	$: title = $page.error?.message || 'An error occured';
+	$: title = $page.error?.message || "An error occured";
 </script>
 
 <svelte:head>

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { writable } from 'svelte/store';
-	import { PortableText } from '@portabletext/svelte';
-	import { PUBLIC_SANITY_API_TOKEN } from '$env/static/public';
-	import { urlFor } from '$lib/sanity/images';
-	import type { PageData } from './$types';
+	import { onMount } from "svelte";
+	import { writable } from "svelte/store";
+	import { PortableText } from "@portabletext/svelte";
+	import { PUBLIC_SANITY_API_TOKEN } from "$env/static/public";
+	import { urlFor } from "$lib/sanity/images";
+	import type { PageData } from "./$types";
 
 	export let data: PageData;
 
@@ -12,17 +12,23 @@
 
 	onMount(async () => {
 		if (data.isPreview || data.isEmbedPreview) {
-			const { definePreview } = await import('$lib/sanity/svelte/preview');
-			const { default: config } = await import('$lib/sanity/config/client');
-			const { projectQuery } = await import('$lib/sanity/queries');
+			const { definePreview } = await import("$lib/sanity/svelte/preview");
+			const { default: config } = await import("$lib/sanity/config/client");
+			const { projectQuery } = await import("$lib/sanity/queries");
 
 			const withPreview = definePreview(config);
-			project = withPreview(PUBLIC_SANITY_API_TOKEN, data.project, projectQuery, {
-				slug: data.project.slug
-			});
+			project = withPreview(
+				PUBLIC_SANITY_API_TOKEN,
+				data.project,
+				projectQuery,
+				{ slug: data.project.slug },
+			);
 		}
 	});
-	$: featuredImage = urlFor($project.featuredImage).size(1024, 576).auto('format').url();
+	$: featuredImage = urlFor($project.featuredImage)
+		.size(1024, 576)
+		.auto("format")
+		.url();
 </script>
 
 <svelte:head>
@@ -36,7 +42,9 @@
 		<p class="entry-meta">
 			Posted on
 			<time class="posted-on" datetime={$project.date}>
-				{new Date($project.date).toLocaleDateString('en-CA', { dateStyle: 'long' })}
+				{new Date($project.date).toLocaleDateString("en-CA", {
+					dateStyle: "long",
+				})}
 			</time>
 		</p>
 	</header>

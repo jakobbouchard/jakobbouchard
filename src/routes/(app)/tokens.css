@@ -1,9 +1,9 @@
-@import '@fontsource/atkinson-hyperlegible/400.css';
-@import '@fontsource/atkinson-hyperlegible/400-italic.css';
-@import '@fontsource/atkinson-hyperlegible/700.css';
-@import '@fontsource/atkinson-hyperlegible/700-italic.css';
-@import '@fontsource/libre-baskerville/400.css';
-@import '@fontsource/libre-baskerville/700.css';
+@import "@fontsource/atkinson-hyperlegible/400.css";
+@import "@fontsource/atkinson-hyperlegible/400-italic.css";
+@import "@fontsource/atkinson-hyperlegible/700.css";
+@import "@fontsource/atkinson-hyperlegible/700-italic.css";
+@import "@fontsource/libre-baskerville/400.css";
+@import "@fontsource/libre-baskerville/700.css";
 
 :root {
 	/* Core units */
@@ -16,8 +16,8 @@
 	--breakpoint-lg: 64rem; /* 1024px */
 
 	/* Fonts */
-	--font-primary: 'Atkinson Hyperlegible', sans-serif;
-	--font-secondary: 'Libre Baskerville', serif;
+	--font-primary: "Atkinson Hyperlegible", sans-serif;
+	--font-secondary: "Libre Baskerville", serif;
 	/* Font sizes - 4x4 grid */
 	--text-base-unit: var(--base-unit);
 	--text-xs: calc(var(--text-base-unit) * 3);
@@ -75,9 +75,21 @@
 	--color-ninja: #00060a;
 
 	/* Gradients */
-	--gradient-1: linear-gradient(132deg, var(--color-primary) 0%, var(--color-primary-lighter) 100%);
-	--gradient-2: linear-gradient(132deg, var(--color-primary-lighter) 0%, var(--color-primary) 100%);
-	--gradient-3: linear-gradient(132deg, var(--color-primary) 0%, var(--color-primary-darker) 100%);
+	--gradient-1: linear-gradient(
+		132deg,
+		var(--color-primary) 0%,
+		var(--color-primary-lighter) 100%
+	);
+	--gradient-2: linear-gradient(
+		132deg,
+		var(--color-primary-lighter) 0%,
+		var(--color-primary) 100%
+	);
+	--gradient-3: linear-gradient(
+		132deg,
+		var(--color-primary) 0%,
+		var(--color-primary-darker) 100%
+	);
 
 	/* Border radius */
 	--rounded-sm: calc(var(--base-unit) * 0.5);

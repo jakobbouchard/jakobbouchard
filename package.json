@@ -13,7 +13,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint --cache .",
-		"format": "prettier --cache --write ."
+		"format": "prettier --plugin-search-dir . --cache --write ."
 	},
 	"devDependencies": {
 		"@fontsource/atkinson-hyperlegible": "^4.5.10",

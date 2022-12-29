@@ -2,7 +2,7 @@
 	export let text: string;
 
 	function getDelay(index: number) {
-		return 0.15 * (index + 1) + 's';
+		return 0.15 * (index + 1) + "s";
 	}
 </script>
 
@@ -10,8 +10,11 @@
 	<div class="preloader-background" />
 	<div class="preloader-inner">
 		<span class="preloader-text">
-			{#each text.split(' ') as part, index}
-				<span class="preloader-text-part" style:--animation-delay={getDelay(index)}>
+			{#each text.split(" ") as part, index}
+				<span
+					class="preloader-text-part"
+					style:--animation-delay={getDelay(index)}
+				>
 					{part}
 				</span>
 			{/each}
@@ -53,7 +56,7 @@
 
 	.preloader-inner::before,
 	.preloader-inner::after {
-		content: '';
+		content: "";
 		position: absolute;
 		width: 0;
 		height: 0;
@@ -86,13 +89,15 @@
 	:global(html.dom-loading) .preloader-inner::after {
 		width: 100%;
 		height: 100%;
-		transition: width var(--speed-normal) ease, height var(--speed-normal) ease var(--speed-normal);
+		transition: width var(--speed-normal) ease,
+			height var(--speed-normal) ease var(--speed-normal);
 	}
 
 	:global(html.dom-loading) .preloader-text-part {
 		bottom: 0;
 		opacity: 1;
-		transition: opacity var(--speed-normal) ease, bottom var(--speed-normal) ease;
+		transition: opacity var(--speed-normal) ease,
+			bottom var(--speed-normal) ease;
 		transition-delay: var(--animation-delay);
 	}
 
@@ -105,7 +110,8 @@
 	:global(html.dom-loaded) .preloader-background {
 		transform-origin: center left;
 		transform: scaleX(0);
-		transition: transform var(--speed-slower) cubic-bezier(0.55, 0.06, 0.68, 0.19);
+		transition: transform var(--speed-slower)
+			cubic-bezier(0.55, 0.06, 0.68, 0.19);
 	}
 
 	:global(html.dom-loaded) .preloader-inner {
@@ -147,7 +153,8 @@
 		:global(html.dom-loaded) .preloader-background {
 			transform: unset;
 			opacity: 0;
-			transition: opacity var(--speed-slower) cubic-bezier(0.55, 0.06, 0.68, 0.19);
+			transition: opacity var(--speed-slower)
+				cubic-bezier(0.55, 0.06, 0.68, 0.19);
 		}
 	}
 </style>
