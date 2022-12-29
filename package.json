@@ -3,16 +3,17 @@
 	"private": true,
 	"version": "1.0.0",
 	"license": "MIT",
-	"packageManager": "pnpm@7.18.1",
+	"packageManager": "pnpm@7.21.0",
 	"type": "module",
 	"scripts": {
+		"prepare": "husky install",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"lint": "eslint --cache .",
+		"format": "prettier --cache --write ."
 	},
 	"devDependencies": {
 		"@fontsource/atkinson-hyperlegible": "^4.5.10",
@@ -36,6 +37,8 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"event-source-polyfill": "^1.0.31",
 		"groq": "^2.33.2",
+		"husky": "^8.0.2",
+		"lint-staged": "^13.1.0",
 		"prettier": "^2.8.1",
 		"prettier-plugin-svelte": "^2.9.0",
 		"react": "^18.2.0",

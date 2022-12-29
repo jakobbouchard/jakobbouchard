@@ -1,6 +1,4 @@
-/.turbo
-/.sanity
 /.svelte-kit
-/dist
+/.vercel
 node_modules
 .DS_Store
