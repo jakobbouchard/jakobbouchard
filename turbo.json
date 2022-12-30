@@ -1,0 +1,42 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"pipeline": {
+		"build": {
+			"env": [
+				"PUBLIC_PREVIEW_SECRET",
+				"PUBLIC_SANITY_PROJECT_ID",
+				"PUBLIC_SANITY_PROJECT_DATASET",
+				"PUBLIC_SANITY_API_TOKEN"
+			],
+			"outputs": [".svelte-kit/**", ".vercel/**"]
+		},
+		"check": {
+			"outputs": []
+		},
+		"lint": {
+			"outputs": []
+		},
+		"format": {
+			"outputs": []
+		},
+		"test": {
+			"dependsOn": ["build"],
+			"inputs": ["tests/**", "playwright.config.ts", ".env"],
+			"outputs": []
+		},
+		"test:unit": {
+			"dependsOn": ["build"],
+			"inputs": ["src/**/*.{test,spec}.ts", "vite.config.ts", ".env"],
+			"outputs": []
+		},
+		"dev": {
+			"cache": false
+		},
+		"check:watch": {
+			"cache": false
+		},
+		"preview": {
+			"cache": false
+		}
+	}
+}

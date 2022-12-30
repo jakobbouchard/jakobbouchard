@@ -5,9 +5,10 @@ module.exports = {
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
+		"turbo",
 		"prettier",
 	],
-	plugins: ["svelte3", "@typescript-eslint"],
+	plugins: ["svelte3", "@typescript-eslint", "turbo"],
 	ignorePatterns: ["*.cjs"],
 	overrides: [{ files: ["*.svelte"], processor: "svelte3/svelte3" }],
 	settings: {
