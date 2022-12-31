@@ -1,5 +1,8 @@
 <script lang="ts">
 	import "./styles.css";
+
+	import { page } from "$app/stores";
+	import PageTransition from "./PageTransition.svelte";
 	import Preloader from "./Preloader.svelte";
 	import Header from "./Header.svelte";
 	import Footer from "./Footer.svelte";
@@ -19,7 +22,9 @@
 <div class="app">
 	<Header />
 	<main id="content" tabindex="-1">
-		<slot />
+		<PageTransition pathname={$page.url.pathname}>
+			<slot />
+		</PageTransition>
 	</main>
 	<Footer />
 </div>

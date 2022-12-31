@@ -1,33 +1,33 @@
 import type { SchemaPluginOptions } from "sanity";
 
 export default {
+	title: "Project",
 	name: "project",
 	type: "document",
-	title: "Project",
 	fields: [
 		{
+			title: "Title",
 			name: "title",
 			type: "string",
-			title: "Title",
 			validation: (Rule) => Rule.required().min(10).max(80),
 		},
 		{
+			title: "Slug",
 			name: "slug",
 			type: "slug",
-			title: "Slug",
 			options: { source: "title" },
 			validation: (Rule) => Rule.required(),
 		},
 		{
+			title: "Featured Image",
 			name: "featuredImage",
 			type: "image",
-			title: "Featured Image",
 			validation: (Rule) => Rule.required(),
 		},
 		{
+			title: "Summary",
 			name: "summary",
 			type: "string",
-			title: "Summary",
 			validation: (Rule) => Rule.required(),
 		},
 		{
