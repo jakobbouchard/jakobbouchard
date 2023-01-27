@@ -1,0 +1,93 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [$default-branch]
+
+env:
+  PNPM_VERSION: "7"
+  NODE_VERSION: "18.x"
+  PUBLIC_PREVIEW_SECRET: "null"
+  PUBLIC_SANITY_PROJECT_ID: "null"
+  PUBLIC_SANITY_PROJECT_DATASET: "null"
+  PUBLIC_SANITY_API_TOKEN: "null"
+
+jobs:
+  packages:
+    name: Check pnpm install
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+  lint:
+    name: Run ESLint
+    runs-on: ubuntu-latest
+    needs: [packages]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run ESLint
+        run: pnpm eslint .
+  format:
+    name: Run Prettier
+    runs-on: ubuntu-latest
+    needs: [packages]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run Prettier
+        run: pnpm prettier --check .
+  sveltecheck:
+    name: Run Svelte Check
+    runs-on: ubuntu-latest
+    needs: [packages]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run Svelte Check
+        run: pnpm check
