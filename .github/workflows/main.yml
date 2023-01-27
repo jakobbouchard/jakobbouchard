@@ -1,10 +1,10 @@
 name: CI
 
 on:
-  workflow_dispatch:
   pull_request:
   push:
     branches: [$default-branch]
+  workflow_dispatch:
 
 env:
   PNPM_VERSION: "7"
