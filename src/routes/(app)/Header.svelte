@@ -1,11 +1,11 @@
 <script>
-	import { afterNavigate } from '$app/navigation';
-	import { page } from '$app/stores';
+	import { afterNavigate } from "$app/navigation";
+	import { page } from "$app/stores";
 
 	let open = false;
 
 	afterNavigate((navigate) => {
-		if (open && navigate.type == 'link') {
+		if (open && navigate.type == "link") {
 			open = false;
 		}
 	});
@@ -16,23 +16,27 @@
 <header>
 	<div class="container">
 		<div class="branding">
-			<svelte:element this={$page.url.pathname === '/' ? 'h1' : 'p'}>
+			<svelte:element this={$page.url.pathname === "/" ? "h1" : "p"}>
 				<a href="/" rel="home">Jakob<br />Bouchard</a>
 			</svelte:element>
 		</div>
 		<nav aria-label="Main Menu" class:active={open}>
-			<button on:click={() => (open = !open)} aria-expanded={open} aria-controls="main-menu">
+			<button
+				on:click={() => (open = !open)}
+				aria-expanded={open}
+				aria-controls="main-menu"
+			>
 				<span class="sr-only">Menu</span>
 			</button>
 			<div class="menu-background" />
 			<ul id="main-menu">
-				<li class:active={$page.url.pathname.startsWith('/projects')}>
-					<a href="/projects">Projects</a>
-				</li>
-				<li class:active={$page.url.pathname.startsWith('/about')}>
+				<li class:active={$page.url.pathname.startsWith("/about")}>
 					<a href="/about">About</a>
 				</li>
-				<li class:active={$page.url.pathname.startsWith('/contact')}>
+				<li class:active={$page.url.pathname.startsWith("/projects")}>
+					<a href="/projects">Projects</a>
+				</li>
+				<li class:active={$page.url.pathname.startsWith("/contact")}>
 					<a href="/contact">Contact</a>
 				</li>
 			</ul>
@@ -112,12 +116,13 @@
 
 	nav button::before,
 	nav button::after {
-		content: '';
+		content: "";
 		position: relative;
 		display: block;
 		border-top: 2px solid var(--color-black);
 		width: 100%;
-		transition: transform var(--speed-fast) ease, top var(--speed-fast) ease var(--speed-fast),
+		transition: transform var(--speed-fast) ease,
+			top var(--speed-fast) ease var(--speed-fast),
 			bottom var(--speed-fast) ease var(--speed-fast);
 	}
 
@@ -131,8 +136,8 @@
 
 	nav.active button::before,
 	nav.active button::after {
-		transition: transform var(--speed-fast) ease var(--speed-fast), top var(--speed-fast) ease,
-			bottom var(--speed-fast) ease;
+		transition: transform var(--speed-fast) ease var(--speed-fast),
+			top var(--speed-fast) ease, bottom var(--speed-fast) ease;
 	}
 
 	nav.active button::before {
@@ -161,6 +166,7 @@
 		transform: scaleY(1);
 		transition: transform var(--speed-slower) ease;
 	}
+
 	nav ul {
 		position: fixed;
 		inset: 0;
@@ -170,7 +176,7 @@
 		visibility: hidden;
 		list-style: none;
 		margin: var(--space-8) 0 0;
-		padding: var(--space-2) var(--space-3);
+		padding: var(--space-4) 0;
 		font-size: var(--text-4xl);
 		text-align: right;
 		transition: visibility 0s var(--speed-slower);
@@ -183,21 +189,48 @@
 		transition: opacity var(--speed-normal) ease, right var(--speed-slower) ease;
 	}
 
-	nav ul li:nth-of-type(1) {
+	nav ul li::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 0;
+		height: 1px;
+		background-color: var(--color-gray-9);
+		transition: width var(--speed-fast) ease;
+		z-index: -1;
+	}
+
+	nav ul li:hover::after {
+		height: 100%;
+	}
+
+	nav ul li:nth-of-type(1),
+	nav ul li:nth-of-type(1)::after {
 		transition-delay: 0.2s;
 	}
 
-	nav ul li:nth-of-type(2) {
+	nav ul li:nth-of-type(2),
+	nav ul li:nth-of-type(2)::after {
 		transition-delay: 0.1s;
 	}
 
-	nav ul li:nth-of-type(3) {
+	nav ul li:nth-of-type(3),
+	nav ul li:nth-of-type(3)::after {
 		transition-delay: 0;
 	}
 
 	nav ul li a {
+		display: block;
+		padding: var(--space-3);
+		color: var(--color-gray-9);
 		text-decoration: none;
 		cursor: pointer;
+		transition: color var(--speed-fast) ease;
+	}
+
+	nav ul li:hover a {
+		color: var(--color-gray-1);
 	}
 
 	nav.active ul {
@@ -209,6 +242,11 @@
 		right: 0;
 		opacity: 1;
 		transition: opacity var(--speed-slow) ease, right var(--speed-normal) ease;
+	}
+
+	nav.active ul li::after {
+		width: 100%;
+		transition: width var(--speed-normal) ease, height var(--speed-fast) ease;
 	}
 
 	nav.active ul li:nth-of-type(1) {
@@ -256,13 +294,20 @@
 			opacity: 1;
 		}
 
+		nav ul li::after {
+			content: none;
+		}
+
 		nav ul li a {
 			position: relative;
+			padding: 0;
 			z-index: 0;
+			color: var(--color-gray-9) !important;
+			transition: color var(--speed-normal) ease;
 		}
 
 		nav ul li a::after {
-			content: '';
+			content: "";
 			display: block;
 			position: absolute;
 			bottom: 0;
@@ -295,6 +340,24 @@
 
 		nav .menu-background {
 			background-color: var(--color-gray-9);
+		}
+
+		nav ul li::after {
+			background-color: var(--color-gray-1);
+		}
+
+		nav ul li a {
+			color: var(--color-gray-1);
+		}
+
+		@media (min-width: 32rem) {
+			nav ul li a {
+				color: var(--color-gray-1) !important;
+			}
+		}
+
+		nav ul li:hover a {
+			color: var(--color-gray-9);
 		}
 
 		nav ul li a::after {

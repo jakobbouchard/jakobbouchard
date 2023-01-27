@@ -1,41 +1,41 @@
-import type { SchemaPluginOptions } from 'sanity';
+import type { SchemaPluginOptions } from "sanity";
 
 export default {
-	name: 'project',
-	type: 'document',
-	title: 'Project',
+	title: "Project",
+	name: "project",
+	type: "document",
 	fields: [
 		{
-			name: 'title',
-			type: 'string',
-			title: 'Title',
-			validation: (Rule) => Rule.required().min(10).max(80)
+			title: "Title",
+			name: "title",
+			type: "string",
+			validation: (Rule) => Rule.required().min(10).max(80),
 		},
 		{
-			name: 'slug',
-			type: 'slug',
-			title: 'Slug',
-			options: { source: 'title' },
-			validation: (Rule) => Rule.required()
+			title: "Slug",
+			name: "slug",
+			type: "slug",
+			options: { source: "title" },
+			validation: (Rule) => Rule.required(),
 		},
 		{
-			name: 'featuredImage',
-			type: 'image',
-			title: 'Featured Image',
-			validation: (Rule) => Rule.required()
+			title: "Featured Image",
+			name: "featuredImage",
+			type: "image",
+			validation: (Rule) => Rule.required(),
 		},
 		{
-			name: 'summary',
-			type: 'string',
-			title: 'Summary',
-			validation: (Rule) => Rule.required()
+			title: "Summary",
+			name: "summary",
+			type: "string",
+			validation: (Rule) => Rule.required(),
 		},
 		{
-			title: 'Content',
-			name: 'content',
-			type: 'array',
-			of: [{ type: 'block' }],
-			validation: (Rule) => Rule.required()
-		}
-	]
-} satisfies Unpacked<SchemaPluginOptions['types']>;
+			title: "Content",
+			name: "content",
+			type: "array",
+			of: [{ type: "block" }],
+			validation: (Rule) => Rule.required(),
+		},
+	],
+} satisfies Unpacked<SchemaPluginOptions["types"]>;

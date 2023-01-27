@@ -60,7 +60,9 @@
 					stroke-linecap="round"
 					stroke-linejoin="round"
 				>
-					<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+					<path
+						d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+					/>
 				</svg>
 				<span class="sr-only">Mastodon</span>
 			</a>
@@ -88,7 +90,9 @@
 				<span class="sr-only">GitHub</span>
 			</a>
 		</div>
-		<div class="copyright">Jakob Bouchard &copy; {new Date().getFullYear()}</div>
+		<div class="copyright">
+			Jakob Bouchard &copy; {new Date().getFullYear()}
+		</div>
 		<div class="links">
 			<a href="/privacy">Privacy</a>
 		</div>
@@ -139,7 +143,7 @@
 	}
 
 	.links a::after {
-		content: '';
+		content: "";
 		display: block;
 		position: absolute;
 		bottom: 0;

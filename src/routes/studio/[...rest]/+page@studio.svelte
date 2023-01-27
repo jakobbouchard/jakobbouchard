@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { renderStudio } from 'sanity';
-	import config from '$lib/sanity/config/studio';
+	import { onMount } from "svelte";
+	import { renderStudio } from "sanity";
+	import config from "$lib/sanity/config/studio";
 
 	let studio: HTMLElement;
 

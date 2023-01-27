@@ -1,6 +1,6 @@
-import groq from 'groq';
-import type { InputValue } from '@portabletext/svelte/ptTypes';
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import groq from "groq";
+import type { InputValue } from "@portabletext/svelte/ptTypes";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 export interface ProjectNoContent {
 	_id: string;

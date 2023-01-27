@@ -1,10 +1,14 @@
-import type { QueryParams } from 'sanity';
-import type { GroqStore, Config } from '@sanity/groq-store';
-import { writable } from 'svelte/store';
+import type { QueryParams } from "sanity";
+import type { GroqStore, Config } from "@sanity/groq-store";
+import { writable } from "svelte/store";
 
 type PreviewConfig = Pick<
 	Config,
-	'projectId' | 'dataset' | 'includeTypes' | 'documentLimit' | 'subscriptionThrottleMs'
+	| "projectId"
+	| "dataset"
+	| "includeTypes"
+	| "documentLimit"
+	| "subscriptionThrottleMs"
 >;
 
 export function definePreview({
@@ -12,44 +16,47 @@ export function definePreview({
 	dataset,
 	includeTypes,
 	documentLimit = 3000,
-	subscriptionThrottleMs = 50
+	subscriptionThrottleMs = 50,
 }: PreviewConfig) {
 	let store: GroqStore;
 	return function withPreview<D>(
 		token: string | null,
 		initialData: D,
 		query: string,
-		params?: QueryParams
+		params?: QueryParams,
 	) {
 		const data = writable(initialData);
 
 		(async () => {
 			if (!projectId) {
-				console.warn('No projectId set for `definePreview`');
+				console.warn("No projectId set for `definePreview`");
 				return;
 			}
 
 			if (!store) {
 				const _checkAuth = async () => {
-					const res = await fetch(`https://${projectId}.api.sanity.io/v1/users/me`, {
-						credentials: 'include',
-						headers: token ? { Authorization: `Bearer ${token}` } : undefined
-					});
+					const res = await fetch(
+						`https://${projectId}.api.sanity.io/v1/users/me`,
+						{
+							credentials: "include",
+							headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+						},
+					);
 					const json = await res.json();
 					return !!json?.id;
 				};
 
 				const hasAuth = await _checkAuth();
 				if (!hasAuth) {
-					throw new Error('Not authenticated. Cannot preview.');
+					throw new Error("Not authenticated. Cannot preview.");
 				}
 
-				const { groqStore } = await import('@sanity/groq-store');
+				const { groqStore } = await import("@sanity/groq-store");
 
 				// Lazy load the huge `event-source-polyfill`, but only if a token is specified
 				let EventSource = undefined;
 				if (token !== null) {
-					const pkg = await import('event-source-polyfill');
+					const pkg = await import("event-source-polyfill");
 					EventSource = pkg.EventSourcePolyfill;
 				}
 
@@ -62,18 +69,18 @@ export function definePreview({
 					token: token === null ? undefined : token,
 					EventSource,
 					listen: true,
-					overlayDrafts: true
+					overlayDrafts: true,
 				});
 
 				const subscription = store.subscribe(
 					query,
-					typeof params === 'undefined' ? {} : params,
+					typeof params === "undefined" ? {} : params,
 					(err, result) => {
 						if (err) {
 							throw err;
 						}
 						data.set(result);
-					}
+					},
 				);
 
 				return () => {

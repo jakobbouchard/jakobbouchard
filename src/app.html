@@ -2,21 +2,29 @@
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover"
+		/>
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<link rel="profile" href="https://gmpg.org/xfn/11" />
 		%sveltekit.head%
 		<script>
 			let start = performance.now();
-			document.documentElement.classList.replace('no-js', 'js');
+			document.documentElement.classList.replace("no-js", "js");
 			// Needs a timeout for animations to work
-			setTimeout(() => document.documentElement.classList.add('dom-loading'), 0);
+			setTimeout(() => {
+				document.documentElement.classList.add("dom-loading");
+			}, 0);
 
-			window.addEventListener('load', () => {
+			window.addEventListener("load", () => {
 				const delay = Math.max(0, 800 - (performance.now() - start));
 				start = undefined;
 				setTimeout(() => {
-					document.documentElement.classList.replace('dom-loading', 'dom-loaded');
+					document.documentElement.classList.replace(
+						"dom-loading",
+						"dom-loaded",
+					);
 				}, delay);
 			});
 		</script>
