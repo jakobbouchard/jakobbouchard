@@ -5,7 +5,7 @@
 		"+page*.svelte": "+page.server.ts, +page.ts",
 		".env": "*.env, .env.*, .envrc, env.d.ts",
 		// Config files
-		"package.json": ".eslint*, .lintstagedrc*, .npm*, .prettier*, playwright.config.*, pnpm*, svelte.config.*, tsconfig.json, turbo.json, vercel*, vite.config.*, vitest.config.*",
+		"package.json": ".eslint*, .lintstagedrc*, .npm*, .prettier*, playwright.config.*, pnpm*, renovate.json, svelte.config.*, tsconfig.json, turbo.json, vercel*, vite.config.*, vitest.config.*",
 		"readme*": "changelog*, license*, readme*"
 	}
 }
