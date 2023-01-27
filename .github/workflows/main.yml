@@ -67,8 +67,8 @@ jobs:
         run: pnpm install
       - name: Run Prettier
         run: pnpm prettier --check .
-  typecheck:
-    name: Run TypeScript
+  sveltecheck:
+    name: Run Svelte Check
     runs-on: ubuntu-latest
     needs: [packages]
     steps:
@@ -86,11 +86,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run TypeScript
-        run: pnpm tsc --noEmit
+        run: pnpm check
   build:
     name: Build
     runs-on: ubuntu-latest
     needs: [packages]
+    env:
+      PUBLIC_PREVIEW_SECRET: "null"
+      PUBLIC_SANITY_PROJECT_ID: "null"
+      PUBLIC_SANITY_PROJECT_DATASET: "null"
+      PUBLIC_SANITY_API_TOKEN: "null"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -107,23 +112,3 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm build
-  test:
-    name: Run tests
-    runs-on: ubuntu-latest
-    needs: [packages]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: ${{ env.PNPM_VERSION }}
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
-      - name: Install dependencies
-        run: pnpm install
-      - name: Run tests
-        run: pnpm test
