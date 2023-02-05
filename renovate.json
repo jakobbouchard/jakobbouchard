@@ -1,5 +1,10 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:js-app", ":preserveSemverRanges"],
-	"baseBranches": ["develop"]
+	"extends": [
+		"config:js-app",
+		":preserveSemverRanges",
+		"schedule:earlyMondays"
+	],
+	"baseBranches": ["develop"],
+	"timezone": "America/Montreal"
 }
