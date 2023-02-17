@@ -13,6 +13,7 @@ env:
   PUBLIC_SANITY_PROJECT_ID: "null"
   PUBLIC_SANITY_PROJECT_DATASET: "null"
   PUBLIC_SANITY_API_TOKEN: "null"
+  ISR_BYPASS_TOKEN: "null"
 
 jobs:
   packages:

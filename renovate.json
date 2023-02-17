@@ -3,8 +3,8 @@
 	"extends": [
 		"config:js-app",
 		":preserveSemverRanges",
+		"group:allNonMajor",
 		"schedule:earlyMondays"
 	],
-	"baseBranches": ["develop"],
 	"timezone": "America/Montreal"
 }
