@@ -24,7 +24,7 @@
 		"@fontsource/atkinson-hyperlegible": "^4.5.11",
 		"@fontsource/libre-baskerville": "^4.5.10",
 		"@playwright/test": "^1.30.0",
-		"@portabletext/svelte": "^1.0.1",
+		"@portabletext/svelte": "^2.0.0",
 		"@sanity/client": "^4.0.1",
 		"@sanity/groq-store": "^2.0.6",
 		"@sanity/icons": "^2.2.2",
