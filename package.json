@@ -11,6 +11,8 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@fontsource/atkinson-hyperlegible": "^4.5.11",
+		"@fontsource/source-serif-pro": "^4.5.9",
 		"astro": "^2.1.3"
 	}
 }
