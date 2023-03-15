@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout title="Privacy – Jakob Bouchard">
+	<div class="stack gap-20">
+		<main class="wrapper privacy">
+			<Hero title="Privacy" />
+
+			<section>
+				<h2 class="section-title">Analytics</h2>
+				<div class="content">
+					<p>
+						I use an open-source, privacy-respecting, analytics tool called
+						umami to monitor my site’s visits. It doesn’t use trackers or
+						cookies, so it’s not able to personally identify visitors, unlike
+						Google Analytics. Plus, I can self-host it, which I like. My umami
+						instance is hosted on Fly.io.
+					</p>
+					<p>
+						You can see <a
+							href="https://umami.jakobbouchard.dev/share/wLP1SE57/jakobbouchard.dev"
+							data-type="URL"
+							target="_blank"
+							rel="noreferrer noopener">this website’s stats here</a
+						> — it’s literally my dashboard. I can see what pages are popular and
+						where visitors come from. I don’t need anything more. Google Analytics
+						has wayyy too much stuff for me.
+					</p>
+					<p>
+						If you want to know more about umami, <a
+							href="https://umami.is/"
+							target="_blank"
+							rel="noreferrer noopener">here is their website</a
+						>, and <a
+							href="https://github.com/umami-software/umami"
+							target="_blank"
+							rel="noreferrer noopener">here is their repo</a
+						>.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Cookies</h2>
+				<div class="content">
+					<p>
+						While I think cookies taste amazing — especially PC’s The Decadent
+						cookies — I don’t want them on my website.
+					</p>
+				</div>
+			</section>
+		</main>
+	</div>
+</BaseLayout>
+
+<style>
+	.privacy {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+		padding-bottom: 3.5rem;
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.privacy {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.privacy > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

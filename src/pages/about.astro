@@ -1,11 +1,14 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout
+	title="About – Jakob Bouchard"
+	description="About Jakob Bouchard Lorem Ipsum"
+>
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
@@ -13,10 +16,10 @@ import Hero from '../components/Hero.astro';
 				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
 			>
 				<img
-					width="1553"
-					height="873"
+					width="1200"
+					height="900"
 					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
+					alt="Jakob Bouchard at work with a colleague"
 				/>
 			</Hero>
 
@@ -24,21 +27,25 @@ import Hero from '../components/Hero.astro';
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a>
+						makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum
+						vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra
+						diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus
+						in ornare.
 					</p>
 					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
+						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget
+						gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat
+						pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh
+						venenatis cras sed felis eget velit. Id diam vel quam elementum
+						pulvinar etiam non.
 					</p>
 					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
+						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut
+						sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor
+						posuere ac ut consequat semper viverra. Viverra accumsan in nisl
+						nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
 						pretium fusce.
 					</p>
 				</div>
@@ -69,6 +76,9 @@ import Hero from '../components/Hero.astro';
 	}
 
 	img {
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		object-position: top;
 		margin-top: 1.5rem;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
