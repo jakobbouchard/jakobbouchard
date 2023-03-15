@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import Pill from "../components/Pill.astro";
 
 interface Props {
 	project: CollectionEntry<"work">;
@@ -16,10 +17,12 @@ const { data, slug } = Astro.props.project;
 		loading="lazy"
 		decoding="async"
 	/>
+	<Pill>{data.tags[0]}</Pill>
 </a>
 
 <style>
 	.card {
+		position: relative;
 		display: grid;
 		grid-template: auto 1fr / auto 1fr;
 		height: 11rem;
@@ -37,6 +40,13 @@ const { data, slug } = Astro.props.project;
 
 	.card:hover {
 		box-shadow: var(--shadow-md);
+	}
+
+	.card :global(.pill) {
+		position: absolute;
+		bottom: 0.5rem;
+		left: 0.5rem;
+		border-radius: 0.375rem;
 	}
 
 	.title {
@@ -62,7 +72,8 @@ const { data, slug } = Astro.props.project;
 			border-radius: 1.5rem;
 		}
 
-		.title {
+		.title,
+		.card :global(.pill) {
 			border-radius: 0.9375rem;
 		}
 	}
