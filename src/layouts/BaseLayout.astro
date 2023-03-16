@@ -1,11 +1,9 @@
 ---
-// Learn about using Astro layouts:
-// https://docs.astro.build/en/core-concepts/layouts/
+import MainHead from "@components/MainHead.astro";
+import Nav from "@components/Nav.astro";
+import Footer from "@components/Footer.astro";
 
-// Component Imports
-import MainHead from "../components/MainHead.astro";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
+// Todo: Use Astro assets to optimize the backgrounds
 
 interface Props {
 	title?: string | undefined;

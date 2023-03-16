@@ -1,6 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Pill from "../components/Pill.astro";
+import { Image } from "astro:assets";
+
+import Pill from "@components/Pill.astro";
 
 interface Props {
 	project: CollectionEntry<"work">;
@@ -11,12 +13,7 @@ const { data, slug } = Astro.props.project;
 
 <a class="card" href={`/work/${slug}`}>
 	<span class="title">{data.title}</span>
-	<img
-		src={data.img}
-		alt={data.img_alt || ""}
-		loading="lazy"
-		decoding="async"
-	/>
+	<Image src={data.img} alt={data.img_alt || ""} />
 	<Pill>{data.tags[0]}</Pill>
 </a>
 
