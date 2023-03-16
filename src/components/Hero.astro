@@ -12,7 +12,7 @@ const { align = "center", tagline, title, ctaLink } = Astro.props;
 ---
 
 <header class:list={["hero stack gap-4", align]}>
-	<div class="info">
+	<div class:list={[{ info: Boolean(ctaLink) }]}>
 		<div class="stack gap-2">
 			<h1 class="title">{title}</h1>
 			{tagline && <p class="tagline" set:html={tagline} />}
