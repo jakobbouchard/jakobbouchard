@@ -22,7 +22,7 @@ import Icon from "./Icon.astro";
 
 			/** Set whether the button is currently shown or hidden. */
 			const setShow = (scrolled: boolean) => {
-				btn.classList.toggle("hide", !scrolled);
+				btn.classList.toggle("show", scrolled);
 			};
 
 			// Hide button if not scrolled enough
@@ -53,6 +53,9 @@ import Icon from "./Icon.astro";
 		color: var(--gray-300);
 		background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
 		box-shadow: var(--shadow-md);
+		pointer-events: none;
+		opacity: 0;
+		transform: translateY(25%);
 		transition: opacity 0.2s ease, transform 0.2s ease;
 	}
 
@@ -67,9 +70,9 @@ import Icon from "./Icon.astro";
 			radial-gradient(var(--gray-900), var(--gray-800) 150%);
 	}
 
-	.back-to-top.hide {
-		pointer-events: none;
-		opacity: 0;
-		transform: translateY(25%);
+	.back-to-top.show {
+		pointer-events: unset;
+		opacity: unset;
+		transform: unset;
 	}
 </style>
