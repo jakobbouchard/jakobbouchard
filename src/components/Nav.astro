@@ -164,6 +164,11 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
 			radial-gradient(var(--gray-900), var(--gray-800) 150%);
 	}
 
+	:global(.theme-dark) .menu-button[aria-expanded="true"] {
+		background: linear-gradient(180deg, transparent, var(--gray-600)),
+			radial-gradient(var(--gray-900), var(--gray-800) 150%);
+	}
+
 	.menu-button[hidden] {
 		display: none;
 	}

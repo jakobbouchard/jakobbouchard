@@ -1,25 +1,49 @@
 ---
+import CallToAction from "./CallToAction.astro";
+
 interface Props {
 	title: string;
 	tagline?: string;
 	align?: "start" | "center";
+	ctaLink?: string;
 }
 
-const { align = "center", tagline, title } = Astro.props;
+const { align = "center", tagline, title, ctaLink } = Astro.props;
 ---
 
 <header class:list={["hero stack gap-4", align]}>
-	<div class="stack gap-2">
-		<h1 class="title">{title}</h1>
-		{tagline && <p class="tagline">{tagline}</p>}
+	<div class="info">
+		<div class="stack gap-2">
+			<h1 class="title">{title}</h1>
+			{tagline && <p class="tagline" set:html={tagline} />}
+		</div>
+		{
+			ctaLink && (
+				<div class="cta">
+					<CallToAction external href={ctaLink}>
+						View project
+					</CallToAction>
+				</div>
+			)
+		}
 	</div>
 	<slot />
+	{
+		ctaLink && (
+			<div class="cta">
+				<CallToAction external href={ctaLink}>
+					View project
+				</CallToAction>
+			</div>
+		)
+	}
 </header>
 
 <style>
 	.hero {
 		font-size: var(--text-lg);
 		text-align: center;
+		align-items: center;
 	}
 
 	.title,
@@ -33,9 +57,25 @@ const { align = "center", tagline, title } = Astro.props;
 		color: var(--gray-0);
 	}
 
+	.tagline :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.tagline :global(a:hover),
+	.tagline :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	.stack + .cta {
+		display: none;
+	}
+
 	@media (min-width: 50em) {
 		.hero {
 			font-size: var(--text-xl);
+			align-items: unset;
 		}
 
 		.start {
@@ -47,8 +87,23 @@ const { align = "center", tagline, title } = Astro.props;
 			margin-inline: unset;
 		}
 
+		.info {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+		}
+
 		.title {
 			font-size: var(--text-5xl);
+		}
+
+		.stack + .cta {
+			display: unset;
+		}
+
+		.hero > .cta {
+			display: none;
 		}
 	}
 </style>

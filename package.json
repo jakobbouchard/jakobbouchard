@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "^1.2.1",
+		"@astrojs/vercel": "^3.2.1",
 		"@fontsource/atkinson-hyperlegible": "^4.5.11",
 		"@fontsource/source-serif-pro": "^4.5.9",
 		"astro": "^2.1.3",

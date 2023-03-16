@@ -137,11 +137,18 @@ body {
 }
 
 body {
+	scroll-behavior: smooth;
 	background-color: var(--gray-999);
 	color: var(--gray-200);
 	font-family: var(--font-body);
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body {
+		scroll-behavior: auto;
+	}
 }
 
 *,
