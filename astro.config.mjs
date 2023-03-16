@@ -6,8 +6,8 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
 	site: "https://jakobbouchard.dev",
 	assets: "_app",
-	output: "server",
-	adapter: vercel(),
+	// output: "server",
+	// adapter: vercel(),
 	experimental: {
 		assets: true,
 	},
