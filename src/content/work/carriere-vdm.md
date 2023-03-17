@@ -1,12 +1,12 @@
 ---
 featured: true
-title: Val-des-Bois
+title: Carrière VDM
 description: |
-  The municipality of Val-des-Bois needed a new, modern website to replace their old custom PHP-based website.
-publishDate: 2021-07-01 00:00:00
+  Carrière VDM underwent a full rebranding and name change and needed a website to match their new identity.
+publishDate: 2021-08-15 00:00:00
 attribution: Created as Web Developer at <a href="https://distantia.ca">Distantia</a>
-url: https://val-des-bois.ca/
-img: val-des-bois.png
+url: https://carrierevdm.com/
+img: la-rotonde.png
 tags:
   - Web
   - Dev
@@ -22,7 +22,7 @@ Blibla
 - Figma, to get design tokens
 - WordPress
   - In-house theme
+  - Custom weight calculator
   - ACF Pro
-  - Owl Carousel
   - JS Composer
-  - Google Maps
+  - Owl Carousel
