@@ -49,7 +49,7 @@ import Icon from "./Icon.astro";
 		border-radius: 999rem;
 		border: 1px var(--gray-700) solid;
 		padding: 0.5rem;
-		font-size: 1.5rem;
+		font-size: var(--text-2xl);
 		color: var(--gray-300);
 		background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
 		box-shadow: var(--shadow-md);
@@ -74,5 +74,12 @@ import Icon from "./Icon.astro";
 		pointer-events: unset;
 		opacity: unset;
 		transform: unset;
+	}
+
+	@media (min-width: 50em) {
+		back-to-top {
+			right: 4rem;
+			bottom: 4rem;
+		}
 	}
 </style>
