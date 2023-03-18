@@ -4,8 +4,8 @@ import ThemeToggle from "@components/ThemeToggle.astro";
 
 const mainMenuItems: { label: string; href: string }[] = [
 	{ label: "Home", href: "/" },
-	{ label: "Work", href: "/work/" },
-	{ label: "About me", href: "/about/" },
+	{ label: "Work", href: "/work" },
+	{ label: "About me", href: "/about" },
 ];
 
 const socialMedias: {
@@ -93,7 +93,11 @@ const socialMedias: {
 				mainMenuItems.map(({ label, href }) => (
 					<li>
 						<a
-							aria-current={Astro.url.pathname === href ? "page" : false}
+							aria-current={
+								Astro.url.pathname === href || Astro.url.pathname === `${href}/`
+									? "page"
+									: false
+							}
 							class:list={[
 								"link",
 								{
@@ -168,6 +172,10 @@ const socialMedias: {
 		box-shadow: var(--shadow-md);
 	}
 
+	:global(.no-js) .menu-button {
+		display: none;
+	}
+
 	.menu-button[aria-expanded="true"] {
 		color: var(--gray-0);
 		background: linear-gradient(180deg, var(--gray-600), transparent),
@@ -205,6 +213,7 @@ const socialMedias: {
 		display: none;
 	}
 
+	:global(.no-js) .main-menu,
 	.menu-header.menu-open ~ .main-menu {
 		display: block;
 	}
@@ -232,6 +241,7 @@ const socialMedias: {
 		box-shadow: var(--shadow-lg);
 	}
 
+	:global(.no-js) .menu-footer,
 	.menu-header.menu-open ~ .menu-footer {
 		display: flex;
 	}
