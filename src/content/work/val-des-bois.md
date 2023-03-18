@@ -1,5 +1,4 @@
 ---
-featured: true
 title: Val-des-Bois
 description: |
   The municipality of Val-des-Bois needed a new, modern website to replace their old custom PHP-based website.

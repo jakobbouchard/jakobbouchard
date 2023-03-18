@@ -1,15 +1,17 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import { iconPaths } from "./IconPaths";
+
+import { iconPaths } from "@components/IconPaths";
 
 export interface Props {
 	icon: keyof typeof iconPaths;
 	color?: string;
 	gradient?: boolean;
 	size?: string;
+	title?: string;
 }
 
-const { color = "currentcolor", gradient, icon, size } = Astro.props;
+const { color = "currentcolor", gradient, icon, size, title } = Astro.props;
 const iconPath = iconPaths[icon];
 
 const attrs: HTMLAttributes<"svg"> = {};
@@ -29,6 +31,7 @@ const gradientId =
 	fill={gradient ? `url(#${gradientId})` : color}
 	{...attrs}
 >
+	{title && <title>{title}</title>}
 	<g set:html={iconPath} />
 	{
 		gradient && (

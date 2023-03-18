@@ -1,5 +1,5 @@
 ---
-import CallToAction from "./CallToAction.astro";
+import CallToAction from "@components/CallToAction.astro";
 
 interface Props {
 	title: string;
@@ -11,7 +11,7 @@ interface Props {
 const { align = "center", tagline, title, ctaLink } = Astro.props;
 ---
 
-<header class:list={["hero stack gap-4", align]}>
+<div class:list={["hero stack gap-4", align]}>
 	<div class:list={[{ info: Boolean(ctaLink) }]}>
 		<div class="stack gap-2">
 			<h1 class="title">{title}</h1>
@@ -37,7 +37,7 @@ const { align = "center", tagline, title, ctaLink } = Astro.props;
 			</div>
 		)
 	}
-</header>
+</div>
 
 <style>
 	.hero {

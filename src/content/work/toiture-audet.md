@@ -1,5 +1,4 @@
 ---
-featured: true
 title: Toiture Audet
 description: |
   A roofing company came to us in 2021 to create a brand new website, with modern looks and features.

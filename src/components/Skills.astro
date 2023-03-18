@@ -1,8 +1,8 @@
 ---
-import Icon from "./Icon.astro";
+import Icon from "@components/Icon.astro";
 ---
 
-<section class="box skills">
+<div class="skills">
 	<div class="stack gap-2 lg:gap-4">
 		<Icon
 			icon="terminal-window"
@@ -10,14 +10,14 @@ import Icon from "./Icon.astro";
 			size="2.5rem"
 			gradient
 		/>
-		<h2>Full Stack</h2>
+		<p class="title">Full Stack</p>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 		</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Industry Leader</h2>
+		<p class="title">Industry Leader</p>
 		<p>
 			Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor
 			elit.
@@ -30,13 +30,16 @@ import Icon from "./Icon.astro";
 			size="2.5rem"
 			gradient
 		/>
-		<h2>Strategy-Minded</h2>
+		<p class="title">Strategy-Minded</p>
 		<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
 	</div>
-</section>
+</div>
 
 <style>
-	.box {
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
 		padding: 1.5rem;
@@ -44,14 +47,12 @@ import Icon from "./Icon.astro";
 		box-shadow: var(--shadow-sm);
 	}
 
-	.skills {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-	}
-
-	.skills h2 {
+	.skills .title {
 		font-size: var(--text-lg);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		line-height: 1.1;
+		color: var(--gray-100);
 	}
 
 	.skills p {
@@ -59,18 +60,15 @@ import Icon from "./Icon.astro";
 	}
 
 	@media (min-width: 50em) {
-		.box {
-			border-radius: 1.5rem;
-			padding: 2.5rem;
-		}
-
 		.skills {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 5rem;
+			border-radius: 1.5rem;
+			padding: 2.5rem;
 		}
 
-		.skills h2 {
+		.skills .title {
 			font-size: var(--text-2xl);
 		}
 	}

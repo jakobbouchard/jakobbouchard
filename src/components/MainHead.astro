@@ -12,27 +12,31 @@ const {
 	title = "Jakob Bouchard – Game and Web Developer",
 	description = "The portfolio of Jakob Bouchard",
 } = Astro.props;
+
+// TODO: Better favicons + social images (generate them?)
 ---
 
-<meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
-<meta name="viewport" content="width=device-width" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+
 <title>{title}</title>
+<meta name="description" property="og:description" content={description} />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-<!-- <script
+<script
 	async
 	defer
-	src="https://umami.jakobbouchard.dev/umami.js"
+	src="https://umami.jakobbouchard.dev/sherlock.js"
 	data-website-id="e6d09bc6-f1fb-4d06-ac14-cd10147e8a41"
 	data-domains="jakobbouchard.dev"
 	data-do-not-track="true"
-></script> -->
+></script>
 
 <script is:inline>
-	// This code is inlined in the head to make dark mode instant & blocking.
+	document.documentElement.classList.replace("no-js", "js");
+
 	const getThemePreference = () => {
 		if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
 			return localStorage.getItem("theme");
@@ -42,10 +46,9 @@ const {
 			: "light";
 	};
 	const isDark = getThemePreference() === "dark";
-	document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
+	document.documentElement.classList.toggle("theme-dark", isDark);
 
 	if (typeof localStorage !== "undefined") {
-		// Watch the document element and persist user preference when it changes.
 		const observer = new MutationObserver(() => {
 			const isDark = document.documentElement.classList.contains("theme-dark");
 			localStorage.setItem("theme", isDark ? "dark" : "light");

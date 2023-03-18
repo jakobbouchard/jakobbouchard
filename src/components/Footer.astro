@@ -2,16 +2,18 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer>
+<footer role="contentinfo">
 	<div class="group">
 		<p>&copy; {currentYear} Jakob Bouchard</p>
 	</div>
-	<p class="socials">
-		<a href="/privacy"> Privacy</a>
-		<a href="https://ko-fi.com/jakobbouchard"> Ko-fi</a>
-		<a rel="me" href="https://fosstodon.org/@jakobbouchard"> Mastodon</a>
-	</p>
+	<nav role="navigation" aria-label="Footer">
+		<h2 id="footer-nav-title" class="sr-only">Footer navigation</h2>
+		<ul aria-describedby="footer-nav-title">
+			<li><a href="/privacy">Privacy</a></li>
+		</ul>
+	</nav>
 </footer>
+
 <style>
 	footer {
 		display: flex;
@@ -42,11 +44,13 @@ const currentYear = new Date().getFullYear();
 		gap: 0.5rem;
 	}
 
-	.socials {
+	nav ul {
 		display: flex;
 		justify-content: center;
 		gap: 1rem;
 		flex-wrap: wrap;
+		padding-left: 0;
+		list-style: none;
 	}
 
 	@media (min-width: 50em) {
@@ -62,7 +66,7 @@ const currentYear = new Date().getFullYear();
 			flex-wrap: wrap;
 		}
 
-		.socials {
+		nav ul {
 			justify-content: flex-end;
 		}
 	}

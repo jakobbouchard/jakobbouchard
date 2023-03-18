@@ -1,5 +1,4 @@
 ---
-featured: true
 title: Carrière VDM
 description: |
   Carrière VDM underwent a full rebranding and name change and needed a website to match their new identity.

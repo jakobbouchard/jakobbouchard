@@ -5,53 +5,54 @@ import Hero from "@components/Hero.astro";
 ---
 
 <BaseLayout title="Privacy – Jakob Bouchard">
-	<div class="stack gap-20">
-		<main class="wrapper privacy">
+	<div class="privacy wrapper stack gap-20">
+		<header>
 			<Hero title="Privacy" />
+		</header>
 
-			<section>
-				<h2 class="section-title">Analytics</h2>
-				<div class="content">
-					<p>
-						I use an open-source, privacy-respecting, analytics tool called
-						umami to monitor my site’s visits. It doesn’t use trackers or
-						cookies, so it’s not able to personally identify visitors, unlike
-						Google Analytics. Plus, I can self-host it, which I like. My umami
-						instance is hosted on Fly.io.
-					</p>
-					<p>
-						You can see <a
-							href="https://umami.jakobbouchard.dev/share/wLP1SE57/jakobbouchard.dev"
-							data-type="URL"
-							target="_blank"
-							rel="noreferrer noopener">this website’s stats here</a
-						> — it’s literally my dashboard. I can see what pages are popular and
-						where visitors come from. I don’t need anything more. Google Analytics
-						has wayyy too much stuff for me.
-					</p>
-					<p>
-						If you want to know more about umami, <a
-							href="https://umami.is/"
-							target="_blank"
-							rel="noreferrer noopener">here is their website</a
-						>, and <a
-							href="https://github.com/umami-software/umami"
-							target="_blank"
-							rel="noreferrer noopener">here is their repo</a
-						>.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Cookies</h2>
-				<div class="content">
-					<p>
-						While I think cookies taste amazing — especially PC’s The Decadent
-						cookies — I don’t want them on my website.
-					</p>
-				</div>
-			</section>
-		</main>
+		<section>
+			<h2 class="section-title">Analytics</h2>
+			<div class="content">
+				<p>
+					I use an open-source, privacy-respecting, analytics tool called umami
+					to monitor my site’s visits. It doesn’t use trackers or cookies, so
+					it’s not able to personally identify visitors, unlike Google
+					Analytics. Plus, I can self-host it, which I like. My umami instance
+					is hosted on Fly.io.
+				</p>
+				<p>
+					You can see <a
+						href="https://umami.jakobbouchard.dev/share/wLP1SE57/jakobbouchard.dev"
+						data-type="URL"
+						target="_blank"
+						rel="noreferrer noopener">this website’s stats here</a
+					> — it’s literally my dashboard. I can see what pages are popular and where
+					visitors come from. I don’t need anything more. Google Analytics has wayyy
+					too much stuff for me.
+				</p>
+				<p>
+					If you want to know more about umami, <a
+						href="https://umami.is/"
+						target="_blank"
+						rel="noreferrer noopener">here is their website</a
+					>, and <a
+						href="https://github.com/umami-software/umami"
+						target="_blank"
+						rel="noreferrer noopener">here is their repo</a
+					>.
+				</p>
+			</div>
+		</section>
+
+		<section>
+			<h2 class="section-title">Cookies</h2>
+			<div class="content">
+				<p>
+					While I think cookies taste amazing — especially PC’s The Decadent
+					cookies — I don’t want them on my website.
+				</p>
+			</div>
+		</section>
 	</div>
 </BaseLayout>
 

@@ -1,10 +1,9 @@
 ---
-import MainHead from "@components/MainHead.astro";
-import Nav from "@components/Nav.astro";
-import Footer from "@components/Footer.astro";
 import BackToTop from "@components/BackToTop.astro";
-
-// Todo: Use Astro assets to optimize the backgrounds
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import MainHead from "@components/MainHead.astro";
+import SkipToContent from "@components/SkipToContent.astro";
 
 interface Props {
 	title?: string | undefined;
@@ -14,23 +13,17 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="no-js">
 	<head>
 		<MainHead title={title} description={description} />
 	</head>
 	<body>
-		<div class="stack" id="top">
-			<Nav />
+		<SkipToContent />
+		<Header />
+		<main role="main" id="content">
 			<slot />
-			<Footer />
-			<BackToTop />
-		</div>
-
-		<script>
-			// Add “loaded” class once the document has completely loaded.
-			addEventListener("load", () =>
-				document.documentElement.classList.add("loaded")
-			);
-		</script>
+		</main>
+		<BackToTop />
+		<Footer />
 	</body>
 </html>

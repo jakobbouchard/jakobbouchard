@@ -1,5 +1,4 @@
 ---
-featured: true
 title: Vaccine Injury Support Program
 description: |
   RCGT mandated us with the creation of a website for their Vaccine Injury Support Program.

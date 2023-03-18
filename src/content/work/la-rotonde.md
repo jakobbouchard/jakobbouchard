@@ -1,5 +1,4 @@
 ---
-featured: true
 title: La Rotonde
 description: |
   We developed a new custom WordPress-based website for the oldest French-language student newspaper outside of Québec.

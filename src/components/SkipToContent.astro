@@ -1,0 +1,41 @@
+<a href="#content" class="skip-link sr-only" id="skip-navigation-link">Skip to content</a>
+
+<style>
+	.skip-link {
+		border: 0;
+		clip: rect(1px, 1px, 1px, 1px);
+		clip-path: inset(50%);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute !important;
+		width: 1px;
+		word-wrap: normal !important;
+	}
+
+	.skip-link:focus {
+		background-color: var(--gray-999);
+		border-radius: .25rem;
+		box-shadow: var(--shadow-sm);
+		clip: auto !important;
+		clip-path: none;
+		color: var(--gray-200);
+		display: block;
+		font-size: 0.875rem;
+		font-weight: 700;
+		height: auto;
+		left: 1rem;
+		line-height: normal;
+		padding: 1rem 1.5rem 1rem;
+		text-decoration: none;
+		top: 1rem;
+		width: auto;
+		z-index: 100000;
+	}
+
+	/* Do not show the outline on the skip link target. */
+	#content[tabindex="-1"]:focus {
+		outline: 0;
+	}
+</style>

@@ -1,14 +1,16 @@
 ---
 interface Props {
 	href: string;
-	external: boolean;
+	external?: boolean;
 }
 
 const { href, external } = Astro.props;
 ---
 
-<a href={href} rel={external && "noreferrer"} target={external && "_blank"}
-	><slot /></a
+<a
+	href={href}
+	rel={external && "external noreferrer"}
+	target={external && "_blank"}><slot /></a
 >
 
 <style>

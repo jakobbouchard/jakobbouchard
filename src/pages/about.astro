@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 import ContactCTA from "@components/ContactCTA.astro";
+
 import Hero from "@components/Hero.astro";
 
 import atWork from "@assets/at-work.jpg";
@@ -14,13 +15,15 @@ import atWork from "@assets/at-work.jpg";
 	description="About Jakob Bouchard Lorem Ipsum"
 >
 	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About me"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
-			>
-				<Image src={atWork} alt="Jakob Bouchard at work with a colleague" />
-			</Hero>
+		<div class="wrapper about">
+			<header>
+				<Hero
+					title="About me"
+					tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+				>
+					<Image src={atWork} alt="Jakob Bouchard at work with a colleague" />
+				</Hero>
+			</header>
 
 			<section>
 				<h2 class="section-title">Background</h2>
@@ -49,19 +52,21 @@ import atWork from "@assets/at-work.jpg";
 					</p>
 				</div>
 			</section>
+
 			<section>
 				<h2 class="section-title">Education</h2>
 				<div class="content">
 					<p>Corporis voluptates tenetur laudantium.</p>
 				</div>
 			</section>
+
 			<section>
 				<h2 class="section-title">Skills</h2>
 				<div class="content">
 					<p>officia unde omnis</p>
 				</div>
 			</section>
-		</main>
+		</div>
 
 		<ContactCTA />
 	</div>

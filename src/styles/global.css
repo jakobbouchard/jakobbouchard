@@ -127,25 +127,18 @@
 		0px 4px 9px rgba(255, 255, 255, 0.12);
 }
 
-html,
-body {
-	height: 100%;
-	overflow-x: hidden;
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
 }
 
 body {
-	scroll-behavior: smooth;
 	background-color: var(--gray-999);
 	color: var(--gray-200);
 	font-family: var(--font-body);
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.5;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	body {
-		scroll-behavior: auto;
-	}
 }
 
 *,
@@ -169,9 +162,9 @@ h2,
 h3,
 h4,
 h5 {
-	line-height: 1.1;
 	font-family: var(--font-brand);
 	font-weight: 600;
+	line-height: 1.1;
 	color: var(--gray-100);
 }
 
