@@ -2,7 +2,7 @@
 	"name": "@example/portfolio",
 	"type": "module",
 	"version": "0.0.1",
-	"packageManager": "pnpm@7.30.3",
+	"packageManager": "pnpm@7.30.5",
 	"private": true,
 	"scripts": {
 		"dev": "astro dev",
