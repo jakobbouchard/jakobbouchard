@@ -6,7 +6,7 @@
 	"outputDirectory": "dist",
 	"redirects": [
 		{
-			"source": "/blog",
+			"source": "/(blog\\/?.*)",
 			"destination": "https://jakob.bearblog.dev/"
 		},
 		{
