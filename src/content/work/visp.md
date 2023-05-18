@@ -5,7 +5,7 @@ description: |
 publishDate: 2021-07-12 00:00:00
 attribution: Created as Web Developer at <a href="https://distantia.ca">Distantia</a>
 url: https://vaccineinjurysupport.ca/
-img: visp.png
+img: ./visp.png
 tags:
   - Web
   - Dev

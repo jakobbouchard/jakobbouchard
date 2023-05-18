@@ -5,7 +5,7 @@ description: |
 publishDate: 2021-09-15 00:00:00
 attribution: Created as Web Developer at <a href="https://distantia.ca">Distantia</a>
 url: https://www.larotonde.ca
-img: la-rotonde.png
+img: ./la-rotonde.png
 tags:
   - Web
   - Dev

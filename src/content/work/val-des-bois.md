@@ -5,7 +5,7 @@ description: |
 publishDate: 2021-07-01 00:00:00
 attribution: Created as Web Developer at <a href="https://distantia.ca">Distantia</a>
 url: https://val-des-bois.ca/
-img: val-des-bois.png
+img: ./val-des-bois.png
 tags:
   - Web
   - Dev
