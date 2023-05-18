@@ -30,8 +30,8 @@ const { Content } = await entry.render();
 	title={`${entry.data.title} – Jakob Bouchard `}
 	description={entry.data.description}
 >
-	<div class="stack gap-20">
-		<article class="stack gap-15">
+	<div class="stack gap-15 lg:gap-20">
+		<article class="stack gap-10 lg:gap-15">
 			<header>
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
@@ -52,7 +52,7 @@ const { Content } = await entry.render();
 			</header>
 
 			<section class="wrapper">
-				<div class="stack gap-10 content">
+				<div class="stack gap-2 lg:gap-10 content">
 					{
 						entry.data.img && (
 							<Image

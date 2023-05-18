@@ -1,5 +1,5 @@
 ---
-title: Splatoon-inspired splash mechanic
+title: Splatoon-style mechanic
 description: I was in charge of recreating Splatoon’s ink mechanic for a project.
 publishDate: 2023-04-28 00:00:00
 attribution: Created as game dev student at <a href="https://uqat.ca">UQAT</a>
