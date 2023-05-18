@@ -6,6 +6,10 @@
 	"outputDirectory": "dist",
 	"redirects": [
 		{
+			"source": "/blog",
+			"destination": "https://jakob.bearblog.dev/"
+		},
+		{
 			"source": "/blog/:slug",
 			"destination": "https://jakob.bearblog.dev/:slug"
 		}
