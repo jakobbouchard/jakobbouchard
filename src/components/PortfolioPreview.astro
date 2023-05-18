@@ -13,7 +13,16 @@ const { data, slug } = Astro.props.project;
 
 <a class="card" href={`/work/${slug}`}>
 	<span class="title">{data.title}</span>
-	{data.img && <Image src={data.img} alt={data.imgAlt || ""} />}
+	{
+		data.img && (
+			<Image
+				src={data.img.src}
+				width={data.img.width}
+				height={data.img.height}
+				alt={data.imgAlt || ""}
+			/>
+		)
+	}
 	<Pill>{data.tags[0]}</Pill>
 </a>
 

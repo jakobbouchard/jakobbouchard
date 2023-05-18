@@ -40,7 +40,9 @@ const projects = (await getCollection("work"))
 				</Hero>
 
 				<Image
-					src={portrait}
+					src={portrait.src}
+					width={portrait.width}
+					height={portrait.height}
 					alt="Jakob Bouchard smiling in a pink shirt and golden glasses"
 				/>
 			</header>
