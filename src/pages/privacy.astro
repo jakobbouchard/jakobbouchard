@@ -5,8 +5,8 @@ import Hero from "@components/Hero.astro";
 ---
 
 <BaseLayout title="Privacy – Jakob Bouchard">
-	<div class="stack gap-20">
-		<div class="wrapper privacy">
+	<div class="stack gap-15 lg:gap-20">
+		<div class="wrapper privacy gap-10 lg:gap-15">
 			<header>
 				<Hero title="Privacy" />
 			</header>
@@ -50,7 +50,6 @@ import Hero from "@components/Hero.astro";
 	.privacy {
 		display: flex;
 		flex-direction: column;
-		gap: 3.5rem;
 		padding-bottom: 3.5rem;
 	}
 
@@ -62,8 +61,9 @@ import Hero from "@components/Hero.astro";
 	}
 
 	.section-title {
+		margin-bottom: 0.5em;
 		grid-column-start: 1;
-		font-size: var(--text-xl);
+		font-size: var(--text-2xl);
 		color: var(--gray-0);
 	}
 
