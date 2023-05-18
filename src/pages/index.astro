@@ -27,14 +27,21 @@ const projects = (await getCollection("work"))
 			<header>
 				<Hero
 					title="Hello, my name is Jakob Bouchard"
-					tagline="I am a developer who is currently based in Montréal, Québec."
+					tagline="I am a developer currently based in Montréal, Québec."
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="cat" size="1.33em" /> Cat lover</Pill>
 						<Pill>
-							<Icon icon="coffee" size="1.33em" /> Coffee & tea enjoyer
+							<Icon icon="code" size="1.33em" />
+							Developer
+						</Pill>
+						<Pill>
+							<Icon icon="cat" size="1.33em" />
+							Cat lover
+						</Pill>
+						<Pill>
+							<Icon icon="coffee" size="1.33em" />
+							Coffee enjoyer
 						</Pill>
 					</div>
 				</Hero>
@@ -52,11 +59,8 @@ const projects = (await getCollection("work"))
 
 		<section class="wrapper section with-cta">
 			<header class="section-header stack gap-2 lg:gap-4">
-				<h2>Selected Work</h2>
-				<p>
-					Take a look below at some of my featured work for clients from the
-					past few years.
-				</p>
+				<h2>Selected projects</h2>
+				<p>Take a look below at some of my projects from the past few years.</p>
 			</header>
 
 			<div class="gallery">
@@ -79,7 +83,7 @@ const projects = (await getCollection("work"))
 			</div>
 		</section>
 
-		<section class="wrapper section">
+		<!-- <section class="wrapper section">
 			<header class="section-header stack gap-2 lg:gap-4">
 				<h2>Mentions</h2>
 				<p>
@@ -105,7 +109,7 @@ const projects = (await getCollection("work"))
 					}
 				</Grid>
 			</div>
-		</section>
+		</section> -->
 
 		<ContactCTA />
 	</div>
@@ -122,7 +126,6 @@ const projects = (await getCollection("work"))
 	.hero > header img {
 		aspect-ratio: 5 / 4;
 		object-fit: cover;
-		object-position: top left;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
 	}
@@ -188,7 +191,7 @@ const projects = (await getCollection("work"))
 		}
 
 		.section-header h2 {
-			font-size: var(--text-4xl);
+			font-size: var(--text-3xl);
 		}
 
 		.with-cta .section-header {
@@ -202,6 +205,12 @@ const projects = (await getCollection("work"))
 
 		.cta {
 			grid-area: cta;
+		}
+	}
+
+	@media (min-width: 75em) {
+		.section-header h2 {
+			font-size: var(--text-4xl);
 		}
 	}
 

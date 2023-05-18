@@ -10,17 +10,23 @@ import Icon from "@components/Icon.astro";
 			size="2.5rem"
 			gradient
 		/>
-		<p class="title">Full Stack</p>
+		<p class="title">Full stack</p>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+			I’m able to develop both back-end and front-end features, as well as game
+			design aspects.
 		</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<p class="title">Industry Leader</p>
+		<Icon
+			icon="puzzle-piece"
+			color="var(--accent-regular)"
+			size="2.5rem"
+			gradient
+		/>
+		<p class="title">Problem solver</p>
 		<p>
-			Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor
-			elit.
+			I analyze complex problems critically and do my best to identify effective
+			and efficient solutions.
 		</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
@@ -30,8 +36,11 @@ import Icon from "@components/Icon.astro";
 			size="2.5rem"
 			gradient
 		/>
-		<p class="title">Strategy-Minded</p>
-		<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
+		<p class="title">Technology explorer</p>
+		<p>
+			I’m always on the lookout for new technologies and eager to learn new
+			things.
+		</p>
 	</div>
 </div>
 
@@ -39,7 +48,7 @@ import Icon from "@components/Icon.astro";
 	.skills {
 		display: flex;
 		flex-direction: column;
-		gap: 3rem;
+		gap: 1.5rem;
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
 		padding: 1.5rem;
@@ -47,7 +56,7 @@ import Icon from "@components/Icon.astro";
 		box-shadow: var(--shadow-sm);
 	}
 
-	:global(html.theme-dark) .skills {
+	:global(.theme-dark) .skills {
 		background-color: var(--gray-999_40);
 	}
 
@@ -67,9 +76,19 @@ import Icon from "@components/Icon.astro";
 		.skills {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			gap: 5rem;
+			gap: 3rem;
 			border-radius: 1.5rem;
 			padding: 2.5rem;
+		}
+
+		.skills .title {
+			font-size: var(--text-xl);
+		}
+	}
+
+	@media (min-width: 75em) {
+		.skills {
+			gap: 5rem;
 		}
 
 		.skills .title {

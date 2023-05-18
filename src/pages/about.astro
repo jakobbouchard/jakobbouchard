@@ -34,43 +34,33 @@ import atWork from "@assets/at-work.jpg";
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a>
-						makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum
-						vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra
-						diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus
-						in ornare.
+						I'm currently in my final year at UQAT, studying video game
+						development. Before coming to Montréal, I completed a program in
+						multimedia integration at Cégep de l’Outaouais, which sparked my
+						passion for the game industry.
 					</p>
 					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget
-						gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat
-						pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh
-						venenatis cras sed felis eget velit. Id diam vel quam elementum
-						pulvinar etiam non.
+						Aside from my studies, I work as a web developer, always exploring
+						new technologies and taking on challenging projects to push my
+						limits. In the long run, I hope to start a cooperative studio with
+						some friends, where we can create innovative games together and
+						cultivate a supportive work environment.
 					</p>
 					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut
-						sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor
-						posuere ac ut consequat semper viverra. Viverra accumsan in nisl
-						nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
+						When I'm not focused on my studies or work, I love gaming, exploring
+						the vibrant city of Montréal, and trying out different food spots.
+						Music and pop culture also excite me, and I'm constantly on the
+						lookout for emerging artists and binge-worthy TV series.
 					</p>
 				</div>
 			</section>
 
-			<section>
-				<h2 class="section-title">Education</h2>
+			<!-- <section>
+				<h2 class="section-title">Skills & expertise</h2>
 				<div class="content">
 					<p>Corporis voluptates tenetur laudantium.</p>
 				</div>
-			</section>
-
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>officia unde omnis</p>
-				</div>
-			</section>
+			</section> -->
 		</div>
 
 		<ContactCTA />
@@ -110,6 +100,10 @@ import atWork from "@assets/at-work.jpg";
 		grid-column: 2 / 4;
 	}
 
+	.content :global(p + p) {
+		margin-top: 1em;
+	}
+
 	.content :global(a) {
 		text-decoration: 1px solid underline transparent;
 		text-underline-offset: 0.25em;
@@ -124,7 +118,8 @@ import atWork from "@assets/at-work.jpg";
 	@media (min-width: 50em) {
 		.about {
 			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
+			grid-template-columns: 1fr 55% 1fr;
+			gap: 2.5rem;
 		}
 
 		.about > :global(:first-child) {
@@ -134,6 +129,13 @@ import atWork from "@assets/at-work.jpg";
 		section {
 			display: contents;
 			font-size: var(--text-lg);
+		}
+	}
+
+	@media (min-width: 62em) {
+		.about {
+			grid-template-columns: 1fr 60% 1fr;
+			gap: 3.5rem;
 		}
 	}
 </style>

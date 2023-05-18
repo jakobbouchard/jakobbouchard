@@ -85,22 +85,7 @@ const { Content } = await entry.render();
 	}
 
 	.details {
-		display: flex;
-		flex-direction: column;
-		padding: 0.5rem;
-		gap: 1.5rem;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.tags {
-		display: flex;
-		gap: 0.5rem;
-	}
-
-	.description {
-		font-size: var(--text-lg);
-		max-width: 54ch;
+		display: none;
 	}
 
 	.content {
@@ -119,6 +104,14 @@ const { Content } = await entry.render();
 	.content :global(h4),
 	.content :global(h5) {
 		margin: 1.5rem 0;
+	}
+
+	.content :global(h2) {
+		font-size: var(--text-2xl);
+	}
+
+	.content :global(h3) {
+		font-size: var(--text-xl);
 	}
 
 	.content :global(img) {
@@ -159,12 +152,44 @@ const { Content } = await entry.render();
 		}
 
 		.details {
-			flex-direction: row;
 			gap: 2.5rem;
 			align-items: flex-start;
 		}
 
+		.details {
+			display: flex;
+			flex-direction: row;
+			padding: 0.5rem;
+			gap: 1.5rem;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.tags {
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		.description {
+			font-size: var(--text-md);
+			max-width: 54ch;
+		}
+
 		.content :global(blockquote) {
+			font-size: var(--text-2xl);
+		}
+	}
+
+	@media (min-width: 62em) {
+		.description {
+			font-size: var(--text-lg);
+		}
+
+		.content :global(h2) {
+			font-size: var(--text-3xl);
+		}
+
+		.content :global(h3) {
 			font-size: var(--text-2xl);
 		}
 	}

@@ -143,7 +143,7 @@ body {
 	line-height: 1.5;
 }
 
-html.theme-dark body {
+.theme-dark body {
 	background-color: var(--gray-900);
 }
 

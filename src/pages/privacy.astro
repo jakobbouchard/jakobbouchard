@@ -5,27 +5,44 @@ import Hero from "@components/Hero.astro";
 ---
 
 <BaseLayout title="Privacy – Jakob Bouchard">
-	<div class="privacy wrapper stack gap-20">
-		<header>
-			<Hero title="Privacy" />
-		</header>
-
-		<section>
-			<h2 class="section-title">Analytics</h2>
-			<div class="content">
-				<p>I am not using any analytics software as of now.</p>
-			</div>
-		</section>
-
-		<section>
-			<h2 class="section-title">Cookies</h2>
-			<div class="content">
-				<p>
-					While I think cookies taste amazing — especially PC’s The Decadent
-					cookies — I don’t want them on my website.
-				</p>
-			</div>
-		</section>
+	<div class="stack gap-20">
+		<div class="wrapper privacy">
+			<header>
+				<Hero title="Privacy" />
+			</header>
+			<section>
+				<h2 class="section-title">Analytics</h2>
+				<div class="content">
+					<p>
+						I am not using any analytics software as of now. However, I can
+						suggest both <a
+							href="https://usefathom.com/ref/XVD48R"
+							rel="external noreferrer"
+							target="_blank">Fathom</a
+						> (referral link), as well as <a
+							href="https://umami.is"
+							rel="external noreferrer"
+							target="_blank">Umami</a
+						>, if you are looking for privacy-oriented options.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Cookies</h2>
+				<div class="content">
+					<p>
+						While I really like eating cookies, I don’t want them on my website.
+						However, I am using <a
+							href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+							rel="external noreferrer"
+							target="_blank"
+						>
+							<code>localStorage</code>
+						</a> to store your theme preference.
+					</p>
+				</div>
+			</section>
+		</div>
 	</div>
 </BaseLayout>
 
@@ -82,6 +99,16 @@ import Hero from "@components/Hero.astro";
 		section {
 			display: contents;
 			font-size: var(--text-lg);
+		}
+
+		.section-title {
+			font-size: var(--text-xl);
+		}
+	}
+
+	@media (min-width: 62em) {
+		.section-title {
+			font-size: var(--text-2xl);
 		}
 	}
 </style>

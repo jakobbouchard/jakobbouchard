@@ -14,6 +14,11 @@ const socialMedias: {
 	icon: IconProps["icon"];
 }[] = [
 	{
+		title: "Instagram",
+		href: "https://instagram.com/jakobbouchard",
+		icon: "instagram-logo",
+	},
+	{
 		title: "LinkedIn",
 		href: "https://linkedin.com/in/jakobbouchard",
 		icon: "linkedin-logo",
@@ -209,6 +214,10 @@ const socialMedias: {
 		border-bottom: 1px solid var(--gray-800);
 	}
 
+	:global(.theme-dark) .main-menu ul {
+		background-color: var(--gray-900);
+	}
+
 	.main-menu {
 		display: none;
 	}
@@ -239,6 +248,10 @@ const socialMedias: {
 		background-color: var(--gray-999);
 		border-radius: 0 0 0.75rem 0.75rem;
 		box-shadow: var(--shadow-lg);
+	}
+
+	:global(.theme-dark) .menu-footer {
+		background-color: var(--gray-900);
 	}
 
 	:global(.no-js) .menu-footer,
@@ -314,7 +327,7 @@ const socialMedias: {
 			box-shadow: var(--shadow-md);
 		}
 
-		:global(html.theme-dark) .main-menu ul {
+		:global(.theme-dark) .main-menu ul {
 			background: radial-gradient(var(--gray-800), var(--gray-900) 150%);
 		}
 
