@@ -13,7 +13,7 @@ tags:
 
 ## My role
 
-Because no server, needed static. So Sapper was chosen, SvelteKit wasn't viable at this point + didn't support IE.
+This project was for RCGT Consulting and the Government of Canada, which presented the constraint of not utilizing a server. Drawing from my personal experience with Svelte, I made the decision to adopt Sapper as a static site generator. This choice proved advantageous as it provided the necessary functionality while ensuring compatibility across various web browsers, including Internet Explorer. As a result, the project successfully utilized static files, meeting the client's requirements and delivering a robust solution through the implementation of Sapper. I want to note that [SvelteKit](https://kit.svelte.dev) was not an option at the time, as it was not production-ready and didn't support IE (and still doesn't).
 
 ### Technologies used
 
