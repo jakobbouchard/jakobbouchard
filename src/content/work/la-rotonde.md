@@ -18,15 +18,3 @@ I was in charge of programming the whole website, based on the design from our S
 The website has a "subscriber portal" where readers can create an account, save articles, and enable notifications for individual categories. Every morning, one email per category is sent out to subscribed readers, so they can always be up to date on the latest news that have been posted. I also integrated the [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) in supported browsers, so that the OS share sheet can be used for sharing, enhancing the user experience. For unsupported browsers, this gracefully falls back to a tooltip with some sharing options.
 
 The transfer of articles from the old website was a relatively easy task since their website was already using WordPress. This allowed article links that were shared before the redesign to still work correctly, without any complex redirection setup.
-
-### Technologies used
-
-- Figma, to get design tokens
-- WordPress
-  - In-house theme
-  - Subscriber portal with email notifications
-  - ACF Pro
-  - JS Composer
-  - Select2
-  - Mailchimp
-  - Web Share API
