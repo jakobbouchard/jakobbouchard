@@ -11,7 +11,7 @@ interface Props {
 const { data, slug } = Astro.props.project;
 ---
 
-<a class="card" href={`/work/${slug}`}>
+<a class:list={["card", { video: data.videoPreview }]} href={`/work/${slug}`}>
 	<span class="title">{data.title}</span>
 	{
 		data.img && (
@@ -21,6 +21,13 @@ const { data, slug } = Astro.props.project;
 				height={data.img.height}
 				alt={data.imgAlt || ""}
 			/>
+		)
+	}
+	{
+		data.videoPreview && (
+			<video autoplay loop>
+				<source src={data.videoPreview} type="video/mp4" />
+			</video>
 		)
 	}
 	<Pill>{data.tags[0]}</Pill>
@@ -65,7 +72,8 @@ const { data, slug } = Astro.props.project;
 		border-radius: 0.375rem;
 	}
 
-	img {
+	img,
+	video {
 		grid-area: 1 / 1 / 3 / 3;
 		width: 100%;
 		height: 100%;
@@ -73,8 +81,17 @@ const { data, slug } = Astro.props.project;
 		transition: filter 0.3s ease;
 	}
 
-	.card:hover img {
+	video {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.card:not(.video):hover img {
 		filter: blur(2px) grayscale(75%);
+	}
+
+	.card.video:hover video {
+		opacity: 1;
 	}
 
 	@media (min-width: 50em) {

@@ -54,13 +54,20 @@ const { Content } = await entry.render();
 			<section class="wrapper">
 				<div class="stack gap-2 lg:gap-10 content">
 					{
-						entry.data.img && (
+						entry.data.img && !entry.data.videoPreview && (
 							<Image
 								src={entry.data.img.src}
 								width={entry.data.img.width}
 								height={entry.data.img.height}
 								alt={entry.data.imgAlt || ""}
 							/>
+						)
+					}
+					{
+						entry.data.videoPreview && (
+							<video autoplay loop>
+								<source src={entry.data.videoPreview} type="video/mp4" />
+							</video>
 						)
 					}
 					<div class="content">
@@ -114,7 +121,9 @@ const { Content } = await entry.render();
 		font-size: var(--text-xl);
 	}
 
-	.content :global(img) {
+	.content :global(img),
+	.content :global(video),
+	.content :global(iframe) {
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
@@ -129,6 +138,12 @@ const { Content } = await entry.render();
 		padding-inline-start: 1.5rem;
 		border-inline-start: 0.25rem solid var(--accent-dark);
 		color: var(--gray-0);
+	}
+
+	.content :global(iframe) {
+		margin-top: 2rem;
+		width: 100%;
+		aspect-ratio: 16/9;
 	}
 
 	.back-link,
