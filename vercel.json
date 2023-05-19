@@ -4,16 +4,6 @@
 	"devCommand": "astro dev",
 	"buildCommand": "astro build",
 	"outputDirectory": "dist",
-	"redirects": [
-		{
-			"source": "/blog/:slug",
-			"destination": "https://jakob.bearblog.dev/:slug"
-		},
-		{
-			"source": "/(blog\\/?.*)",
-			"destination": "https://jakob.bearblog.dev/"
-		}
-	],
 	"github": {
 		"silent": true
 	}
