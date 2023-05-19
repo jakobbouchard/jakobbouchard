@@ -65,7 +65,7 @@ const { Content } = await entry.render();
 					}
 					{
 						entry.data.videoPreview && (
-							<video autoplay loop>
+							<video autoplay loop muted playsinline>
 								<source src={entry.data.videoPreview} type="video/mp4" />
 							</video>
 						)

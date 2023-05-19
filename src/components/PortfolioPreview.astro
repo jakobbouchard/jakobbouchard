@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { data, slug } = Astro.props.project;
+// Todo: lazy-load videos https://web.dev/lazy-loading-video/
 ---
 
 <a class:list={["card", { video: data.videoPreview }]} href={`/work/${slug}`}>
@@ -25,7 +26,7 @@ const { data, slug } = Astro.props.project;
 	}
 	{
 		data.videoPreview && (
-			<video autoplay loop>
+			<video autoplay loop muted playsinline>
 				<source src={data.videoPreview} type="video/mp4" />
 			</video>
 		)
