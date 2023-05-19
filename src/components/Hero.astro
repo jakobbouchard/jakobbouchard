@@ -9,6 +9,13 @@ interface Props {
 }
 
 const { align = "center", tagline, title, ctaLink } = Astro.props;
+
+function getCTAText() {
+	if (ctaLink.includes("itch.io")) {
+		return "Play on itch.io";
+	}
+	return "View project";
+}
 ---
 
 <div class:list={["hero stack gap-4", align]}>
@@ -21,7 +28,7 @@ const { align = "center", tagline, title, ctaLink } = Astro.props;
 			ctaLink && (
 				<div class="cta">
 					<CallToAction external href={ctaLink}>
-						View project
+						{getCTAText()}
 					</CallToAction>
 				</div>
 			)
@@ -32,7 +39,7 @@ const { align = "center", tagline, title, ctaLink } = Astro.props;
 		ctaLink && (
 			<div class="cta">
 				<CallToAction external href={ctaLink}>
-					View project
+					{getCTAText()}
 				</CallToAction>
 			</div>
 		)
