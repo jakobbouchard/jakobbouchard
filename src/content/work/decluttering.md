@@ -4,6 +4,7 @@ description: A small game about letting go and moving out.
 publishDate: 2023-05-14 18:00:00
 attribution: Created for <a href="https://itch.io/jam/go-godot-jam-4">GoGodotJam 4</a>
 url: https://jakobbouchard.itch.io/decluttering
+videoPreview: /decluttering.mp4
 img: ./decluttering.png
 tags:
   - Game jam
