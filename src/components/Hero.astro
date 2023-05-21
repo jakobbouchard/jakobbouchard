@@ -14,6 +14,9 @@ function getCTAText() {
 	if (ctaLink.includes("itch.io")) {
 		return "Play on itch.io";
 	}
+	if (ctaLink.includes("github.com")) {
+		return "View source code";
+	}
 	return "View project";
 }
 ---
