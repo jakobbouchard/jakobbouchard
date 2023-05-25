@@ -5,8 +5,8 @@ dependencies:
     specifier: ^1.3.1
     version: 1.3.1
   '@fontsource/atkinson-hyperlegible':
-    specifier: ^4.5.11
-    version: 4.5.11
+    specifier: ^5.0.0
+    version: 5.0.0
   '@fontsource/source-serif-pro':
     specifier: ^4.5.9
     version: 4.5.9
@@ -554,8 +554,8 @@ packages:
     dev: false
     optional: true
 
-  /@fontsource/atkinson-hyperlegible@4.5.11:
-    resolution: {integrity: sha512-ounnhVVjseNci+G0dGPBwUY7RYM2h8FsfyhzvpUnQYKeiuUcRtGahCswnrKPrvSXNRCl1uqnRSxP3ahJ4miYIQ==}
+  /@fontsource/atkinson-hyperlegible@5.0.0:
+    resolution: {integrity: sha512-c5iD8/ngdP99YBO/VbvvJqqC37rRYiKeHzm1kt8s+pCjQ3NRF3bQWvB/o2Ewze5CBJ2lmi1aFAMb1S5mqovsrw==}
     dev: false
 
   /@fontsource/source-serif-pro@4.5.9:
