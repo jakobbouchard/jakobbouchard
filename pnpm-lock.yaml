@@ -8,8 +8,8 @@ dependencies:
     specifier: ^5.0.0
     version: 5.0.0
   '@fontsource/source-serif-pro':
-    specifier: ^4.5.9
-    version: 4.5.9
+    specifier: ^5.0.0
+    version: 5.0.0
   astro:
     specifier: ^2.4.5
     version: 2.4.5(sharp@0.32.1)
@@ -558,8 +558,8 @@ packages:
     resolution: {integrity: sha512-c5iD8/ngdP99YBO/VbvvJqqC37rRYiKeHzm1kt8s+pCjQ3NRF3bQWvB/o2Ewze5CBJ2lmi1aFAMb1S5mqovsrw==}
     dev: false
 
-  /@fontsource/source-serif-pro@4.5.9:
-    resolution: {integrity: sha512-VgDvUvd3An3v9HtKgYk9TJuhB/4ZXw4huv/uqTXO4gES7CUbqGcf6tSb69TwG6o5AZzEVt6jnN7FN18OaO5J9A==}
+  /@fontsource/source-serif-pro@5.0.0:
+    resolution: {integrity: sha512-o8tnN9aKla296MJEjc4pCR2JvpTE7VOJRr3eRGK9JQkalGAdBUUXuSv+Ltreo9MTIjQ7A9/9TiEb4xtCF74puQ==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
