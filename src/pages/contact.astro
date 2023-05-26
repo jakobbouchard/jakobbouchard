@@ -1,0 +1,123 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+import Hero from "@components/Hero.astro";
+---
+
+<BaseLayout
+	title="Contact – Jakob Bouchard"
+	description="Jakob Bouchard’s contact information and social media."
+>
+	<div class="stack gap-15 lg:gap-20">
+		<div class="contact wrapper gap-8 lg:gap-10">
+			<header>
+				<Hero
+					title="Contact"
+					tagline="Interested in working together? Here’s how you can get in touch."
+				/>
+			</header>
+			<section>
+				<h2 class="section-title">Email</h2>
+				<div class="content">
+					<p>
+						If you’d like to get in touch with me, feel free to reach out via
+						email at <a href="mailto:jakob@jakobbouchard.dev">
+							jakob@jakobbouchard.dev</a
+						>. I’m always open to new opportunities, collaborations, and
+						discussions related to game development. Whether you have a project
+						in mind, want to discuss ideas, or simply connect, I’d be happy to
+						hear from you. Please don’t hesitate to send me an email, and I’ll
+						make sure to get back to you as soon as possible!
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Social media</h2>
+				<div class="content">
+					<p>
+						If you prefer to connect through social media, feel free to reach
+						out to me on <a href="https://linkedin.com/in/jakobbouchard">
+							LinkedIn
+						</a> and <a href="https://instagram.com/jakobbouchard">Instagram</a
+						>. I’m always happy to engage with fellow game enthusiasts, industry
+						professionals, and like-minded individuals. Whether you have
+						questions, want to discuss gaming trends, or explore potential
+						collaborations, don’t hesitate to reach out.
+					</p>
+				</div>
+			</section>
+		</div>
+	</div>
+</BaseLayout>
+
+<style>
+	.contact {
+		display: flex;
+		flex-direction: column;
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		margin-bottom: 0.5em;
+		grid-column-start: 1;
+		font-size: var(--text-2xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(p + p) {
+		margin-top: 1em;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.contact {
+			display: grid;
+			grid-template-columns: 1fr 55% 1fr;
+		}
+
+		.contact > :global(:first-child) {
+			grid-column: 1 / 4;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+
+		.section-title {
+			font-size: var(--text-xl);
+		}
+	}
+
+	@media (min-width: 62em) {
+		.section-title {
+			font-size: var(--text-2xl);
+		}
+	}
+
+	@media (min-width: 75em) {
+		.contact {
+			grid-template-columns: 1fr 60% 1fr;
+		}
+	}
+</style>

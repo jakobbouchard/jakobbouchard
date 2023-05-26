@@ -4,24 +4,29 @@ import Icon from "@components/Icon.astro";
 ---
 
 <aside>
-	<h2>Interested in working together?</h2>
-	<CallToAction href="mailto:jakob@jakobbouchard.dev">
-		Send me an email
-		<Icon icon="paper-plane-tilt" size="1.2em" />
-	</CallToAction>
+	<div class="wrapper">
+		<h2>Interested in working together?</h2>
+		<CallToAction href="/contact">
+			Get in touch
+			<Icon icon="paper-plane-tilt" size="1.2em" />
+		</CallToAction>
+	</div>
 </aside>
 
 <style>
 	aside {
+		border-top: 1px solid var(--gray-800);
+		border-bottom: 1px solid var(--gray-800);
+		padding: 3rem 0;
+		background-color: var(--gray-900);
+		box-shadow: var(--shadow-sm);
+	}
+
+	aside .wrapper {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 3rem;
-		border-top: 1px solid var(--gray-800);
-		border-bottom: 1px solid var(--gray-800);
-		padding: 3rem 1.5rem;
-		background-color: var(--gray-900);
-		box-shadow: var(--shadow-sm);
+		gap: 2rem;
 	}
 
 	:global(.theme-dark) aside {
@@ -36,13 +41,16 @@ import Icon from "@components/Icon.astro";
 
 	@media (min-width: 35em) {
 		aside {
-			padding: 5rem 1.5rem;
+			padding: 5rem 0;
 		}
 	}
 
 	@media (min-width: 50em) {
 		aside {
-			padding: 7.5rem;
+			padding: 7.5rem 0;
+		}
+
+		aside .wrapper {
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: space-between;
