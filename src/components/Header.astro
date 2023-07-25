@@ -53,7 +53,7 @@ const socialMedias: {
 			const setExpanded = (expand: boolean) => {
 				btn.setAttribute("aria-expanded", expand ? "true" : "false");
 				text.textContent = expand ? "Close menu" : "Open menu";
-				this.parentElement.classList.toggle("menu-open", expand);
+				this.parentElement!.classList.toggle("menu-open", expand);
 			};
 
 			btn.addEventListener("click", () => setExpanded(!this.isOpen()));
@@ -67,7 +67,7 @@ const socialMedias: {
 		}
 
 		isOpen() {
-			return this.parentElement.classList.contains("menu-open");
+			return this.parentElement!.classList.contains("menu-open");
 		}
 	}
 	customElements.define("menu-button", MenuButton);

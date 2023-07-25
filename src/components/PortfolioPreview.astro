@@ -17,7 +17,7 @@ const { data, slug } = Astro.props.project;
 	{
 		data.img && (
 			<Image
-				src={data.img.src}
+				src={data.img}
 				width={data.img.width}
 				height={data.img.height}
 				alt={data.imgAlt || ""}
