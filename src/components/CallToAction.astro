@@ -8,13 +8,14 @@ const { href, external } = Astro.props;
 ---
 
 <a
+	class="call-to-action"
 	href={href}
-	rel={external && "external noreferrer"}
-	target={external && "_blank"}><slot /></a
+	rel={external ? "external noreferrer" : undefined}
+	target={external ? "_blank" : undefined}><slot /></a
 >
 
 <style>
-	a {
+	a.call-to-action {
 		position: relative;
 		display: flex;
 		place-content: center;
