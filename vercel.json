@@ -1,9 +1,5 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"framework": "astro",
-	"devCommand": "astro dev",
-	"buildCommand": "astro build",
-	"outputDirectory": "dist",
 	"github": {
 		"silent": true
 	}
