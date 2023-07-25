@@ -8,7 +8,7 @@ export interface Props {
 	color?: string;
 	gradient?: boolean;
 	size?: string;
-	title?: string;
+	title?: string | undefined;
 }
 
 const { color = "currentcolor", gradient, icon, size, title } = Astro.props;

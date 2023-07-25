@@ -56,7 +56,7 @@ const { Content } = await entry.render();
 					{
 						entry.data.img && !entry.data.videoPreview && (
 							<Image
-								src={entry.data.img.src}
+								src={entry.data.img}
 								width={entry.data.img.width}
 								height={entry.data.img.height}
 								alt={entry.data.imgAlt || ""}
