@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@astrojs/sitemap':
     specifier: 2.0.1
@@ -19,10 +23,10 @@ dependencies:
 
 devDependencies:
   prettier:
-    specifier: ^3.0.0
+    specifier: 3.0.0
     version: 3.0.0
   prettier-plugin-astro:
-    specifier: ^0.11.0
+    specifier: 0.11.0
     version: 0.11.0
 
 packages:
@@ -3679,7 +3683,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: false
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
