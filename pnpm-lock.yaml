@@ -9,22 +9,22 @@ dependencies:
     specifier: 2.0.2
     version: 2.0.2
   '@fontsource/atkinson-hyperlegible':
-    specifier: 5.0.9
-    version: 5.0.9
+    specifier: 5.0.11
+    version: 5.0.11
   '@fontsource/source-serif-pro':
     specifier: 5.0.8
     version: 5.0.8
   astro:
-    specifier: 2.10.14
-    version: 2.10.14(sharp@0.32.5)
+    specifier: 2.10.15
+    version: 2.10.15(sharp@0.32.5)
   sharp:
     specifier: 0.32.5
     version: 0.32.5
 
 devDependencies:
   prettier:
-    specifier: 3.0.2
-    version: 3.0.2
+    specifier: 3.0.3
+    version: 3.0.3
   prettier-plugin-astro:
     specifier: 0.12.0
     version: 0.12.0
@@ -65,13 +65,13 @@ packages:
       vscode-uri: 3.0.7
     dev: false
 
-  /@astrojs/markdown-remark@2.2.1(astro@2.10.14):
+  /@astrojs/markdown-remark@2.2.1(astro@2.10.15):
     resolution: {integrity: sha512-VF0HRv4GpC1XEMLnsKf6jth7JSmlt9qpqP0josQgA2eSpCIAC/Et+y94mgdBIZVBYH/yFnMoIxgKVe93xfO2GA==}
     peerDependencies:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.10.14(sharp@0.32.5)
+      astro: 2.10.15(sharp@0.32.5)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -767,8 +767,8 @@ packages:
     dev: false
     optional: true
 
-  /@fontsource/atkinson-hyperlegible@5.0.9:
-    resolution: {integrity: sha512-kFdxJvUEJC521EBvnL2Qhp1qQYnWiGhQAwzS1YvCF4FoyqCy1Rqx1Ok9d9n24VfAW1XZXE3AlXxUMHrYj6tmsA==}
+  /@fontsource/atkinson-hyperlegible@5.0.11:
+    resolution: {integrity: sha512-wHzGH0ykPXJa2fxliI6ZBplgQ09miYlHDml39g7ILy2h1+Dr/pMdmy4pimuWsRarCVk631atnrxZdJkxTyn20g==}
     dev: false
 
   /@fontsource/source-serif-pro@5.0.8:
@@ -1023,8 +1023,8 @@ packages:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
     dev: false
 
-  /astro@2.10.14(sharp@0.32.5):
-    resolution: {integrity: sha512-02k2DjnI8yGtLCvdCSggvfCTkTWPm9UDgc/XHKdd1K34TSTl3X0A8TTYbASEXvgynk1zInCyOEe3IUDt3Lke+A==}
+  /astro@2.10.15(sharp@0.32.5):
+    resolution: {integrity: sha512-7jgkCZexxOX541g2kKHGOcDDUVKYc+sGi87GtLOkbWwTsKqEIp9GU0o7DpKe1rhItm9VVEiHz4uxvMh3wGmJdA==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
     peerDependencies:
@@ -1036,7 +1036,7 @@ packages:
       '@astrojs/compiler': 1.8.1
       '@astrojs/internal-helpers': 0.1.2
       '@astrojs/language-server': 1.0.5
-      '@astrojs/markdown-remark': 2.2.1(astro@2.10.14)
+      '@astrojs/markdown-remark': 2.2.1(astro@2.10.15)
       '@astrojs/telemetry': 2.1.1
       '@astrojs/webapi': 2.2.0
       '@babel/core': 7.22.6
@@ -2779,7 +2779,7 @@ packages:
     engines: {node: ^14.15.0 || >=16.0.0}
     dependencies:
       '@astrojs/compiler': 1.8.1
-      prettier: 3.0.2
+      prettier: 3.0.3
       sass-formatter: 0.7.6
     dev: true
 
@@ -2799,8 +2799,8 @@ packages:
     hasBin: true
     dev: false
 
-  /prettier@3.0.2:
-    resolution: {integrity: sha512-o2YR9qtniXvwEZlOKbveKfDQVyqxbEIWn48Z8m3ZJjBjcCmUy3xZGIv+7AkaeuaTr6yPXJjwv07ZWlsWbEy1rQ==}
+  /prettier@3.0.3:
+    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
