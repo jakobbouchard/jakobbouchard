@@ -5,9 +5,6 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
 	site: "https://jakobbouchard.dev",
 	assets: "_app",
-	experimental: {
-		assets: true,
-	},
 	server: {
 		port: 5173,
 		host: true,
