@@ -9,6 +9,7 @@ export const collections = {
 				attribution: z.string().optional(),
 				publishDate: z.coerce.date(),
 				tags: z.array(z.string()),
+				filters: z.array(z.string()),
 				videoPreview: z.string().optional(),
 				img: image().optional(),
 				imgAlt: z.string().optional(),

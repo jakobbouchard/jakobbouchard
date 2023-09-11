@@ -5,6 +5,9 @@ publishDate: 2021-12-31 00:00:00
 attribution: Created as developer at <a href="https://distantia.ca">Distantia</a>
 videoPreview: /artblr-gallery.mp4
 img: ./artblr-gallery.jpg
+filters:
+  - VR
+  - Godot
 tags:
   - VR experience
   - Godot 3

@@ -6,6 +6,9 @@ attribution: Created for <a href="https://itch.io/jam/go-godot-jam-4">GoGodotJam
 url: https://jakobbouchard.itch.io/decluttering
 videoPreview: /decluttering.mp4
 img: ./decluttering.png
+filters:
+  - Game jam
+  - Godot
 tags:
   - Game jam
   - Godot 4

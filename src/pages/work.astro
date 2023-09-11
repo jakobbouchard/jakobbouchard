@@ -12,6 +12,7 @@ import PortfolioPreview from "@components/PortfolioPreview.astro";
 const projects = (await getCollection("work")).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
+const filters = [...new Set(projects.flatMap((project) => project.data.filters))].sort();
 ---
 
 <BaseLayout
@@ -26,18 +27,69 @@ const projects = (await getCollection("work")).sort(
 					tagline="See my most recent projects below to get an idea of my past experience."
 					align="start"
 				/>
+				<select id="filter">
+					<option disabled selected value="">Filter</option>
+					{
+						filters.map((filter) => (
+							<option value={filter}>{filter}</option>
+						))
+					}
+				</select>
+				<button data-clear="">Clear</button>
 			</header>
 
 			<Grid>
 				{
 					projects.map((project) => (
-						<li>
+						<li data-filters={project.data.filters}>
 							<PortfolioPreview project={project} />
 						</li>
 					))
 				}
 			</Grid>
 		</div>
+
+		<script>
+			// Filter projects using Vanilla JS
+			const filter = document.querySelector("#filter");
+			const projects = document.querySelectorAll("[data-filters]");
+			const clear = document.querySelector("[data-clear]");
+			let activeFilter = "";
+
+			filter.addEventListener("change", () => {
+				activeFilter = filter.value;
+
+				projects.forEach((project) => {
+					const projectFilters = project.dataset.filters.split(",");
+					console.log(projectFilters);
+
+					if (activeFilter == "") {
+						project.classList.remove("hidden");
+					} else {
+						if (projectFilters.includes(activeFilter)) {
+							project.classList.remove("hidden");
+						} else {
+							project.classList.add("hidden");
+						}
+					}
+				});
+			});
+
+			clear.addEventListener("click", () => {
+				filter.value = "";
+				activeFilter = "";
+
+				projects.forEach((project) => {
+					project.classList.remove("hidden");
+				});
+			});
+		</script>
+
+		<style>
+			.hidden {
+				display: none;
+			}
+		</style>
 
 		<ContactCTA />
 	</div>

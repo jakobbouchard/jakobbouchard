@@ -1,5 +1,5 @@
 ---
-import Icon, { Props as IconProps } from "@components/Icon.astro";
+import Icon, { type Props as IconProps } from "@components/Icon.astro";
 import ThemeToggle from "@components/ThemeToggle.astro";
 
 const mainMenuItems: { label: string; href: string }[] = [
@@ -22,6 +22,11 @@ const socialMedias: {
 		title: "LinkedIn",
 		href: "https://linkedin.com/in/jakobbouchard",
 		icon: "linkedin-logo",
+	},
+	{
+		title: "Itch.io",
+		href: "https://jakobbouchard.itch.io",
+		icon: "game-controller",
 	},
 	{
 		title: "GitHub",
