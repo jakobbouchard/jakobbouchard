@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 import Hero from "@components/Hero.astro";
+import Icon from "@components/Icon.astro";
 ---
 
 <BaseLayout
@@ -17,22 +18,40 @@ import Hero from "@components/Hero.astro";
 				/>
 			</header>
 			<section>
-				<h2 class="section-title">Email</h2>
+				<div class="section-title">
+					<h2>Email</h2>
+					<a class="email" href="mailto:jakob@bchrd.ca">jakob@bchrd.ca</a>
+				</div>
 				<div class="content">
 					<p>
 						If you’d like to get in touch with me, feel free to reach out via
-						email at <a href="mailto:jakob@jakobbouchard.dev">
-							jakob@jakobbouchard.dev</a
-						>. I’m always open to new opportunities, collaborations, and
-						discussions related to game development. Whether you have a project
-						in mind, want to discuss ideas, or simply connect, I’d be happy to
-						hear from you. Please don’t hesitate to send me an email, and I’ll
-						make sure to get back to you as soon as possible!
+						email at <a href="mailto:jakob@bchrd.ca">jakob@bchrd.ca</a>. I’m
+						always open to new opportunities, collaborations, and discussions
+						related to game development. Whether you have a project in mind,
+						want to discuss ideas, or simply connect, I’d be happy to hear from
+						you. Please don’t hesitate to send me an email, and I’ll make sure
+						to get back to you as soon as possible!
 					</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Social media</h2>
+				<div class="section-title">
+					<h2>Social media</h2>
+					<div class="socials">
+						<a
+							rel="me external noreferrer"
+							href="https://linkedin.com/in/jakobbouchard"
+						>
+							<Icon title="LinkedIn" icon="linkedin-logo" />
+						</a>
+						<a
+							rel="me external noreferrer"
+							href="https://instagram.com/jakobbouchard"
+						>
+							<Icon title="Instagram" icon="instagram-logo" />
+						</a>
+					</div>
+				</div>
 				<div class="content">
 					<p>
 						If you prefer to connect through social media, feel free to reach
@@ -66,7 +85,46 @@ import Hero from "@components/Hero.astro";
 	.section-title {
 		margin-bottom: 0.5em;
 		grid-column-start: 1;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.socials {
+		--icon-size: var(--text-xl);
+
+		display: flex;
+		gap: 0.5rem;
+		font-size: var(--icon-size);
+	}
+
+	.socials a {
+		display: flex;
+		text-decoration: none;
+		color: var(--accent-dark);
+		transition: color var(--theme-transition);
+	}
+
+	.socials a:hover,
+	.socials a:focus {
+		color: var(--gray-0);
+	}
+
+	.section-title h2 {
+		margin: 0;
 		font-size: var(--text-2xl);
+		color: var(--gray-0);
+	}
+
+	.section-title .email {
+		font-size: var(--text-md);
+		text-decoration: none;
+		color: var(--accent-dark);
+		transition: color var(--theme-transition);
+	}
+
+	.section-title .email:hover,
+	.section-title .email:focus {
 		color: var(--gray-0);
 	}
 
@@ -105,7 +163,13 @@ import Hero from "@components/Hero.astro";
 		}
 
 		.section-title {
-			font-size: var(--text-xl);
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+
+		.socials {
+			gap: 0.75rem;
 		}
 	}
 

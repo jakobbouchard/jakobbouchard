@@ -7,7 +7,7 @@ url: https://marcoux.itch.io/bloodtoon
 videoPreview: /splatoon-style-mechanic.mp4
 img: ./splatoon-style-mechanic.png
 filters:
-  - Unreal Engine
+  - Unreal Engine 5
 tags:
   - Game mechanic
   - Unreal Engine 5
