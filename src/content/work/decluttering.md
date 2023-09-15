@@ -8,7 +8,7 @@ videoPreview: /decluttering.mp4
 img: ./decluttering.png
 filters:
   - Game jam
-  - Godot
+  - Godot 4
 tags:
   - Game jam
   - Godot 4

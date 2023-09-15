@@ -7,7 +7,7 @@ videoPreview: /artblr-gallery.mp4
 img: ./artblr-gallery.jpg
 filters:
   - VR
-  - Godot
+  - Godot 3
   - Web
 tags:
   - VR experience
@@ -17,10 +17,11 @@ tags:
 
 ## Technologies used
 
-- Godot 3
+- Godot 3.4.3
   - XR Tools
   - XR Plugin
   - Custom theming
+  - Custom Android export templates for encryption
   - HTTP API to get images from Artblr
 - Oculus Quest 2
 - REST API
