@@ -6,10 +6,24 @@ attribution: Created for <a href="https://itch.io/jam/go-godot-jam-4">GoGodotJam
 url: https://jakobbouchard.itch.io/decluttering
 videoPreview: /decluttering.mp4
 img: ./decluttering.png
+filters:
+  - Game jam
+  - Godot
 tags:
   - Game jam
   - Godot 4
 ---
+
+## Technologies used
+
+- Godot 4.0.2
+  - Custom resources
+  - Custom theme
+  - Node groups
+  - Signals
+  - GDScript with static typings
+  - Custom level loader with transitions
+- Affinity Photo to resize the pictures of the assets
 
 ## Project overview
 

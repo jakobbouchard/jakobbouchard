@@ -1,5 +1,5 @@
 ---
-import Icon, { Props as IconProps } from "@components/Icon.astro";
+import Icon, { type Props as IconProps } from "@components/Icon.astro";
 import ThemeToggle from "@components/ThemeToggle.astro";
 
 const mainMenuItems: { label: string; href: string }[] = [
@@ -22,6 +22,11 @@ const socialMedias: {
 		title: "LinkedIn",
 		href: "https://linkedin.com/in/jakobbouchard",
 		icon: "linkedin-logo",
+	},
+	{
+		title: "Itch.io",
+		href: "https://jakobbouchard.itch.io",
+		icon: "game-controller",
 	},
 	{
 		title: "GitHub",
@@ -71,7 +76,7 @@ const socialMedias: {
 				size="1.6em"
 				gradient
 			/>
-			Jakob Bouchard
+			 Jakob Bouchard
 		</a>
 		<menu-button>
 			<button class="menu-button" aria-expanded="false">
@@ -331,7 +336,8 @@ const socialMedias: {
 		.link {
 			padding: 0.5rem 1rem;
 			border-radius: 999rem;
-			transition: color var(--theme-transition),
+			transition:
+				color var(--theme-transition),
 				background-color var(--theme-transition);
 		}
 

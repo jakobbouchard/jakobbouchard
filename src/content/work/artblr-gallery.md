@@ -5,10 +5,27 @@ publishDate: 2021-12-31 00:00:00
 attribution: Created as developer at <a href="https://distantia.ca">Distantia</a>
 videoPreview: /artblr-gallery.mp4
 img: ./artblr-gallery.jpg
+filters:
+  - VR
+  - Godot
+  - Web
 tags:
   - VR experience
   - Godot 3
+  - REST API
 ---
+
+## Technologies used
+
+- Godot 3
+  - XR Tools
+  - XR Plugin
+  - Custom theming
+  - HTTP API to get images from Artblr
+- Oculus Quest 2
+- REST API
+  - PHP
+  - MySQL
 
 ## Project overview
 

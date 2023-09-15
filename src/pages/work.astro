@@ -10,8 +10,11 @@ import Hero from "@components/Hero.astro";
 import PortfolioPreview from "@components/PortfolioPreview.astro";
 
 const projects = (await getCollection("work")).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
+const filters = [
+	...new Set(projects.flatMap((project) => project.data.filters)),
+].sort();
 ---
 
 <BaseLayout
@@ -25,13 +28,25 @@ const projects = (await getCollection("work")).sort(
 					title="My work"
 					tagline="See my most recent projects below to get an idea of my past experience."
 					align="start"
-				/>
+				>
+					<div class="filter">
+						<button class="hidden" data-clear="">Clear filter</button>
+						<select id="filter">
+							<option disabled selected value="">Filter</option>
+							{
+								filters.map((filter) => (
+									<option value={filter}>{filter}</option>
+								))
+							}
+						</select>
+					</div>
+				</Hero>
 			</header>
 
 			<Grid>
 				{
 					projects.map((project) => (
-						<li>
+						<li data-filters={project.data.filters}>
 							<PortfolioPreview project={project} />
 						</li>
 					))
@@ -39,6 +54,137 @@ const projects = (await getCollection("work")).sort(
 			</Grid>
 		</div>
 
+		<script>
+			// Filter projects using Vanilla JS
+			const filter = document.querySelector("#filter");
+			const projects = document.querySelectorAll("[data-filters]");
+			const clear = document.querySelector("[data-clear]");
+			let activeFilter = "";
+
+			filter.addEventListener("change", () => {
+				activeFilter = filter.value;
+
+				clear.classList.remove("hidden");
+
+				projects.forEach((project) => {
+					const projectFilters = project.dataset.filters.split(",");
+
+					if (projectFilters.includes(activeFilter)) {
+						project.classList.remove("hidden");
+					} else {
+						project.classList.add("hidden");
+					}
+				});
+			});
+
+			clear.addEventListener("click", () => {
+				filter.value = "";
+				activeFilter = "";
+
+				clear.classList.add("hidden");
+
+				projects.forEach((project) => {
+					project.classList.remove("hidden");
+				});
+			});
+		</script>
+
 		<ContactCTA />
 	</div>
 </BaseLayout>
+
+<style>
+	.hidden {
+		display: none;
+	}
+
+	.filter {
+		display: flex;
+		gap: 1rem;
+		align-self: flex-end;
+	}
+
+	.filter button {
+		position: relative;
+		display: flex;
+		place-content: center;
+		text-align: center;
+		padding: 0.56em 2em;
+		gap: 0.8em;
+		color: var(--accent-text-over);
+		text-decoration: none;
+		line-height: 1.1;
+		border: 0;
+		border-radius: 999rem;
+		overflow: hidden;
+		background: var(--gradient-accent-orange);
+		box-shadow: var(--shadow-md);
+		white-space: nowrap;
+		font-size: var(--text-base);
+		cursor: pointer;
+	}
+
+	.filter button.hidden {
+		display: none;
+	}
+
+	/* Overlay for hover effects. */
+	.filter button::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		transition: background-color var(--theme-transition);
+		mix-blend-mode: overlay;
+	}
+
+	.filter button:focus::after,
+	.filter button:hover::after {
+		background-color: hsla(var(--gray-999-basis), 0.3);
+	}
+
+	.filter select {
+		appearance: none;
+		background: var(--gray-999);
+		border: 2px solid var(--accent-regular);
+		border-radius: 999rem;
+		color: var(--accent-regular);
+		font-size: var(--text-base);
+		text-align: center;
+		padding: 0.5rem 1rem;
+	}
+
+	.filter select:focus {
+		outline: none;
+	}
+
+	.filter select option {
+		background: var(--gray-999);
+		color: var(--accent-regular);
+	}
+
+	@media (min-width: 20em) {
+		.filter button,
+		.filter select {
+			font-size: var(--text-md);
+		}
+	}
+
+	@media (min-width: 50em) {
+		:global(.hero.stack.start) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	@media (min-width: 75em) {
+		.filter button,
+		.filter select {
+			padding: 1.125rem 2.5rem;
+			font-size: var(--text-lg);
+		}
+		.filter select {
+			padding: 0.94rem 2.5rem;
+		}
+	}
+</style>
