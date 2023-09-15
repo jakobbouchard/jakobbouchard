@@ -121,6 +121,10 @@ const projects = (await getCollection("work"))
 			object-fit: cover;
 		}
 
+		.hero :global(.hero) :global(.call-to-action) {
+			align-self: flex-start;
+		}
+
 		.roles {
 			margin-top: 0.5rem;
 			display: flex;
