@@ -8,6 +8,7 @@ import ContactCTA from "@components/ContactCTA.astro";
 import Hero from "@components/Hero.astro";
 
 import portrait from "@assets/portrait.jpg";
+import Icon from "@components/Icon.astro";
 ---
 
 <BaseLayout
@@ -31,7 +32,17 @@ import portrait from "@assets/portrait.jpg";
 			</header>
 
 			<section>
-				<h2 class="section-title">Background</h2>
+				<div class="section-title">
+					<h2>Background</h2>
+					<div class="socials">
+						<a
+							rel="me external noreferrer"
+							href="https://instagram.com/jakobbouchard"
+						>
+							<Icon title="Instagram" icon="instagram-logo" />
+						</a>
+					</div>
+				</div>
 				<div class="content">
 					<p>
 						I'm currently in my final year at UQAT, studying video game
@@ -40,17 +51,57 @@ import portrait from "@assets/portrait.jpg";
 						passion for the game industry.
 					</p>
 					<p>
-						Aside from my studies, I work as a web developer, always exploring
-						new technologies and taking on challenging projects to push my
-						limits. In the long run, I hope to start a cooperative studio with
-						some friends, where we can create innovative games together and
-						cultivate a supportive work environment.
-					</p>
-					<p>
 						When I'm not focused on my studies or work, I love gaming, exploring
 						the vibrant city of Montréal, and trying out different food spots.
 						Music and pop culture also excite me, and I'm constantly on the
 						lookout for emerging artists and binge-worthy TV series.
+					</p>
+				</div>
+			</section>
+			<section>
+				<div class="section-title">
+					<h2>Experience</h2>
+					<div class="socials">
+						<a
+							rel="me external noreferrer"
+							href="https://linkedin.com/in/jakobbouchard"
+						>
+							<Icon title="LinkedIn" icon="linkedin-logo" />
+						</a>
+						<a
+							rel="me external noreferrer"
+							href="https://jakobbouchard.itch.io"
+						>
+							<Icon title="Itch.io" icon="game-controller" />
+						</a>
+						<a
+							rel="me external noreferrer"
+							href="https://github.com/jakobbouchard"
+						>
+							<Icon title="GitHub" icon="github-logo" />
+						</a>
+					</div>
+				</div>
+				<div class="content">
+					<p>
+						Currently, I work as a web developer, always exploring new
+						technologies and taking on challenging projects to push my limits.
+						In the long run, I hope to start a cooperative studio with some
+						friends, where we can create innovative games together and cultivate
+						a supportive work environment.
+					</p>
+					<p>
+						To learn more about my professional experience, check out my
+						<a
+							rel="me external noreferrer"
+							href="https://linkedin.com/in/jakobbouchard">LinkedIn</a
+						>. You can also view some of my projects on <a
+							rel="me external noreferrer"
+							href="https://jakobbouchard.itch.io">itch.io</a
+						> and <a
+							rel="me external noreferrer"
+							href="https://github.com/jakobbouchard">GitHub</a
+						>.
 					</p>
 				</div>
 			</section>
@@ -85,6 +136,33 @@ import portrait from "@assets/portrait.jpg";
 	.section-title {
 		margin-bottom: 0.5em;
 		grid-column-start: 1;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.socials {
+		--icon-size: var(--text-xl);
+
+		display: flex;
+		gap: 0.5rem;
+		font-size: var(--icon-size);
+	}
+
+	.socials a {
+		display: flex;
+		text-decoration: none;
+		color: var(--accent-dark);
+		transition: color var(--theme-transition);
+	}
+
+	.socials a:hover,
+	.socials a:focus {
+		color: var(--gray-0);
+	}
+
+	.section-title h2 {
+		margin: 0;
 		font-size: var(--text-2xl);
 		color: var(--gray-0);
 	}
@@ -124,7 +202,13 @@ import portrait from "@assets/portrait.jpg";
 		}
 
 		.section-title {
-			font-size: var(--text-xl);
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+
+		.socials {
+			gap: 0.75rem;
 		}
 	}
 

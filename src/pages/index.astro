@@ -44,6 +44,7 @@ const projects = (await getCollection("work"))
 							 Coffee enjoyer
 						</Pill>
 					</div>
+					<CallToAction size="small" href="/about">Get to know me</CallToAction>
 				</Hero>
 
 				<Image
@@ -77,7 +78,7 @@ const projects = (await getCollection("work"))
 
 			<div class="cta">
 				<CallToAction href="/work/">
-					View All
+					View all
 					<Icon icon="arrow-right" size="1.2em" />
 				</CallToAction>
 			</div>
@@ -120,8 +121,13 @@ const projects = (await getCollection("work"))
 			object-fit: cover;
 		}
 
+		.hero :global(.hero) :global(.call-to-action) {
+			align-self: flex-start;
+		}
+
 		.roles {
 			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
 			display: flex;
 			gap: 0.5rem;
 		}

@@ -1,14 +1,15 @@
 ---
 interface Props {
+	size?: "small";
 	href: string;
 	external?: boolean;
 }
 
-const { href, external } = Astro.props;
+const { size, href, external } = Astro.props;
 ---
 
 <a
-	class="call-to-action"
+	class:list={["call-to-action", size]}
 	href={href}
 	rel={external ? "external noreferrer" : undefined}
 	target={external ? "_blank" : undefined}><slot /></a
@@ -57,6 +58,9 @@ const { href, external } = Astro.props;
 		a {
 			padding: 1.125rem 2.5rem;
 			font-size: var(--text-xl);
+		}
+		a.small {
+			font-size: var(--text-lg);
 		}
 	}
 </style>
