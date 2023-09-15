@@ -14,6 +14,17 @@ tags:
   - Godot 4
 ---
 
+## Technologies used
+
+- Godot 4.0.2
+  - Custom resources
+  - Custom theme
+  - Node groups
+  - Signals
+  - GDScript with static typings
+  - Custom level loader with transitions
+- Affinity Photo to resize the pictures of the assets
+
 ## Project overview
 
 With the semester having ended recently, [a friend](https://gabbyrondeau.itch.io/) and I wanted to do our first game jam, and noticed the GoGodotJam 4 was ongoing, so we decided to join despite it being already halfway done and our busy work schedules. The theme, _Less is more_, inspired us to create a game about a person going through multiple apartments, and needing to letting go of some personal items. He would need to declutter his belongings, to get more money, as new jobs and promotions are the reason he was moving out. We wanted to add more to the game, but due to lack of time and needing to get familiar with Godot, decided to keep it simpler.

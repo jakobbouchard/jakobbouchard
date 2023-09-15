@@ -14,6 +14,24 @@ tags:
   - ImGui
 ---
 
+## Technologies used
+
+- C++ 17
+  - Precompiled headers
+  - stb_image
+  - spdlog
+- ImGui
+- OpenGL
+  - Basic GLSL Shaders
+  - glm
+  - glfw
+  - glad
+- LLVM
+- Ninja
+- CMake 3.20
+  - `configure_file`
+- ClangFormat
+
 ## Project overview
 
 For one of my winter 2023 classes, we had to find a game dev-related subject to explore. As someone that is quite interested by the technical side of things, I decided to learn how to use OpenGL in C++. After around half the semester, we had to set ourselves a new goal, so I decided to flip my OpenGL framework into somewhat a game framework/engine.
