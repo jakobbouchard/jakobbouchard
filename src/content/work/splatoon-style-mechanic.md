@@ -11,6 +11,7 @@ filters:
 tags:
   - Game mechanic
   - Unreal Engine 5
+  - Sploosh
 ---
 
 ## Technologies and methods used

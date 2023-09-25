@@ -13,6 +13,7 @@ tags:
   - VR experience
   - Godot 3
   - REST API
+  - Fancy artworks
 ---
 
 ## Technologies used

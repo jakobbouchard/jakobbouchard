@@ -12,6 +12,7 @@ filters:
 tags:
   - Game jam
   - Godot 4
+  - Let it go
 ---
 
 ## Technologies used
@@ -19,8 +20,6 @@ tags:
 - Godot 4.0.2
   - Custom resources
   - Custom theme
-  - Node groups
-  - Signals
   - GDScript with static typings
   - Custom level loader with transitions
 - Affinity Photo to resize the pictures of the assets
@@ -31,4 +30,4 @@ With the semester having ended recently, [a friend](https://gabbyrondeau.itch.io
 
 ## My role
 
-In Decluttering, I was in charge of programming everything, while my friend was in charge of the art, writing and level design. Due to not having worked with Godot in the recent months (mostly because of university), I had a little adaptation period to the engine, and encountered some difficulties with features I was used to work with in Unreal Engine, namely Blueprint (not the visual scripting part), which Godot kind of has, but is also a little different, with the scene system. However, once I figured how to better use Godot's features, I was much more productive and a lot of its features have really grown on me, such as the way nodes work, as well as GDScript.
+In _Decluttering_, I was in charge of programming everything, while my friend was in charge of the art, writing and level design. Due to not having worked with Godot in the recent months (mostly because of university), I had a little adaptation period to the engine, and encountered some difficulties with features I was used to work with in Unreal Engine, namely Blueprints (not the visual scripting part), which Godot kind of has, but is also a little different, with the scene system. However, once I figured how to better use Godot's features, I was much more productive and a lot of its features have really grown on me, such as the way nodes work, as well as GDScript.
