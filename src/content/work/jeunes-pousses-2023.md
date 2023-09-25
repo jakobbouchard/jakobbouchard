@@ -7,7 +7,7 @@ img: ./jeunes-pousses-2023.png
 filters:
   - Web
 tags:
-  - Mobile-only web experience
+  - Mobile experience
   - PixiJS
   - howler.js
 ---

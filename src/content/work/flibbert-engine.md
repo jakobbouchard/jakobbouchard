@@ -12,6 +12,7 @@ tags:
   - C++
   - OpenGL
   - ImGui
+  - My cat
 ---
 
 ## Technologies used
