@@ -4,7 +4,6 @@ description: Slash through an invasion of peeping aliens to save the mental heal
 publishDate: 2023-09-25 07:00:00
 attribution: Created for <a href="https://itch.io/jam/gbjam-11">GBJam 11</a>
 url: https://croustade.itch.io/tiny-space-ninja
-# videoPreview: /decluttering.mp4
 img: ./tiny-space-ninja.png
 filters:
   - Game jam
