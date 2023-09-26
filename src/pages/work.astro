@@ -156,6 +156,10 @@ const filters = [
 		padding: 0.5rem 1rem;
 	}
 
+	:global(.theme-dark) .filter select {
+		background: var(--gray-900);
+	}
+
 	.filter select:focus {
 		outline: none;
 	}
@@ -163,6 +167,10 @@ const filters = [
 	.filter select option {
 		background: var(--gray-999);
 		color: var(--accent-regular);
+	}
+
+	:global(.theme-dark) .filter select option {
+		background: var(--gray-900);
 	}
 
 	@media (min-width: 20em) {

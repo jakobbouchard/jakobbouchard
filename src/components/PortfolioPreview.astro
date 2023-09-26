@@ -26,8 +26,10 @@ const { data, slug } = Astro.props.project;
 	}
 	{
 		data.videoPreview && (
-			<video autoplay loop muted playsinline>
-				<source src={data.videoPreview} type="video/mp4" />
+			<video class="lazy" autoplay loop muted playsinline poster={data.img?.src}>
+				<source data-src={`${data.videoPreview}-av1.webm`} type="video/av1" />
+				<source data-src={`${data.videoPreview}.webm`} type="video/webm" />
+				<source data-src={`${data.videoPreview}.mp4`} type="video/mp4" />
 			</video>
 		)
 	}
