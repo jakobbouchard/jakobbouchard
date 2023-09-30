@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 
+import LazyVideo from "@components/LazyVideo.astro";
 import Pill from "@components/Pill.astro";
 
 interface Props {
@@ -25,15 +26,7 @@ const { data, slug } = Astro.props.project;
 			/>
 		)
 	}
-	{
-		data.videoPreview && (
-			<video class="lazy" autoplay loop muted playsinline>
-				<source data-src={`${data.videoPreview}-av1.webm`} type="video/av1" />
-				<source data-src={`${data.videoPreview}.webm`} type="video/webm" />
-				<source data-src={`${data.videoPreview}.mp4`} type="video/mp4" />
-			</video>
-		)
-	}
+	{data.videoPreview && <LazyVideo filename={data.videoPreview} />}
 	<Pill>{data.tags[0]}</Pill>
 </a>
 
@@ -76,7 +69,7 @@ const { data, slug } = Astro.props.project;
 	}
 
 	img,
-	video {
+	.video :global(video) {
 		grid-area: 1 / 1 / 3 / 3;
 		width: 100%;
 		height: 100%;
@@ -84,7 +77,7 @@ const { data, slug } = Astro.props.project;
 		transition: filter 0.3s ease;
 	}
 
-	video {
+	.video :global(video) {
 		opacity: 0;
 		transition: opacity 0.3s ease;
 	}
@@ -93,7 +86,7 @@ const { data, slug } = Astro.props.project;
 		filter: blur(2px) grayscale(75%);
 	}
 
-	.card.video:hover video {
+	.card.video:hover :global(video) {
 		opacity: 1;
 	}
 
