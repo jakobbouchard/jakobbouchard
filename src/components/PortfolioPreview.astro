@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 
+import LazyVideo from "@components/LazyVideo.astro";
 import Pill from "@components/Pill.astro";
 
 interface Props {
@@ -27,11 +28,7 @@ const { data, slug } = Astro.props.project;
 	}
 	{
 		data.videoPreview && (
-			<video class="lazy" autoplay loop muted playsinline>
-				<source data-src={`${data.videoPreview}-av1.webm`} type="video/av1" />
-				<source data-src={`${data.videoPreview}.webm`} type="video/webm" />
-				<source data-src={`${data.videoPreview}.mp4`} type="video/mp4" />
-			</video>
+			<LazyVideo filename={data.videoPreview} />
 		)
 	}
 	<Pill>{data.tags[0]}</Pill>
