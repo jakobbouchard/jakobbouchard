@@ -14,7 +14,7 @@ const { filename, av1 = true, vp9 = true, h264 = true } = Astro.props;
 		av1 && (
 			<source
 				data-src={`${filename}.av1.webm`}
-				type="video/webm; codecs=av01,opus"
+				type="video/webm; codecs=av01.0.05M.08,opus"
 			/>
 		)
 	}
