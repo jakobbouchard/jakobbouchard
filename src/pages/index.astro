@@ -14,7 +14,7 @@ import Icon from "@components/Icon.astro";
 import Pill from "@components/Pill.astro";
 import PortfolioPreview from "@components/PortfolioPreview.astro";
 
-import portrait from "@assets/portrait.jpg";
+import portrait from "@assets/portrait-home.jpg";
 
 const projects = (await getCollection("work"))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
@@ -51,7 +51,7 @@ const projects = (await getCollection("work"))
 					src={portrait}
 					width={portrait.width / 3}
 					height={portrait.height / 3}
-					alt="Jakob Bouchard smiling in a dark blue shirt, with golden glasses"
+					alt="Jakob Bouchard smiling in a colourful polo, with golden glasses"
 					quality={85}
 				/>
 			</header>
@@ -119,7 +119,6 @@ const projects = (await getCollection("work"))
 		.hero > header img {
 			aspect-ratio: 3 / 4;
 			border-radius: 4.5rem;
-			object-fit: cover;
 		}
 
 		.hero :global(.hero) :global(.call-to-action) {
