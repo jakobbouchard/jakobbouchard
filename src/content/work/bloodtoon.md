@@ -1,11 +1,11 @@
 ---
-title: Splatoon-style mechanic
+title: Bloodtoon
 description: I was in charge of recreating Splatoon’s ink mechanic for a project.
 publishDate: 2023-04-28 00:00:00
 attribution: Created as game dev student at <a href="https://uqat.ca">UQAT</a>
 url: https://marcoux.itch.io/bloodtoon
-videoPreview: /splatoon-style-mechanic
-img: ./splatoon-style-mechanic.png
+videoPreview: /bloodtoon
+img: ./bloodtoon.png
 filters:
   - Unreal Engine 5
 tags:
@@ -25,6 +25,8 @@ tags:
 ## Project overview
 
 In my second semester at UQAT, I was part of a team of 8 people, including 3 artists, 4 designers, and myself as the main developer/technical designer. We had to randomly draw a pop culture character and create a game inspired by it. We got Splatoon's Inkling, and took the bold decision to replicate the ink mechanic as our main game mechanic, which ended up being quite the technical challenge.
+
+You can view the rest of my team's roles in the [project's itch.io page](https://marcoux.itch.io/bloodtoon).
 
 ## My role
 
