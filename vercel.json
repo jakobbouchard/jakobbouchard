@@ -1,7 +1,10 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"github": {
-		"silent": true
-	},
-	"redirects": []
+	"redirects": [
+		{
+			"source": "/work/splatoon-style-mechanic",
+			"destination": "/work/bloodtoon",
+			"permanent": false
+		}
+	]
 }

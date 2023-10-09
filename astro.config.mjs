@@ -5,10 +5,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
 	site: "https://jakobbouchard.dev",
 	assets: "_app",
-	server: {
-		port: 5173,
-		host: true,
-	},
+	server: { port: 5173, host: true },
 	image: { service: sharpImageService() },
 	integrations: [sitemap()],
 });
