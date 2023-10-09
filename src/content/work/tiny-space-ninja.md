@@ -2,7 +2,7 @@
 title: Tiny Space Ninja
 description: Slash through an invasion of peeping aliens to save the mental health of the Space Station's astronauts.
 publishDate: 2023-09-25 07:00:00
-attribution: Created for <a href="https://itch.io/jam/gbjam-11">GBJam 11</a>
+attribution: Created for <a href="https://itch.io/jam/gbjam-11">GBJam 11</a>. Ranked 18 out of 404 entries
 url: https://croustade.itch.io/tiny-space-ninja
 img: ./tiny-space-ninja.png
 filters:
@@ -27,6 +27,8 @@ tags:
 ## Project overview
 
 When we saw the announcement for the [GBJam 11](https://itch.io/jam/gbjam-11), my friends ([Cédric](https://cedriclaroche.com) and [Gabby](https://gabbyrondeau.itch.io/)) and I knew we had to participate. It was a simpler jam, with fun restrictions and we wanted to take a stab at it. The theme, _Space_, somehow inspired us to create a game about a ninja that must slash through aliens in low gravity. It's a fun and quirky control scheme to work with, and it ended up being a great experience and game!
+
+We ended up #18 overall, with #7 in gameplay and #10 in music! Not bad for our first full game jam! You can view [the results here](https://itch.io/jam/gbjam-11/results).
 
 ## My role
 
