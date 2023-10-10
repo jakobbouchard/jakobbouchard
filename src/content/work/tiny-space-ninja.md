@@ -28,7 +28,7 @@ tags:
 
 When we saw the announcement for the [GBJam 11](https://itch.io/jam/gbjam-11), my friends ([Cédric](https://cedriclaroche.com) and [Gabby](https://gabbyrondeau.itch.io/)) and I knew we had to participate. It was a simpler jam, with fun restrictions and we wanted to take a stab at it. The theme, _Space_, somehow inspired us to create a game about a ninja that must slash through aliens in low gravity. It's a fun and quirky control scheme to work with, and it ended up being a great experience and game!
 
-We ended up #18 overall, with #7 in gameplay and #10 in music! Not bad for our first full game jam! You can view [the results here](https://itch.io/jam/gbjam-11/results).
+We ended up #17 overall, with #7 in gameplay and #9 in music! Not bad for our first full game jam! You can view [the results here](https://itch.io/jam/gbjam-11/results).
 
 ## My role
 
