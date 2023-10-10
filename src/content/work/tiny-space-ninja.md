@@ -2,7 +2,7 @@
 title: Tiny Space Ninja
 description: Slash through an invasion of peeping aliens to save the mental health of the Space Station's astronauts.
 publishDate: 2023-09-25 07:00:00
-attribution: Created for <a href="https://itch.io/jam/gbjam-11">GBJam 11</a>. Ranked 18 out of 404 entries
+attribution: Created for <a href="https://itch.io/jam/gbjam-11">GBJam 11</a>. Ranked 17 out of 404 entries
 url: https://croustade.itch.io/tiny-space-ninja
 img: ./tiny-space-ninja.png
 filters:
