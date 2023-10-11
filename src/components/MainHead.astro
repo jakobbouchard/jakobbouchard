@@ -28,8 +28,14 @@ const {
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+<script>
+    // Only load on production environment.
+    if (window.location.host !== "jakobbouchard.dev") {
+        window.goatcounter = { no_onload: true };
+	}
+</script>
 <script
-	data-goatcounter="https://jakobbouchard.goatcounter.com/count"
+	data-goatcounter="https://goat.jakobbouchard.dev/count"
 	async
 	src="https://goat.bchrd.ca/count.js"
 ></script>
