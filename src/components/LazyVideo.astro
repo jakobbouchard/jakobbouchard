@@ -21,3 +21,26 @@ const { filename, av1 = true, vp9 = true, h264 = true } = Astro.props;
 	{vp9 && <source data-src={`${filename}.vp9.webm`} type="video/webm" />}
 	{h264 && <source data-src={`${filename}.h264.mp4`} type="video/mp4" />}
 </video>
+<noscript>
+	<video autoplay loop muted playsinline>
+		{
+			av1 && (
+				<source
+					src={`${filename}.av1.webm`}
+					type="video/webm; codecs=av01.0.05M.08,opus"
+				/>
+			)
+		}
+		{vp9 && <source src={`${filename}.vp9.webm`} type="video/webm" />}
+		{h264 && <source src={`${filename}.h264.mp4`} type="video/mp4" />}
+	</video>
+</noscript>
+
+<style>
+	:global(.no-js) video.lazy {
+		display: none;
+	}
+	video {
+		max-width: 100%;
+	}
+</style>
