@@ -82,11 +82,16 @@ const { data, slug } = Astro.props.project;
 		transition: opacity 0.3s ease;
 	}
 
+	:global(.no-js) .card:hover img,
 	.card:not(.video):hover img {
 		filter: blur(2px) grayscale(75%);
 	}
 
-	.card.video:hover :global(video) {
+	:global(.no-js) .card.video :global(video) {
+		display: none;
+	}
+
+	:global(.js) .card.video:hover :global(video) {
 		opacity: 1;
 	}
 
