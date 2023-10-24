@@ -23,7 +23,7 @@ tags:
 
 ## Project overview
 
-Around November 2022, [call for applications](https://production.nfbonf.ca/en/lab/jeunes-pousses-digital-apprenticeship/) by the NFB for six interns to build a mobile-only web experience centered around the _Optimus_ theme. I was one of the two developers chosen for the internship, and you can learn more about the rest of my amazing team on [the NFB's blog](https://blog.nfb.ca/blog/2023/05/17/meet-the-fourth-crop-of-jeunes-pousses-at-the-nfb/).
+Around November 2022, [call for applications](https://production.nfbonf.ca/en/lab/jeunes-pousses-digital-apprenticeship/) by the NFB for six interns to build a mobile-only web experience centered around the _Optimus_ theme. I was one of the two developers chosen for the internship, and you can learn more about the rest of my amazing team on [the NFB's blog](https://blog.nfb.ca/blog/2023/05/17/meet-the-fourth-crop-of-jeunes-pousses-at-the-nfb/). If you want to test the experience before it has been released, please [contact me](/contact) and I will provide you with a link and password!
 
 ## My role
 
