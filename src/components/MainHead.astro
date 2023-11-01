@@ -49,8 +49,16 @@ const {
 		"givenName": "Jakob",
 		"image": "https://jakobbouchard.dev/social.jpg",
 		"jobTitle": "Technical Designer",
-		"worksFor": "https://prosomo.com",
-		"alumniOf": "https://uqat.ca",
+		"worksFor": {
+			"@type": "Organization",
+			"name": "Prosomo",
+			"url": "https://prosomo.com"
+		},
+		"alumniOf": {
+			"@type": "EducationalOrganization",
+			"name": "Université du Québec en Abitibi-Témiscamingue",
+			"url": "https://uqat.ca"
+		},
 		"sameAs": [
 			"https://twitter.com/jakobbchrd",
 			"https://instagram.com/jakobbouchard",
