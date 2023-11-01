@@ -5,7 +5,6 @@ import { Image } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 import ContactCTA from "@components/ContactCTA.astro";
-import Skills from "@components/Skills.astro";
 
 import CallToAction from "@components/CallToAction.astro";
 import Grid from "@components/Grid.astro";
@@ -22,18 +21,18 @@ const projects = (await getCollection("work"))
 ---
 
 <BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
+	<div class="stack gap-20">
 		<section class="hero wrapper stack gap-8 lg:gap-20">
 			<header>
 				<Hero
 					title="Hello, my name is Jakob Bouchard"
-					tagline="I am a developer currently based in Montréal, Québec."
+					tagline="I am a Technical Designer currently based in Montréal."
 					align="start"
 				>
 					<div class="roles">
 						<Pill>
 							<Icon icon="code" size="1.33em" />
-							 Developer
+							 Programmer
 						</Pill>
 						<Pill>
 							<Icon icon="cat" size="1.33em" />
@@ -55,8 +54,6 @@ const projects = (await getCollection("work"))
 					quality={85}
 				/>
 			</header>
-
-			<Skills />
 		</section>
 
 		<section class="wrapper section with-cta">

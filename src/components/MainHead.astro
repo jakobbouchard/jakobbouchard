@@ -12,33 +12,66 @@ interface Props {
 }
 
 const {
-	title = "Jakob Bouchard – Game developer",
-	description = "The portfolio of Jakob Bouchard",
+	title = "Jakob Bouchard – Technical Designer",
+	description = "Jakob Bouchard's portfolio, a reflection of his journey in video game development, as a technical designer from Montréal. Here, you'll find his best projects, showcasing unique gaming experiences and game mechanics. He is well-versed in Godot 3, Godot 4 and Unreal Engine 5, and is excited to share his creations with you!",
 } = Astro.props;
-
-// TODO: Better favicons + social images (generate them?)
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
 <title>{title}</title>
 <meta name="description" property="og:description" content={description} />
 
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta property="og:title" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_CA" />
+<meta property="og:url" content="https://jakobbouchard.dev" />
+<meta property="og:image" content="https://jakobbouchard.dev/social.jpg" />
+<meta
+	property="og:image:alt"
+	content="Jakob Bouchard smiling in a colourful polo, with golden glasses"
+/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta property="twitter:site" content="@jakobbchrd" />
+
+<!-- Schema.org Person type -->
+<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"familyName": "Bouchard",
+		"givenName": "Jakob",
+		"image": "https://jakobbouchard.dev/social.jpg",
+		"jobTitle": "Technical Designer",
+		"worksFor": "https://prosomo.com",
+		"alumniOf": "https://uqat.ca",
+		"sameAs": [
+			"https://twitter.com/jakobbchrd",
+			"https://instagram.com/jakobbouchard",
+			"https://linkedin.com/in/jakobbouchard",
+			"https://github.com/jakobbouchard",
+			"https://jakobbouchard.itch.io",
+			"https://www.youtube.com/channel/UCL9TRrS9FcJhyfXca6VNr7w"
+		]
+	}
+</script>
 
 <script>
-    // Only load on production environment.
-    if (window.location.host !== "jakobbouchard.dev") {
-        window.goatcounter = { no_onload: true };
+	// Only load on production environment.
+	if (window.location.host !== "jakobbouchard.dev") {
+		window.goatcounter = { no_onload: true };
 	}
 </script>
 <script
 	data-goatcounter="https://goat.jakobbouchard.dev/count"
 	async
-	src="https://goat.bchrd.ca/count.js"
-></script>
+	src="https://goat.bchrd.ca/count.js"></script>
 
 <script is:inline>
 	document.documentElement.classList.replace("no-js", "js");
