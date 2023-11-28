@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 
 import LazyVideo from "@components/LazyVideo.astro";
 import Pill from "@components/Pill.astro";
@@ -16,8 +16,7 @@ const { data, slug } = Astro.props.project;
 	<span class="title">{data.title}</span>
 	{
 		data.img && (
-			<Picture
-				formats={["avif", "webp"]}
+			<Image
 				src={data.img}
 				width={data.img.width}
 				height={data.img.height}
