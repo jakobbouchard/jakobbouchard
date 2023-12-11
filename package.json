@@ -15,7 +15,7 @@
 		"@astrojs/sitemap": "3.0.3",
 		"@fontsource/atkinson-hyperlegible": "5.0.18",
 		"@fontsource/source-serif-pro": "5.0.8",
-		"astro": "3.6.4",
+		"astro": "4.0.3",
 		"sharp": "0.33.0"
 	},
 	"devDependencies": {
