@@ -56,46 +56,48 @@ const filters = [
 		</div>
 
 		<script>
-			// Filter projects using Vanilla JS
-			const filter: HTMLSelectElement | null =
-				document.querySelector("#filter");
-			const projects: NodeListOf<HTMLUListElement> =
-				document.querySelectorAll("[data-filters]");
-			const clear: HTMLButtonElement | null =
-				document.querySelector("[data-clear]");
-			let activeFilter = "";
+			(function () {
+				// Filter projects using Vanilla JS
+				const filter: HTMLSelectElement | null =
+					document.querySelector("#filter");
+				const projects: NodeListOf<HTMLUListElement> =
+					document.querySelectorAll("[data-filters]");
+				const clear: HTMLButtonElement | null =
+					document.querySelector("[data-clear]");
+				let activeFilter = "";
 
-			if (!filter || !clear) {
-				console.error("Filter or clear button not found");
-				return;
-			}
+				if (!filter || !clear) {
+					console.error("Filter or clear button not found");
+					return;
+				}
 
-			filter.addEventListener("change", () => {
-				activeFilter = filter.value;
+				filter.addEventListener("change", () => {
+					activeFilter = filter.value;
 
-				clear.classList.remove("hidden");
+					clear.classList.remove("hidden");
 
-				projects.forEach((project) => {
-					const projectFilters = project.dataset.filters?.split(",");
+					projects.forEach((project) => {
+						const projectFilters = project.dataset.filters?.split(",");
 
-					if (projectFilters?.includes(activeFilter)) {
+						if (projectFilters?.includes(activeFilter)) {
+							project.classList.remove("hidden");
+						} else {
+							project.classList.add("hidden");
+						}
+					});
+				});
+
+				clear.addEventListener("click", () => {
+					filter.value = "";
+					activeFilter = "";
+
+					clear.classList.add("hidden");
+
+					projects.forEach((project) => {
 						project.classList.remove("hidden");
-					} else {
-						project.classList.add("hidden");
-					}
+					});
 				});
-			});
-
-			clear.addEventListener("click", () => {
-				filter.value = "";
-				activeFilter = "";
-
-				clear.classList.add("hidden");
-
-				projects.forEach((project) => {
-					project.classList.remove("hidden");
-				});
-			});
+			})();
 		</script>
 
 		<ContactCTA />
