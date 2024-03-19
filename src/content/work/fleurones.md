@@ -1,9 +1,10 @@
 ---
-title: NFB's Jeunes Pousses 2023
-description: A mobile-only web experience. More details will be revealed once the project is published.
+title: Fleurones
+description: A mobile game that plants the idea that our minds must flourish in order to blossom, just like a garden.
 publishDate: 2023-07-27 00:00:00
 attribution: Created for my internship at the <a href="https://nfb.ca">NFB</a>
-img: ./jeunes-pousses-2023.png
+url: https://fleurones.onf.ca
+img: ./fleurones.png
 filters:
   - Web
 tags:
@@ -23,7 +24,7 @@ tags:
 
 ## Project overview
 
-Around November 2022, [call for applications](https://production.nfbonf.ca/en/lab/jeunes-pousses-digital-apprenticeship/) by the NFB for six interns to build a mobile-only web experience centered around the _Optimus_ theme. I was one of the two developers chosen for the internship, and you can learn more about the rest of my amazing team on [the NFB's blog](https://blog.nfb.ca/blog/2023/05/17/meet-the-fourth-crop-of-jeunes-pousses-at-the-nfb/). If you want to test the experience before it has been released, please [contact me](/contact) and I will provide you with a link and password!
+Around November 2022, there was a [call for applications](https://production.nfbonf.ca/en/lab/jeunes-pousses-digital-apprenticeship/) by the NFB for six interns to build a mobile-only web experience centered around the _Optimus_ theme. I was one of the two developers chosen for the internship, and you can learn more about the rest of my amazing team on [the NFB's blog](https://blog.nfb.ca/blog/2023/05/17/meet-the-fourth-crop-of-jeunes-pousses-at-the-nfb/). The experience is available in both French and English. We thought about many different subjects before landing on an experience that approaches the brain with a metaphor about flowers and biodiversity, which made for a very beautiful and soothing experience when coupled with the art and audio assets that were created.
 
 ## My role
 

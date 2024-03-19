@@ -4,7 +4,12 @@
 		{
 			"source": "/work/splatoon-style-mechanic",
 			"destination": "/work/bloodtoon",
-			"permanent": false
+			"permanent": true
+		},
+		{
+			"source": "/work/jeunes-pousses-2023",
+			"destination": "/work/fleurones",
+			"permanent": true
 		}
 	]
 }
