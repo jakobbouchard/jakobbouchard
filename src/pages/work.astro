@@ -9,9 +9,10 @@ import Grid from "@components/Grid.astro";
 import Hero from "@components/Hero.astro";
 import PortfolioPreview from "@components/PortfolioPreview.astro";
 
-const projects = (await getCollection("work")).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
-);
+const projects = (await getCollection("work"))
+	.filter((project) => !project.data.hidden)
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
 const filters = [
 	...new Set(projects.flatMap((project) => project.data.filters)),
 ].sort();
@@ -56,10 +57,18 @@ const filters = [
 
 		<script>
 			// Filter projects using Vanilla JS
-			const filter = document.querySelector("#filter");
-			const projects = document.querySelectorAll("[data-filters]");
-			const clear = document.querySelector("[data-clear]");
+			const filter: HTMLSelectElement | null =
+				document.querySelector("#filter");
+			const projects: NodeListOf<HTMLUListElement> =
+				document.querySelectorAll("[data-filters]");
+			const clear: HTMLButtonElement | null =
+				document.querySelector("[data-clear]");
 			let activeFilter = "";
+
+			if (!filter || !clear) {
+				console.error("Filter or clear button not found");
+				return;
+			}
 
 			filter.addEventListener("change", () => {
 				activeFilter = filter.value;
@@ -67,9 +76,9 @@ const filters = [
 				clear.classList.remove("hidden");
 
 				projects.forEach((project) => {
-					const projectFilters = project.dataset.filters.split(",");
+					const projectFilters = project.dataset.filters?.split(",");
 
-					if (projectFilters.includes(activeFilter)) {
+					if (projectFilters?.includes(activeFilter)) {
 						project.classList.remove("hidden");
 					} else {
 						project.classList.add("hidden");

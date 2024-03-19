@@ -14,6 +14,7 @@ export const collections = {
 				img: image().optional(),
 				imgAlt: z.string().optional(),
 				url: z.string().optional(),
+				hidden: z.boolean().optional(),
 			}),
 	}),
 };

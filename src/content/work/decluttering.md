@@ -1,5 +1,6 @@
 ---
 title: Decluttering
+hidden: true
 description: A small game about letting go and moving out.
 publishDate: 2023-05-14 18:00:00
 attribution: Created for <a href="https://itch.io/jam/go-godot-jam-4">GoGodotJam 4</a>
