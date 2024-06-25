@@ -23,6 +23,7 @@ import Icon from "@components/Icon.astro";
 					tagline="Thanks for stopping by. Read below to learn more about myself and my background."
 				>
 					<Picture
+						loading={"eager"}
 						formats={["avif", "webp"]}
 						src={portrait}
 						width={portrait.width / 3}
@@ -47,16 +48,17 @@ import Icon from "@components/Icon.astro";
 				</div>
 				<div class="content">
 					<p>
-						I'm currently in my final year at UQAT, studying video game
-						development. Before coming to Montréal, I completed a program in
-						multimedia integration at Cégep de l’Outaouais, which sparked my
-						passion for the game industry.
+						I obtained a B.A. in video game development after two years of
+						studies at UQAT’s Montréal campus. Before coming to Montréal, I
+						completed a program in multimedia integration at <i
+							>Cégep de l’Outaouais</i
+						>, which sparked my passion for the game industry.
 					</p>
 					<p>
 						When I'm not focused on my studies or work, I love gaming, exploring
 						the vibrant city of Montréal, and trying out different food spots.
 						Music and pop culture also excite me, and I'm constantly on the
-						lookout for emerging artists and binge-worthy TV series.
+						lookout for new artists and binge-worthy TV series.
 					</p>
 				</div>
 			</section>
@@ -86,11 +88,14 @@ import Icon from "@components/Icon.astro";
 				</div>
 				<div class="content">
 					<p>
-						Currently, I work as a web developer, always exploring new
-						technologies and taking on challenging projects to push my limits.
-						In the long run, I hope to start a cooperative studio with some
-						friends, where we can create innovative games together and cultivate
-						a supportive work environment.
+						Currently, I work as a backend programmer at <a
+							rel="external noreferrer"
+							href="https://www.lucid-tales.com/">Lucid Tales</a
+						>, a worker cooperative creating innovative games in a great,
+						supportive work environment. We are currently working on <a
+							rel="external noreferrer"
+							href="https://www.lucid-tales.com/sally"><i>Sally</i></a
+						>, a life-simulation game about community and belonging.
 					</p>
 					<p>
 						To learn more about my professional experience, check out my

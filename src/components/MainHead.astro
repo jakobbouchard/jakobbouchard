@@ -41,14 +41,19 @@ const {
 <meta property="twitter:site" content="@jakobbchrd" />
 
 <!-- Schema.org Person type -->
-<script type="application/ld+json">
+<script is:inline type="application/ld+json">
 	{
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"familyName": "Bouchard",
 		"givenName": "Jakob",
 		"image": "https://jakobbouchard.dev/social.jpg",
-		"jobTitle": "Technical Designer",
+		"jobTitle": "Backend Programmer",
+		"worksFor": {
+			"@type": "Organization",
+			"name": "Lucid Tales",
+			"url": "https://lucid-tales.com"
+		},
 		"alumniOf": {
 			"@type": "EducationalOrganization",
 			"name": "Université du Québec en Abitibi-Témiscamingue",
@@ -65,13 +70,14 @@ const {
 	}
 </script>
 
-<script>
+<script is:inline>
 	// Only load on production environment.
 	if (window.location.host !== "jakobbouchard.dev") {
 		window.goatcounter = { no_onload: true };
 	}
 </script>
 <script
+	is:inline
 	data-goatcounter="https://goat.jakobbouchard.dev/count"
 	async
 	src="https://goat.bchrd.ca/count.js"></script>

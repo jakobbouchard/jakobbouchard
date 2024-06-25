@@ -48,6 +48,7 @@ const projects = (await getCollection("work"))
 				</Hero>
 
 				<Picture
+					loading={"eager"}
 					formats={["avif", "webp"]}
 					src={portrait}
 					width={900}

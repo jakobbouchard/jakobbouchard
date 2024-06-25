@@ -58,6 +58,7 @@ const { Content } = await entry.render();
 					{
 						entry.data.img && !entry.data.videoPreview && (
 							<Picture
+								loading={"eager"}
 								formats={["avif", "webp"]}
 								src={entry.data.img}
 								width={entry.data.img.width}
