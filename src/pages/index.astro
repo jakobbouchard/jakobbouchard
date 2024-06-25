@@ -4,8 +4,6 @@ import { Picture } from "astro:assets";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-import ContactCTA from "@components/ContactCTA.astro";
-
 import CallToAction from "@components/CallToAction.astro";
 import Grid from "@components/Grid.astro";
 import Hero from "@components/Hero.astro";
@@ -84,8 +82,6 @@ const projects = (await getCollection("work"))
 				</CallToAction>
 			</div>
 		</section>
-
-		<ContactCTA />
 	</div>
 </BaseLayout>
 

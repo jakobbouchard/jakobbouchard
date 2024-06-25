@@ -4,7 +4,6 @@ import { Picture } from "astro:assets";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-import ContactCTA from "@components/ContactCTA.astro";
 import LazyVideo from "@components/LazyVideo.astro";
 import LazyLoadVideo from "@components/LazyLoadVideoScript.astro";
 
@@ -79,8 +78,6 @@ const { Content } = await entry.render();
 				</div>
 			</section>
 		</article>
-
-		<ContactCTA />
 	</div>
 </BaseLayout>
 

@@ -18,11 +18,16 @@ const currentYear = new Date().getFullYear();
 	footer {
 		display: flex;
 		flex-direction: column;
-		margin-top: auto;
+		margin-top: 5rem;
 		padding: 3rem 2rem 3rem;
+		background-color: var(--gray-900);
 		text-align: center;
-		color: var(--gray-400);
+		color: var(--gray-300);
 		font-size: var(--text-sm);
+	}
+
+	:global(.theme-dark) footer {
+		background-color: var(--gray-800);
 	}
 
 	footer a {
