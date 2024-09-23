@@ -2,7 +2,7 @@
 	"name": "@jakobbouchard/portfolio",
 	"type": "module",
 	"version": "0.0.1",
-	"packageManager": "pnpm@9.9.0",
+	"packageManager": "pnpm@9.11.0",
 	"private": true,
 	"scripts": {
 		"dev": "astro dev",
@@ -13,9 +13,9 @@
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "3.1.6",
-		"@fontsource/atkinson-hyperlegible": "5.0.22",
-		"@fontsource/source-serif-pro": "5.0.8",
-		"astro": "4.15.4",
+		"@fontsource/atkinson-hyperlegible": "5.1.0",
+		"@fontsource/source-serif-pro": "5.1.0",
+		"astro": "4.15.8",
 		"sharp": "0.33.5"
 	},
 	"devDependencies": {
