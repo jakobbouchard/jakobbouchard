@@ -9,10 +9,10 @@ interface Props {
 	project: CollectionEntry<"work">;
 }
 
-const { data, slug } = Astro.props.project;
+const { data, id } = Astro.props.project;
 ---
 
-<a class:list={["card", { video: data.videoPreview }]} href={`/work/${slug}`}>
+<a class:list={["card", { video: data.videoPreview }]} href={`/work/${id}`}>
 	<span class="title">{data.title}</span>
 	{
 		data.img && (
