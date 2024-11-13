@@ -18,8 +18,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       astro:
-        specifier: 5.0.0-beta.6
-        version: 5.0.0-beta.6(rollup@4.24.3)(typescript@5.5.4)
+        specifier: 5.0.0-beta.7
+        version: 5.0.0-beta.7(rollup@4.24.3)(typescript@5.5.4)
       sharp:
         specifier: 0.33.5
         version: 0.33.5
@@ -670,8 +670,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@5.0.0-beta.6:
-    resolution: {integrity: sha512-QDKX+0SV5qGTHJy0ltv+1jKwVDv18m2DmGYdyT1hGsSuMSyISvXumiURJF1h8xJRUDjhiXjHSqMEL5/fpDAF9g==}
+  astro@5.0.0-beta.7:
+    resolution: {integrity: sha512-0gwb80vd78srzP1PATCOEJQDxQjZswD8tL/2bfrryM4FaSHXJ847oV4uj5eomRD9G0zZPv2UOWJKNksuyG3X2w==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1440,21 +1440,26 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite@6.0.0-beta.2:
-    resolution: {integrity: sha512-TdrjEhCnVNjT3kjohFhVJQL9V3SguxMAphP2RW085QbE0Xc+lRvql9l5hTIr/mttO2jhivYXEP4xfaIRPjzqiw==}
+  vite@6.0.0-beta.6:
+    resolution: {integrity: sha512-XbMzqwx2CDrOOKDDRvenHMQx+JwUTSm/1a/GgjTL6oC5XwpAk+PgoxmB6vGh2UQi0t9EIVS5d2GZXMWd4P5ahA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
       '@types/node': ^18.0.0 || >=20.0.0
+      jiti: '>=1.21.0'
       less: '*'
       lightningcss: ^1.21.0
       sass: '*'
       sass-embedded: '*'
       stylus: '*'
       sugarss: '*'
-      terser: ^5.4.0
+      terser: ^5.16.0
+      tsx: ^4.8.1
+      yaml: ^2.4.2
     peerDependenciesMeta:
       '@types/node':
+        optional: true
+      jiti:
         optional: true
       less:
         optional: true
@@ -1469,6 +1474,10 @@ packages:
       sugarss:
         optional: true
       terser:
+        optional: true
+      tsx:
+        optional: true
+      yaml:
         optional: true
 
   vitefu@1.0.3:
@@ -1988,7 +1997,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@5.0.0-beta.6(rollup@4.24.3)(typescript@5.5.4):
+  astro@5.0.0-beta.7(rollup@4.24.3)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -2038,8 +2047,8 @@ snapshots:
       tsconfck: 3.1.4(typescript@5.5.4)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      vite: 6.0.0-beta.2
-      vitefu: 1.0.3(vite@6.0.0-beta.2)
+      vite: 6.0.0-beta.6
+      vitefu: 1.0.3(vite@6.0.0-beta.6)
       which-pm: 3.0.0
       xxhash-wasm: 1.0.2
       yargs-parser: 21.1.1
@@ -2051,6 +2060,7 @@ snapshots:
       sharp: 0.33.5
     transitivePeerDependencies:
       - '@types/node'
+      - jiti
       - less
       - lightningcss
       - rollup
@@ -2060,7 +2070,9 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+      - tsx
       - typescript
+      - yaml
 
   axobject-query@4.1.0: {}
 
@@ -3149,7 +3161,7 @@ snapshots:
       '@types/unist': 3.0.0
       vfile-message: 4.0.2
 
-  vite@6.0.0-beta.2:
+  vite@6.0.0-beta.6:
     dependencies:
       esbuild: 0.24.0
       postcss: 8.4.47
@@ -3157,9 +3169,9 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitefu@1.0.3(vite@6.0.0-beta.2):
+  vitefu@1.0.3(vite@6.0.0-beta.6):
     optionalDependencies:
-      vite: 6.0.0-beta.2
+      vite: 6.0.0-beta.6
 
   web-namespaces@2.0.1: {}
 
