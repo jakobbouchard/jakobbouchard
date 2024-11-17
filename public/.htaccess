@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+Redirect 301 /work/splatoon-style-mechanic /work/bloodtoon
+Redirect 301 /work/jeunes-pousses-2023 /work/fleurones
+ErrorDocument 404 /404.html
+</IfModule>

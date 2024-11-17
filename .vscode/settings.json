@@ -1,5 +1,5 @@
 {
 	"explorer.fileNesting.patterns": {
-		"package.json": ".editorconfig, astro.config*, pnpm-lock.yaml, renovate.json, sandbox.config.json, tsconfig.json, vercel.json"
+		"package.json": ".editorconfig, astro.config*, pnpm-lock.yaml, renovate.json, sandbox.config.json, tsconfig.json"
 	}
 }
