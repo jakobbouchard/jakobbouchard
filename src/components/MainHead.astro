@@ -9,17 +9,20 @@ import "@styles/global.css";
 interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
+	canonical?: string | undefined;
 }
 
 const {
 	title = "Jakob Bouchard – Backend Programmer",
 	description = "Jakob Bouchard's portfolio, a reflection of his journey in video game development, as a backend programmer from Montréal. Here, you'll find his best projects, showcasing unique gaming experiences and game mechanics. He is well-versed in Godot and Unreal Engine 5, and is excited to share his creations with you!",
+	canonical = new URL(Astro.url.pathname, Astro.site),
 } = Astro.props;
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+<link rel="canonical" href={canonical} />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
