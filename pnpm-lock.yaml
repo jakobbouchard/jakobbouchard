@@ -18,8 +18,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       astro:
-        specifier: 5.0.0-beta.8
-        version: 5.0.0-beta.8(rollup@4.24.3)(typescript@5.5.4)
+        specifier: 5.0.0-beta.10
+        version: 5.0.0-beta.10(rollup@4.24.3)(typescript@5.5.4)
       sharp:
         specifier: 0.33.5
         version: 0.33.5
@@ -670,8 +670,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@5.0.0-beta.8:
-    resolution: {integrity: sha512-AXMNek/+7ndByFILgiRgfT3gxWcSKpzB2T8p4IPKlEWgLNMKaL8t8NaPUhUvQlpOPj+SL5n0ZoaMme6aHQIBaw==}
+  astro@5.0.0-beta.10:
+    resolution: {integrity: sha512-9GuMCb1mRRCnbcIxaebeYefQMz/ow2DSbZ7UwfRuyWk/Ndcm5RNB2wT52tGmWLsjKgbtghnzaqALfhPjdqD3mQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1401,6 +1401,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  ultrahtml@1.5.3:
+    resolution: {integrity: sha512-GykOvZwgDWZlTQMtp5jrD4BVL+gNn2NVlVafjcFUJ7taY20tqYdwdoWBFy6GBJsNTZe1GkGPkSl5knQAjtgceg==}
+
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
 
@@ -1997,7 +2000,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@5.0.0-beta.8(rollup@4.24.3)(typescript@5.5.4):
+  astro@5.0.0-beta.10(rollup@4.24.3)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -2045,6 +2048,7 @@ snapshots:
       shiki: 1.22.2
       tinyexec: 0.3.1
       tsconfck: 3.1.4(typescript@5.5.4)
+      ultrahtml: 1.5.3
       unist-util-visit: 5.0.0
       vfile: 6.0.3
       vite: 6.0.0-beta.6
@@ -3093,6 +3097,8 @@ snapshots:
   type-fest@4.26.1: {}
 
   typescript@5.5.4: {}
+
+  ultrahtml@1.5.3: {}
 
   unified@11.0.5:
     dependencies:
