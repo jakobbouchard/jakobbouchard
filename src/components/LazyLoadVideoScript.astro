@@ -29,7 +29,7 @@
 
 		document
 			.querySelectorAll("video.lazy")
-			.forEach(lazyVideoObserver.observe);
+			.forEach((element) => lazyVideoObserver.observe(element));
 	}
 
 	document.addEventListener("DOMContentLoaded", initializeLazyLoadObserver);
