@@ -1,35 +1,36 @@
 <script>
-	document.addEventListener("DOMContentLoaded", function () {
-		const lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+	function loadVideo(video: HTMLVideoElement) {
+		const sources: NodeListOf<HTMLSourceElement> =
+			video.querySelectorAll("source");
 
-		if ("IntersectionObserver" in window) {
-			const lazyVideoObserver = new IntersectionObserver(function (
-				entries,
-				_observer,
-			) {
-				entries.forEach(function (video) {
-					if (video.isIntersecting) {
-						for (const source in video.target.children) {
-							const videoSource = video.target.children[source];
-							if (
-								videoSource &&
-								typeof videoSource.tagName === "string" &&
-								videoSource.tagName === "SOURCE"
-							) {
-								videoSource.src = videoSource.dataset.src;
-							}
-						}
+		for (const source of sources) {
+			if (source.dataset.src == undefined) continue;
 
-						video.target.load();
-						video.target.classList.remove("lazy");
-						lazyVideoObserver.unobserve(video.target);
-					}
-				});
-			});
-
-			lazyVideos.forEach(function (lazyVideo) {
-				lazyVideoObserver.observe(lazyVideo);
-			});
+			source.src = source.dataset.src;
+			source.removeAttribute("data-src");
 		}
-	});
+
+		video.load();
+		video.classList.remove("lazy");
+	}
+
+	function initializeLazyLoadObserver() {
+		const lazyVideoObserver = new IntersectionObserver(function (
+			entries,
+			observer,
+		) {
+			for (const entry of entries) {
+				if (!entry.isIntersecting) continue;
+
+				loadVideo(entry.target as HTMLVideoElement);
+				observer.unobserve(entry.target);
+			}
+		});
+
+		document
+			.querySelectorAll("video.lazy")
+			.forEach(lazyVideoObserver.observe);
+	}
+
+	document.addEventListener("DOMContentLoaded", initializeLazyLoadObserver);
 </script>

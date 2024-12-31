@@ -2,7 +2,7 @@
 title: Fleurones
 description: A mobile game that plants the idea that our minds must flourish in order to blossom, just like a garden.
 publishDate: 2023-07-27 00:00:00
-attribution: Created for my internship at the <a href="https://nfb.ca">NFB</a>
+attribution: Created for my internship at the <a href="https://www.nfb.ca">NFB</a>
 url: https://fleurones.onf.ca
 img: ./fleurones.png
 filters:

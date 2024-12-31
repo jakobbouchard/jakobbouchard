@@ -14,13 +14,13 @@ const socialMedias: {
 	icon: IconProps["icon"];
 }[] = [
 	{
-		title: "Instagram",
-		href: "https://instagram.com/jakobbouchard",
-		icon: "instagram-logo",
+		title: "Bluesky",
+		href: "https://bsky.app/profile/jakobbchrd.bsky.social",
+		icon: "butterfly",
 	},
 	{
 		title: "LinkedIn",
-		href: "https://linkedin.com/in/jakobbouchard",
+		href: "https://www.linkedin.com/in/jakobbouchard",
 		icon: "linkedin-logo",
 	},
 	{
@@ -52,7 +52,9 @@ const socialMedias: {
 
 			btn.addEventListener("click", () => setExpanded(!this.isOpen()));
 
-			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
+			const handleViewports = (
+				e: MediaQueryList | MediaQueryListEvent,
+			) => {
 				setExpanded(e.matches);
 			};
 			const mediaQueries = window.matchMedia("(min-width: 50em)");
@@ -69,7 +71,12 @@ const socialMedias: {
 
 <header id="site-header" role="banner">
 	<div class="menu-header">
-		<a href="/" aria-label="menu-home" class="site-title" id="menu-item-home">
+		<a
+			href="/"
+			aria-label="menu-home"
+			class="site-title"
+			id="menu-item-home"
+		>
 			<Icon
 				icon="terminal-window"
 				color="var(--accent-regular)"
@@ -93,7 +100,8 @@ const socialMedias: {
 					<li>
 						<a
 							aria-current={
-								Astro.url.pathname === href || Astro.url.pathname === `${href}/`
+								Astro.url.pathname === href ||
+								Astro.url.pathname === `${href}/`
 									? "page"
 									: false
 							}
@@ -102,7 +110,10 @@ const socialMedias: {
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== "/" && Astro.url.pathname.startsWith(href)),
+										(href !== "/" &&
+											Astro.url.pathname.startsWith(
+												href,
+											)),
 								},
 							]}
 							href={href}

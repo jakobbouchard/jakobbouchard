@@ -1,6 +1,6 @@
 ---
 title: Flibbert
-description: A small framework/engine that I'm working on to learn C++.
+description: A small framework/engine that I worked on to learn C++.
 publishDate: 2023-05-14 18:00:00
 url: https://github.com/jakobbouchard/flibbert-engine
 img: ./flibbert-engine.png

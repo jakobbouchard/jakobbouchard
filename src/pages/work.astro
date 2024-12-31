@@ -9,7 +9,9 @@ import PortfolioPreview from "@components/PortfolioPreview.astro";
 
 const projects = (await getCollection("work"))
 	.filter((project) => !project.data.hidden)
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+	.sort(
+		(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+	);
 
 const filters = [
 	...new Set(projects.flatMap((project) => project.data.filters)),
@@ -18,7 +20,7 @@ const filters = [
 
 <BaseLayout
 	title="My work – Jakob Bouchard"
-	description="Learn about Jakob Bouchard's most recent projects"
+	description="Learn about Jakob Bouchard’s most recent projects"
 >
 	<div class="stack gap-20">
 		<div class="wrapper stack gap-8">
@@ -29,7 +31,9 @@ const filters = [
 					align="start"
 				>
 					<div class="filter">
-						<button class="hidden" data-clear="">Clear filter</button>
+						<button class="hidden" data-clear=""
+							>Clear filter</button
+						>
 						<select id="filter">
 							<option disabled selected value="">Filter</option>
 							{
@@ -75,7 +79,8 @@ const filters = [
 					clear.classList.remove("hidden");
 
 					projects.forEach((project) => {
-						const projectFilters = project.dataset.filters?.split(",");
+						const projectFilters =
+							project.dataset.filters?.split(",");
 
 						if (projectFilters?.includes(activeFilter)) {
 							project.classList.remove("hidden");

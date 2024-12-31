@@ -9,20 +9,18 @@ import "@styles/global.css";
 interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
-	canonical?: string | undefined;
 }
 
 const {
-	title = "Jakob Bouchard – Backend Programmer",
-	description = "Jakob Bouchard's portfolio, a reflection of his journey in video game development, as a backend programmer from Montréal. Here, you'll find his best projects, showcasing unique gaming experiences and game mechanics. He is well-versed in Godot and Unreal Engine 5, and is excited to share his creations with you!",
-	canonical = new URL(Astro.url.pathname, Astro.site),
+	title = "Jakob Bouchard – Game Programmer",
+	description = "Jakob Bouchard’s portfolio, a reflection of his journey in video game development, as a game programmer from Montréal. Here, you’ll find his best projects, showcasing unique gaming experiences and game mechanics. He is well-versed in Unreal Engine 5 and Godot, and is excited to share his creations with you!",
 } = Astro.props;
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
-<link rel="canonical" href={canonical} />
+<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -41,8 +39,6 @@ const {
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
-<meta property="twitter:site" content="@jakobbchrd" />
-
 <link rel="me" href="https://mastodon.gamedev.place/@jakobbchrd" />
 
 <!-- Schema.org Person type -->
@@ -53,35 +49,29 @@ const {
 		"familyName": "Bouchard",
 		"givenName": "Jakob",
 		"image": "https://jakobbouchard.dev/social.jpg",
-		"jobTitle": "Backend Programmer",
+		"jobTitle": "Game Programmer",
 		"worksFor": {
 			"@type": "Organization",
 			"name": "Lucid Tales",
-			"url": "https://lucid-tales.com"
+			"url": "https://www.lucidtales.coop"
 		},
 		"alumniOf": {
 			"@type": "EducationalOrganization",
 			"name": "Université du Québec en Abitibi-Témiscamingue",
-			"url": "https://uqat.ca"
+			"url": "https://www.uqat.ca"
 		},
 		"sameAs": [
-			"https://twitter.com/jakobbchrd",
-			"https://instagram.com/jakobbouchard",
-			"https://linkedin.com/in/jakobbouchard",
+			"https://bsky.app/profile/jakobbchrd.bsky.social",
+			"https://www.linkedin.com/in/jakobbouchard/",
 			"https://github.com/jakobbouchard",
 			"https://mastodon.gamedev.place/@jakobbchrd",
 			"https://jakobbouchard.itch.io",
+			"https://www.instagram.com/jakobbouchard",
 			"https://www.youtube.com/channel/UCL9TRrS9FcJhyfXca6VNr7w"
 		]
 	}
 </script>
 
-<script is:inline>
-	// Only load on production environment.
-	if (window.location.host !== "jakobbouchard.dev") {
-		window.goatcounter = { no_onload: true };
-	}
-</script>
 <script
 	is:inline
 	data-goatcounter="https://jakobbouchard.goatcounter.com/count"
@@ -92,24 +82,31 @@ const {
 	document.documentElement.classList.replace("no-js", "js");
 
 	const getThemePreference = () => {
-		if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+		if (localStorage.getItem("theme") != null) {
 			return localStorage.getItem("theme");
 		}
+
 		return window.matchMedia("(prefers-color-scheme: dark)").matches
 			? "dark"
 			: "light";
 	};
-	const isDark = getThemePreference() === "dark";
-	document.documentElement.classList.toggle("theme-dark", isDark);
 
-	if (typeof localStorage !== "undefined") {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains("theme-dark");
-			localStorage.setItem("theme", isDark ? "dark" : "light");
-		});
-		observer.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: ["class"],
-		});
-	}
+	const storeThemePreference = () => {
+		localStorage.setItem(
+			"theme",
+			document.documentElement.classList.contains("theme-dark")
+				? "dark"
+				: "light",
+		);
+	};
+
+	document.documentElement.classList.toggle(
+		"theme-dark",
+		getThemePreference() === "dark",
+	);
+
+	new MutationObserver(storeThemePreference).observe(
+		document.documentElement,
+		{ attributeFilter: ["class"] },
+	);
 </script>
