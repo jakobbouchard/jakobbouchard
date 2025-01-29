@@ -12,11 +12,12 @@ import Icon from "@components/Icon.astro";
 import Pill from "@components/Pill.astro";
 
 export async function getStaticPaths() {
-	const work = await getCollection("work");
-	return work.map((entry) => ({
-		params: { id: entry.id },
-		props: { entry },
-	}));
+	return (await getCollection("work"))
+		.filter((project) => !project.data.hidden || import.meta.env.DEV)
+		.map((entry) => ({
+			params: { id: entry.id },
+			props: { entry },
+		}));
 }
 
 interface Props {
