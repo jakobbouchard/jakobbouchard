@@ -16,7 +16,7 @@ tags:
 
 ## Technologies and methods used
 
-- Unreal Engine 5
+- Unreal Engine 5.0
   - Render targets
   - Mapping projectile hit coordinates to the mesh's UV coordinates
   - Blueprints
