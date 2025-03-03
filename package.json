@@ -2,7 +2,7 @@
 	"name": "@jakobbouchard/portfolio",
 	"type": "module",
 	"version": "0.0.1",
-	"packageManager": "pnpm@9.15.6",
+	"packageManager": "pnpm@10.5.2",
 	"private": true,
 	"scripts": {
 		"dev": "astro dev",
