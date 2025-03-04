@@ -24,7 +24,7 @@ const socialMedias: {
 		icon: "linkedin-logo",
 	},
 	{
-		title: "Itch.io",
+		title: "itch.io",
 		href: "https://jakobbouchard.itch.io",
 		icon: "game-controller",
 	},
@@ -131,7 +131,7 @@ const socialMedias: {
 			{
 				socialMedias.map(({ href, icon, title }) => (
 					<li>
-						<a rel="me external noreferrer" href={href}>
+						<a rel="me external noopener" href={href}>
 							<Icon title={title} icon={icon} />
 						</a>
 					</li>

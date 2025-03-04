@@ -11,7 +11,7 @@ const { size, href, external } = Astro.props;
 <a
 	class:list={["call-to-action", size]}
 	href={href}
-	rel={external ? "external noreferrer" : undefined}
+	rel={external ? "external noopener" : undefined}
 	target={external ? "_blank" : undefined}><slot /></a
 >
 

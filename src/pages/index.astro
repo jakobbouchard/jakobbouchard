@@ -11,7 +11,7 @@ import Icon from "@components/Icon.astro";
 import Pill from "@components/Pill.astro";
 import PortfolioPreview from "@components/PortfolioPreview.astro";
 
-import portrait from "@assets/portrait-home.jpg";
+import portrait from "@assets/my-notion-face-transparent.png";
 
 const projects = (await getCollection("work"))
 	.filter((project) => !project.data.hidden || import.meta.env.DEV)
@@ -53,7 +53,7 @@ const projects = (await getCollection("work"))
 					src={portrait}
 					width={900}
 					height={900}
-					alt="Jakob Bouchard smiling in a colourful polo, with golden glasses"
+					alt="A black and white illustration of Jakob, holding a donut in their mouth."
 					quality={85}
 				/>
 			</header>
@@ -93,16 +93,16 @@ const projects = (await getCollection("work"))
 <style>
 	.hero > header {
 		display: flex;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		align-items: center;
 		gap: 2rem;
 	}
 
 	.hero > header img {
-		aspect-ratio: 5 / 4;
+		aspect-ratio: 5 / 3;
 		object-fit: cover;
 		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
+		width: 20rem;
 	}
 
 	.roles {
@@ -120,6 +120,7 @@ const projects = (await getCollection("work"))
 		.hero > header img {
 			aspect-ratio: 3 / 4;
 			border-radius: 4.5rem;
+			width: fit-content;
 		}
 
 		.hero :global(.hero) :global(.call-to-action) {
