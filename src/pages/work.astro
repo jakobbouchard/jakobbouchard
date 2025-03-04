@@ -59,7 +59,6 @@ const filters = [
 
 		<script>
 			(function () {
-				// Filter projects using Vanilla JS
 				const filter: HTMLSelectElement | null =
 					document.querySelector("#filter");
 				const projects: NodeListOf<HTMLUListElement> =
@@ -107,6 +106,10 @@ const filters = [
 
 <style>
 	.hidden {
+		display: none;
+	}
+
+	:global(.no-js) .filter {
 		display: none;
 	}
 
