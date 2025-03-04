@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Artblr gallery
 description: A VR art gallery, with data coming from a custom API.
 publishDate: 2021-12-31 00:00:00
