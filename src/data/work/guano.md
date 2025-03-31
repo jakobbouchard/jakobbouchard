@@ -4,7 +4,7 @@ description: Play as a delightfully dumb seagull, find food and complete quests 
 publishDate: 2024-03-01 12:00:00
 attribution: Final project as game dev student at <a href="https://www.uqat.ca">UQAT</a>
 url: https://store.steampowered.com/app/2779220/Guano/
-# videoPreview: /guano
+# videoPreview: guano
 img: ./guano.jpg
 filters:
   - Unreal Engine 5

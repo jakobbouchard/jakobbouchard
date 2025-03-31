@@ -1,5 +1,5 @@
 {
-	"name": "@jakobbouchard/portfolio",
+	"name": "@imjuniper/website",
 	"type": "module",
 	"version": "0.0.1",
 	"packageManager": "pnpm@10.6.5",
@@ -12,9 +12,7 @@
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "3.3.0",
-		"@fontsource/atkinson-hyperlegible": "5.2.5",
-		"@fontsource/source-serif-pro": "5.2.5",
-		"astro": "5.5.4",
+		"astro": "5.5.5",
 		"sharp": "0.33.5"
 	},
 	"pnpm": {

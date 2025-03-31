@@ -1,0 +1,88 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { iconPaths } from "@components/IconPaths";
+
+export interface Props {
+	defaultIcon: keyof typeof iconPaths;
+	randomIcons?: (keyof typeof iconPaths)[];
+	color?: string;
+	gradient?: boolean;
+	size?: string;
+}
+
+const {
+	color = "currentcolor",
+	gradient,
+	defaultIcon,
+	randomIcons = [],
+	size,
+} = Astro.props;
+const defaultIconPath = iconPaths[defaultIcon];
+
+const attrs: HTMLAttributes<"svg"> = {};
+if (size) attrs.style = { "--size": size };
+
+const gradientId =
+	"icon-gradient-" + Math.round(Math.random() * 10e12).toString(36);
+
+const randomIconPaths = randomIcons.map((icon) => iconPaths[icon]);
+---
+
+<header-icon data-icons={JSON.stringify(randomIconPaths)}>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="40"
+		height="40"
+		viewBox="0 0 256 256"
+		aria-hidden="true"
+		stroke={gradient ? `url(#${gradientId})` : color}
+		fill={gradient ? `url(#${gradientId})` : color}
+		{...attrs}
+	>
+		<g set:html={defaultIconPath} />
+		{
+			gradient && (
+				<linearGradient
+					id={gradientId}
+					x1="23"
+					x2="235"
+					y1="43"
+					y2="202"
+					gradientUnits="userSpaceOnUse"
+				>
+					<stop stop-color="var(--gradient-stop-1)" />
+					<stop offset=".5" stop-color="var(--gradient-stop-2)" />
+					<stop offset="1" stop-color="var(--gradient-stop-3)" />
+				</linearGradient>
+			)
+		}
+	</svg>
+</header-icon>
+
+<script is:inline>
+	// Inlined so that it doesn't flash
+	class HeaderIcon extends HTMLElement {
+		constructor() {
+			super();
+
+			const g = this.querySelector("svg > g");
+
+			const iconPaths = JSON.parse(this.dataset.icons);
+			const randomIcon =
+				iconPaths[Math.floor(Math.random() * iconPaths.length)];
+			if (randomIcon) {
+				g.innerHTML = randomIcon;
+			}
+		}
+	}
+	customElements.define("header-icon", HeaderIcon);
+</script>
+
+<style>
+	svg {
+		vertical-align: middle;
+		width: var(--size, 1em);
+		height: var(--size, 1em);
+	}
+</style>

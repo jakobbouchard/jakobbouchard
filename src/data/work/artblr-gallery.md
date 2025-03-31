@@ -4,7 +4,7 @@ title: Artblr gallery
 description: A VR art gallery, with data coming from a custom API.
 publishDate: 2021-12-31 00:00:00
 attribution: Created as developer at <a href="https://www.distantia.ca">Distantia</a>
-videoPreview: /artblr-gallery
+videoPreview: artblr-gallery
 img: ./artblr-gallery.jpg
 filters:
   - VR

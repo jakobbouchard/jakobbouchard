@@ -1,38 +1,27 @@
 ---
 interface Props {
 	filename: string;
-	av1?: boolean;
-	vp9?: boolean;
-	h264?: boolean;
 }
 
-const { filename, av1 = true, vp9 = true, h264 = true } = Astro.props;
+const { filename } = Astro.props;
 ---
 
 <video class="lazy" autoplay loop muted playsinline>
-	{
-		av1 && (
-			<source
-				data-src={`${filename}.av1.webm`}
-				type="video/webm; codecs=av01.0.05M.08,opus"
-			/>
-		)
-	}
-	{vp9 && <source data-src={`${filename}.vp9.webm`} type="video/webm" />}
-	{h264 && <source data-src={`${filename}.h264.mp4`} type="video/mp4" />}
+	<source
+		data-src={`/media/${filename}.av1.webm`}
+		type="video/webm; codecs=av01.0.05M.08,opus"
+	/>
+	<source data-src={`/media/${filename}.vp9.webm`} type="video/webm" />
+	<source data-src={`/media/${filename}.h264.mp4`} type="video/mp4" />
 </video>
 <noscript>
 	<video autoplay loop muted playsinline>
-		{
-			av1 && (
-				<source
-					src={`${filename}.av1.webm`}
-					type="video/webm; codecs=av01.0.05M.08,opus"
-				/>
-			)
-		}
-		{vp9 && <source src={`${filename}.vp9.webm`} type="video/webm" />}
-		{h264 && <source src={`${filename}.h264.mp4`} type="video/mp4" />}
+		<source
+			src={`/media/${filename}.av1.webm`}
+			type="video/webm; codecs=av01.0.05M.08,opus"
+		/>
+		<source src={`/media/${filename}.vp9.webm`} type="video/webm" />
+		<source src={`/media/${filename}.h264.mp4`} type="video/mp4" />
 	</video>
 </noscript>
 

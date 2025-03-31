@@ -1,4 +1,5 @@
 ---
+import HeaderIcon from "@components/HeaderIcon.astro";
 import Icon, { type Props as IconProps } from "@components/Icon.astro";
 import ThemeToggle from "@components/ThemeToggle.astro";
 
@@ -15,7 +16,7 @@ const socialMedias: {
 }[] = [
 	{
 		title: "Bluesky",
-		href: "https://bsky.app/profile/did:plc:zphsc2loqx4ct5wzsiyhdflf",
+		href: "https://bsky.app/profile/imjuniper.fyi",
 		icon: "butterfly",
 	},
 	{
@@ -25,7 +26,7 @@ const socialMedias: {
 	},
 	{
 		title: "itch.io",
-		href: "https://jakobbouchard.itch.io",
+		href: "https://imjuniper.itch.io",
 		icon: "game-controller",
 	},
 	{
@@ -77,13 +78,14 @@ const socialMedias: {
 			class="site-title"
 			id="menu-item-home"
 		>
-			<Icon
-				icon="terminal-window"
+			<HeaderIcon
+				defaultIcon="terminal-window"
+				randomIcons={["terminal-window", "code", "cat", "coffee"]}
 				color="var(--accent-regular)"
 				size="1.6em"
 				gradient
 			/>
-			Jakob Bouchard
+			Juni‽
 		</a>
 		<menu-button>
 			<button class="menu-button" aria-expanded="false">
@@ -149,7 +151,6 @@ const socialMedias: {
 	header {
 		z-index: 9999;
 		position: relative;
-		font-family: var(--font-brand);
 		margin-bottom: 3.5rem;
 	}
 

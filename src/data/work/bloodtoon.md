@@ -4,7 +4,7 @@ description: I was in charge of recreating Splatoon’s ink mechanic for a proje
 publishDate: 2023-04-28 00:00:00
 attribution: Created as game dev student at <a href="https://www.uqat.ca">UQAT</a>
 url: https://marcoux.itch.io/bloodtoon
-videoPreview: /bloodtoon
+videoPreview: bloodtoon
 img: ./bloodtoon.png
 filters:
   - Unreal Engine 5
