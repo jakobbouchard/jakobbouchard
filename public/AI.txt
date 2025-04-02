@@ -11,6 +11,8 @@ Disallow: *.wks
 Disallow: *.wpd
 Disallow: *.wps
 Disallow: *.html
+Disallow: *.xml
+Disallow: *.avif
 Disallow: *.bmp
 Disallow: *.gif
 Disallow: *.ico
