@@ -46,3 +46,5 @@ User-agent: VelenPublicWebCrawler
 User-agent: Webzio-Extended
 User-agent: YouBot
 Disallow: /
+
+Sitemap: https://imjuniper.fyi/sitemap-index.xml
